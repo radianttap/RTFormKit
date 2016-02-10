@@ -37,6 +37,7 @@
 		D0EFAA991C6B8D1E00AB4008 = {
 			isa = PBXGroup;
 			children = (
+				D0EFAABC1C6B8E6000AB4008 /* RTFormKit */,
 				D0EFAAA41C6B8D1E00AB4008 /* FormKitDemo */,
 				D0EFAAA31C6B8D1E00AB4008 /* Products */,
 			);
@@ -69,6 +70,13 @@
 				D0EFAAA61C6B8D1E00AB4008 /* main.m */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		D0EFAABC1C6B8E6000AB4008 /* RTFormKit */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = RTFormKit;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
