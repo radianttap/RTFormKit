@@ -8,6 +8,8 @@
 
 #import <UIKit/UIKit.h>
 
+@class RTFormBaseCell;
+
 @interface RTFormController : UIViewController
 
 @end

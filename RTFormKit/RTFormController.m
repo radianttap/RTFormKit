@@ -6,7 +6,10 @@
 //  Copyright © 2016. Radiant Tap. All rights reserved.
 //
 
+#import "UIColor+RTFormKit.h"
+
 #import "RTFormController.h"
+#import "RTFormBaseCell.h"
 
 @interface RTFormController ()
 

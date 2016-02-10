@@ -13,6 +13,7 @@
 		D0EFAAB51C6B8D1E00AB4008 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D0EFAAB31C6B8D1E00AB4008 /* LaunchScreen.storyboard */; };
 		D0EFAABF1C6B8EA000AB4008 /* RTFormController.m in Sources */ = {isa = PBXBuildFile; fileRef = D0EFAABE1C6B8EA000AB4008 /* RTFormController.m */; };
 		D0EFAAC21C6B8ED100AB4008 /* RTFormBaseCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D0EFAAC11C6B8ED100AB4008 /* RTFormBaseCell.m */; };
+		D0EFAAC51C6B92E400AB4008 /* UIColor+RTFormKit.m in Sources */ = {isa = PBXBuildFile; fileRef = D0EFAAC41C6B92E400AB4008 /* UIColor+RTFormKit.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -27,6 +28,8 @@
 		D0EFAABE1C6B8EA000AB4008 /* RTFormController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RTFormController.m; sourceTree = "<group>"; };
 		D0EFAAC01C6B8ED100AB4008 /* RTFormBaseCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RTFormBaseCell.h; sourceTree = "<group>"; };
 		D0EFAAC11C6B8ED100AB4008 /* RTFormBaseCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RTFormBaseCell.m; sourceTree = "<group>"; };
+		D0EFAAC31C6B92E400AB4008 /* UIColor+RTFormKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+RTFormKit.h"; sourceTree = "<group>"; };
+		D0EFAAC41C6B92E400AB4008 /* UIColor+RTFormKit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+RTFormKit.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -81,6 +84,8 @@
 		D0EFAABC1C6B8E6000AB4008 /* RTFormKit */ = {
 			isa = PBXGroup;
 			children = (
+				D0EFAAC31C6B92E400AB4008 /* UIColor+RTFormKit.h */,
+				D0EFAAC41C6B92E400AB4008 /* UIColor+RTFormKit.m */,
 				D0EFAABD1C6B8EA000AB4008 /* RTFormController.h */,
 				D0EFAABE1C6B8EA000AB4008 /* RTFormController.m */,
 				D0EFAAC01C6B8ED100AB4008 /* RTFormBaseCell.h */,
@@ -159,6 +164,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D0EFAAC51C6B92E400AB4008 /* UIColor+RTFormKit.m in Sources */,
 				D0EFAAC21C6B8ED100AB4008 /* RTFormBaseCell.m in Sources */,
 				D0EFAAAA1C6B8D1E00AB4008 /* AppDelegate.m in Sources */,
 				D0EFAABF1C6B8EA000AB4008 /* RTFormController.m in Sources */,

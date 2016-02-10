@@ -6,6 +6,7 @@
 //  Copyright © 2016. Radiant Tap. All rights reserved.
 //
 
+#import "UIColor+RTFormKit.h"
 #import "RTFormBaseCell.h"
 
 @implementation RTFormBaseCell
@@ -55,8 +56,28 @@
 
 - (void)commonInit {
 
+	_delegate = nil;
+	_enabled = YES;
+	_cellType = RTFormCellTypeUnknown;
+	_key = nil;
 }
 
 #pragma mark -
+
+- (void)prepareForReuse {
+	[super prepareForReuse];
+
+	self.enabled = YES;
+}
+
+- (void)setup:(NSDictionary *)config {}
+
+- (void)applyTheme:(NSNotification *)notification {}
+
+- (void)setEnabled:(BOOL)enabled {
+
+	self.contentView.userInteractionEnabled = enabled;
+	self.contentView.alpha = (enabled) ? 1.0 : .35;
+}
 
 @end
