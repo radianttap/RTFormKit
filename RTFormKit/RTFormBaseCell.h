@@ -10,8 +10,8 @@
 
 @interface RTFormBaseCell : UITableViewCell
 
-+ (UINib *)nib;
 + (NSString *)reuseIdentifier;
++ (UINib *)nib;
 + (instancetype)nibInstance;
 
 @end

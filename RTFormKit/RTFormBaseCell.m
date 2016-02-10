@@ -10,12 +10,12 @@
 
 @implementation RTFormBaseCell
 
-+ (UINib *)nib {
-	return [UINib nibWithNibName:NSStringFromClass([self class]) bundle:nil];
-}
-
 + (NSString *)reuseIdentifier {
 	return [NSStringFromClass([self class]) uppercaseString];
+}
+
++ (UINib *)nib {
+	return [UINib nibWithNibName:NSStringFromClass([self class]) bundle:nil];
 }
 
 + (instancetype)nibInstance {
