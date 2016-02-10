@@ -70,7 +70,7 @@
 	self.enabled = YES;
 }
 
-- (void)setup:(NSDictionary *)config {}
+- (void)setupUsingConfiguration:(NSDictionary< NSNumber*,id > *)config {}
 
 - (void)applyTheme:(NSNotification *)notification {}
 
