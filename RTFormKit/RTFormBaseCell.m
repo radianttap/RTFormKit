@@ -34,7 +34,8 @@
 	self.backgroundColor = [UIColor clearColor];
 	self.contentView.backgroundColor = [UIColor clearColor];
 	self.selectionStyle = UITableViewCellSelectionStyleNone;
-	self.clipsToBounds = YES;
+	self.contentView.clipsToBounds = YES;
+	self.selectionStyle = UITableViewCellSelectionStyleNone;
 
 	//	prepare row for self-sizing
 	NSDictionary *metrics = @{@"rowHeight": @(54)};

@@ -31,6 +31,11 @@
 }
 
 
++ (UIColor *)formSeparatorColor {
+	return [UIColor lightGrayColor];
+}
+
+
 + (UIColor *)formTextMainColor {
 	return [UIColor darkTextColor];
 }

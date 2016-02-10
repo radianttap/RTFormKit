@@ -20,6 +20,8 @@
 + (UIColor *)formBackgroundHeaderColor;
 + (UIColor *)formBackgroundFooterColor;
 
++ (UIColor *)formSeparatorColor;
+
 + (UIColor *)formTextMainColor;
 + (UIColor *)formTextSideColor;
 + (UIColor *)formTextFadeColor;
