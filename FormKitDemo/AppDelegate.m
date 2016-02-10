@@ -7,6 +7,7 @@
 //
 
 #import "AppDelegate.h"
+#import "RTRegisterCustomerController.h"
 
 @interface AppDelegate ()
 
@@ -17,7 +18,7 @@
 - (BOOL)application:(UIApplication *)application willFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
 
 	self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
-//	self.window.rootViewController = 
+	self.window.rootViewController = [RTRegisterCustomerController new];
 
 	return YES;
 }

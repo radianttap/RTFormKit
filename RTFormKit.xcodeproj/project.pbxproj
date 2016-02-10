@@ -14,6 +14,7 @@
 		D0EFAABF1C6B8EA000AB4008 /* RTFormController.m in Sources */ = {isa = PBXBuildFile; fileRef = D0EFAABE1C6B8EA000AB4008 /* RTFormController.m */; };
 		D0EFAAC21C6B8ED100AB4008 /* RTFormBaseCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D0EFAAC11C6B8ED100AB4008 /* RTFormBaseCell.m */; };
 		D0EFAAC51C6B92E400AB4008 /* UIColor+RTFormKit.m in Sources */ = {isa = PBXBuildFile; fileRef = D0EFAAC41C6B92E400AB4008 /* UIColor+RTFormKit.m */; };
+		D0EFAAC81C6B995000AB4008 /* RTRegisterCustomerController.m in Sources */ = {isa = PBXBuildFile; fileRef = D0EFAAC71C6B995000AB4008 /* RTRegisterCustomerController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +31,8 @@
 		D0EFAAC11C6B8ED100AB4008 /* RTFormBaseCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RTFormBaseCell.m; sourceTree = "<group>"; };
 		D0EFAAC31C6B92E400AB4008 /* UIColor+RTFormKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+RTFormKit.h"; sourceTree = "<group>"; };
 		D0EFAAC41C6B92E400AB4008 /* UIColor+RTFormKit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+RTFormKit.m"; sourceTree = "<group>"; };
+		D0EFAAC61C6B995000AB4008 /* RTRegisterCustomerController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RTRegisterCustomerController.h; sourceTree = "<group>"; };
+		D0EFAAC71C6B995000AB4008 /* RTRegisterCustomerController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RTRegisterCustomerController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -65,6 +68,8 @@
 			children = (
 				D0EFAAA81C6B8D1E00AB4008 /* AppDelegate.h */,
 				D0EFAAA91C6B8D1E00AB4008 /* AppDelegate.m */,
+				D0EFAAC61C6B995000AB4008 /* RTRegisterCustomerController.h */,
+				D0EFAAC71C6B995000AB4008 /* RTRegisterCustomerController.m */,
 				D0EFAAB11C6B8D1E00AB4008 /* Assets.xcassets */,
 				D0EFAAB31C6B8D1E00AB4008 /* LaunchScreen.storyboard */,
 				D0EFAAB61C6B8D1E00AB4008 /* Info.plist */,
@@ -166,6 +171,7 @@
 			files = (
 				D0EFAAC51C6B92E400AB4008 /* UIColor+RTFormKit.m in Sources */,
 				D0EFAAC21C6B8ED100AB4008 /* RTFormBaseCell.m in Sources */,
+				D0EFAAC81C6B995000AB4008 /* RTRegisterCustomerController.m in Sources */,
 				D0EFAAAA1C6B8D1E00AB4008 /* AppDelegate.m in Sources */,
 				D0EFAABF1C6B8EA000AB4008 /* RTFormController.m in Sources */,
 				D0EFAAA71C6B8D1E00AB4008 /* main.m in Sources */,
