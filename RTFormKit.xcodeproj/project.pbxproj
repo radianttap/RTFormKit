@@ -16,6 +16,8 @@
 		D0EFAAC51C6B92E400AB4008 /* UIColor+RTFormKit.m in Sources */ = {isa = PBXBuildFile; fileRef = D0EFAAC41C6B92E400AB4008 /* UIColor+RTFormKit.m */; };
 		D0EFAAC81C6B995000AB4008 /* RTRegisterCustomerController.m in Sources */ = {isa = PBXBuildFile; fileRef = D0EFAAC71C6B995000AB4008 /* RTRegisterCustomerController.m */; };
 		D0EFAACB1C6B99F800AB4008 /* RTFormDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = D0EFAACA1C6B99F800AB4008 /* RTFormDataSource.m */; };
+		D0EFAACF1C6BB5C800AB4008 /* LICENSE in Resources */ = {isa = PBXBuildFile; fileRef = D0EFAACD1C6BB5C800AB4008 /* LICENSE */; };
+		D0EFAAD01C6BB5C800AB4008 /* README.md in Sources */ = {isa = PBXBuildFile; fileRef = D0EFAACE1C6BB5C800AB4008 /* README.md */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -37,6 +39,8 @@
 		D0EFAAC91C6B99F800AB4008 /* RTFormDataSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RTFormDataSource.h; sourceTree = "<group>"; };
 		D0EFAACA1C6B99F800AB4008 /* RTFormDataSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RTFormDataSource.m; sourceTree = "<group>"; };
 		D0EFAACC1C6B9A5500AB4008 /* RTFormKit.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RTFormKit.h; sourceTree = "<group>"; };
+		D0EFAACD1C6BB5C800AB4008 /* LICENSE */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = LICENSE; path = RTFormKit/LICENSE; sourceTree = "<group>"; };
+		D0EFAACE1C6BB5C800AB4008 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = RTFormKit/README.md; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -53,6 +57,8 @@
 		D0EFAA991C6B8D1E00AB4008 = {
 			isa = PBXGroup;
 			children = (
+				D0EFAACD1C6BB5C800AB4008 /* LICENSE */,
+				D0EFAACE1C6BB5C800AB4008 /* README.md */,
 				D0EFAABC1C6B8E6000AB4008 /* RTFormKit */,
 				D0EFAAA41C6B8D1E00AB4008 /* FormKitDemo */,
 				D0EFAAA31C6B8D1E00AB4008 /* Products */,
@@ -164,6 +170,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D0EFAACF1C6BB5C800AB4008 /* LICENSE in Resources */,
 				D0EFAAB51C6B8D1E00AB4008 /* LaunchScreen.storyboard in Resources */,
 				D0EFAAB21C6B8D1E00AB4008 /* Assets.xcassets in Resources */,
 			);
@@ -182,6 +189,7 @@
 				D0EFAACB1C6B99F800AB4008 /* RTFormDataSource.m in Sources */,
 				D0EFAAAA1C6B8D1E00AB4008 /* AppDelegate.m in Sources */,
 				D0EFAABF1C6B8EA000AB4008 /* RTFormController.m in Sources */,
+				D0EFAAD01C6BB5C800AB4008 /* README.md in Sources */,
 				D0EFAAA71C6B8D1E00AB4008 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
