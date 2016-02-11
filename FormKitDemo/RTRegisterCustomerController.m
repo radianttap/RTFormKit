@@ -9,7 +9,7 @@
 #import "RTRegisterCustomerController.h"
 #import "RTFormKit.h"
 
-@interface RTRegisterCustomerController ()
+@interface RTRegisterCustomerController () < RTFormDataSource >
 
 @property (nonatomic, copy) NSDictionary *dataSource;
 @property (nonatomic, copy) NSArray< NSString* > *sectionNames;
@@ -31,6 +31,7 @@
 - (void)createDataSource {
 
 	NSMutableDictionary *md = [NSMutableDictionary dictionary];
+
 	{
 		//	section 1: Essentials
 		NSMutableArray *marr = [NSMutableArray array];
@@ -73,6 +74,30 @@
 			[marr addObject:row];
 		}
 		md[@"Essential"] = marr;	//	dict key is the section name, to be shown as header
+	}
+
+	{
+		//	section 2: Notifications
+		NSMutableArray *marr = [NSMutableArray array];
+		{
+			NSMutableDictionary *row = [NSMutableDictionary dictionary];
+			row[@(RTFormConfigCellType)] = @(RTFormCellTypeToggle);
+			row[@(RTFormConfigKey)] = @"notifComments";
+			row[@(RTFormConfigValue)] = @YES;
+			row[@(RTFormConfigTitle)] = @"New comments";
+
+			[marr addObject:row];
+		}
+		{
+			NSMutableDictionary *row = [NSMutableDictionary dictionary];
+			row[@(RTFormConfigCellType)] = @(RTFormCellTypeToggle);
+			row[@(RTFormConfigKey)] = @"notifFollowers";
+			row[@(RTFormConfigValue)] = @NO;
+			row[@(RTFormConfigTitle)] = @"New followers";
+
+			[marr addObject:row];
+		}
+		md[@"Notifications"] = marr;	//	dict key is the section name, to be shown as header
 	}
 
 	self.dataSource = md;
@@ -134,7 +159,9 @@
 		}
 		case RTFormCellTypeOneLineField: {
 			RTFormOneLineFieldCell *cell = [tableView dequeueReusableCellWithIdentifier:[RTFormOneLineFieldCell reuseIdentifier] forIndexPath:indexPath];
+			cell.delegate = self;
 			[cell setupUsingConfiguration:config];
+			//	custom setup
 			NSString *dataKey = config[@(RTFormConfigKey)];
 			if ([dataKey isEqualToString:@"email"]) {
 				cell.textField.keyboardType = UIKeyboardTypeEmailAddress;
@@ -147,7 +174,12 @@
 			break;
 		}
 		case RTFormCellTypeToggle: {
+			RTFormToggleCell *cell = [tableView dequeueReusableCellWithIdentifier:[RTFormToggleCell reuseIdentifier] forIndexPath:indexPath];
+			cell.delegate = self;
+			[cell setupUsingConfiguration:config];
 
+			cell.contentView.backgroundColor = (indexPath.row % 2 == 0) ? [UIColor formBackgroundColor] : [UIColor formBackgroundAlternateColor];
+			return cell;
 			break;
 		}
 		case RTFormCellTypeRange: {
@@ -174,6 +206,7 @@
 
 - (void)formCell:(RTFormBaseCell *)cell didChangeValue:(id)value {
 
+	NSLog(@"%@ == %@", cell.key, value);
 }
 
 #pragma mark - RTFormDataSource delegate calls

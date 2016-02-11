@@ -15,4 +15,4 @@
 
 #import "RTFormInfoCell.h"
 #import "RTFormOneLineFieldCell.h"
-
+#import "RTFormToggleCell.h"

@@ -8,8 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@class RTFormDataSource;
-
 @interface RTFormController : UIViewController
 
 @property (nonatomic, strong, readonly) UITableView *tableView;

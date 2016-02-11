@@ -62,6 +62,7 @@
 	[self.tableView registerNib:[RTFormHeader nib] forHeaderFooterViewReuseIdentifier:[RTFormHeader reuseIdentifier]];
 	[self.tableView registerNib:[RTFormInfoCell nib] forCellReuseIdentifier:[RTFormInfoCell reuseIdentifier]];
 	[self.tableView registerNib:[RTFormOneLineFieldCell nib] forCellReuseIdentifier:[RTFormOneLineFieldCell reuseIdentifier]];
+	[self.tableView registerNib:[RTFormToggleCell nib] forCellReuseIdentifier:[RTFormToggleCell reuseIdentifier]];
 
 }
 
