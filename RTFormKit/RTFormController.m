@@ -83,6 +83,33 @@
 	return nil;
 }
 
+#pragma mark Delegate
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+	[tableView deselectRowAtIndexPath:indexPath animated:NO];
+
+	RTFormBaseCell *cell = [tableView cellForRowAtIndexPath:indexPath];
+	switch (cell.cellType) {
+		case RTFormCellTypeOneLineField: {
+			RTFormOneLineFieldCell *tcell = (RTFormOneLineFieldCell *)cell;
+			[tcell.textField becomeFirstResponder];
+			break;
+		}
+		case RTFormCellTypeMultiLineField: {
+			break;
+		}
+		case RTFormCellTypeMultiValuePicker: {
+
+			break;
+		}
+		default: {
+			//	for all other cells, resign the first responder
+			[tableView endEditing:YES];
+			break;
+		}
+	}
+}
+
 #pragma mark - RTFormCellDelegate
 
 - (void)formCell:(RTFormBaseCell *)cell didChangeValue:(id)value {
