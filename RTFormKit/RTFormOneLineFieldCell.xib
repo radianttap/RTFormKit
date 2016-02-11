@@ -81,6 +81,12 @@
                             </mask>
                         </variation>
                     </view>
+                    <view clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vqa-8Y-If3">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="1"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="1" id="6ui-Vx-ZyK"/>
+                        </constraints>
+                    </view>
                 </subviews>
                 <constraints>
                     <constraint firstItem="JEP-r4-wWe" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="0wc-vR-1Ar"/>
@@ -91,8 +97,11 @@
                     <constraint firstItem="ZJF-fs-geq" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="8OG-09-n5X"/>
                     <constraint firstItem="0VC-Gu-Hpj" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="Gb5-nq-SkL"/>
                     <constraint firstItem="0VC-Gu-Hpj" firstAttribute="top" secondItem="JEP-r4-wWe" secondAttribute="bottom" id="IP9-xs-Gt5"/>
+                    <constraint firstItem="vqa-8Y-If3" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="OdI-MA-mhX"/>
                     <constraint firstAttribute="bottom" secondItem="0VC-Gu-Hpj" secondAttribute="bottom" constant="-2" id="PuQ-1K-x6e"/>
                     <constraint firstItem="JEP-r4-wWe" firstAttribute="top" secondItem="ZJF-fs-geq" secondAttribute="bottom" id="aar-Ql-okT"/>
+                    <constraint firstAttribute="trailing" secondItem="vqa-8Y-If3" secondAttribute="trailing" id="edx-WR-xjV"/>
+                    <constraint firstItem="vqa-8Y-If3" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="yY7-d6-KRK"/>
                 </constraints>
             </tableViewCellContentView>
             <connections>
@@ -103,6 +112,7 @@
                 <outlet property="hintHeightConstraint" destination="J0c-Ux-cic" id="sbl-he-rGd"/>
                 <outlet property="hintLabel" destination="7rY-C3-Yi0" id="JIV-Or-UYX"/>
                 <outlet property="innerContentView" destination="JEP-r4-wWe" id="tma-cf-ykW"/>
+                <outlet property="separator" destination="vqa-8Y-If3" id="gL3-j7-yq5"/>
                 <outlet property="textField" destination="lrQ-cG-A4r" id="DvG-LQ-LAg"/>
             </connections>
             <point key="canvasLocation" x="288" y="401"/>

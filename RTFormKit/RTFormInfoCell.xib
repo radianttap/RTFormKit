@@ -21,18 +21,28 @@
                         <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                         <nil key="highlightedColor"/>
                     </label>
+                    <view clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ySo-wM-zAM">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="1"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="1" id="Pwc-Ut-MDl"/>
+                        </constraints>
+                    </view>
                 </subviews>
                 <constraints>
+                    <constraint firstAttribute="trailing" secondItem="ySo-wM-zAM" secondAttribute="trailing" id="8hh-fD-FqR"/>
                     <constraint firstAttribute="bottomMargin" secondItem="dsU-ui-pWB" secondAttribute="bottom" id="8uf-oc-UfV"/>
+                    <constraint firstItem="ySo-wM-zAM" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="FF6-OP-JVU"/>
                     <constraint firstItem="dsU-ui-pWB" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" id="hec-9P-XkW"/>
                     <constraint firstItem="dsU-ui-pWB" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" constant="7" id="m48-mo-FqS"/>
+                    <constraint firstItem="ySo-wM-zAM" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="qaf-f2-xhX"/>
                     <constraint firstAttribute="trailingMargin" secondItem="dsU-ui-pWB" secondAttribute="trailing" id="vEZ-lf-zQd"/>
                 </constraints>
             </tableViewCellContentView>
             <connections>
                 <outlet property="infoLabel" destination="dsU-ui-pWB" id="XWE-AR-n2M"/>
+                <outlet property="separator" destination="ySo-wM-zAM" id="EHd-4i-JBZ"/>
             </connections>
-            <point key="canvasLocation" x="270" y="252"/>
+            <point key="canvasLocation" x="106" y="249"/>
         </tableViewCell>
     </objects>
 </document>

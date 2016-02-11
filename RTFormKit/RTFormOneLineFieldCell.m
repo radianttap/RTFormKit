@@ -12,6 +12,7 @@
 
 @property (nonatomic, copy) NSString *dataValue;
 
+@property (nonatomic, weak) IBOutlet UIView *separator;
 @property (nonatomic, weak) IBOutlet UIView *innerContentView;
 @property (nonatomic, weak) IBOutlet UITextField *textField;
 
@@ -43,6 +44,7 @@
 	self.textField.textColor = [UIColor formTextMainColor];
 	self.hintLabel.textColor = [UIColor formTextNotabeneColor];
 	self.explainLabel.textColor = [UIColor formTextSideColor];
+	self.separator.backgroundColor = [UIColor formSeparatorColor];
 
 	[self.textField addTarget:self action:@selector(textFieldValueChanged:) forControlEvents:UIControlEventEditingChanged];
 }

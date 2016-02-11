@@ -12,6 +12,7 @@
 
 @property (nonatomic, copy) NSString *dataValue;
 @property (nonatomic, weak) IBOutlet UILabel *infoLabel;
+@property (nonatomic, weak) IBOutlet UIView *separator;
 
 @end
 
@@ -31,6 +32,7 @@
 
 	self.cellType = RTFormCellTypeInfo;
 	self.infoLabel.textColor = [UIColor formTextMainColor];
+	self.separator.backgroundColor = [UIColor formSeparatorColor];
 }
 
 - (void)setupUsingConfiguration:(NSDictionary<NSNumber *,id> *)config {

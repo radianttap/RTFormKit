@@ -12,6 +12,7 @@
 
 @property (nonatomic, copy) NSNumber *dataValue;	//	@YES or @NO
 
+@property (nonatomic, weak) IBOutlet UIView *separator;
 @property (nonatomic, weak) IBOutlet UIView *innerContentView;
 @property (nonatomic, weak) IBOutlet UILabel *titleLabel;
 @property (nonatomic, weak) IBOutlet UISwitch *toggleSwitch;
@@ -43,6 +44,7 @@
 	self.cellType = RTFormCellTypeToggle;
 	self.hintLabel.textColor = [UIColor formTextNotabeneColor];
 	self.explainLabel.textColor = [UIColor formTextSideColor];
+	self.separator.backgroundColor = [UIColor formSeparatorColor];
 
 	self.titleLabel.textColor = [UIColor formTextMainColor];
 //	[self.toggleSwitch setTintColor:[UIColor lightGrayColor]];

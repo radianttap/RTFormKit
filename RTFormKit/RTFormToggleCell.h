@@ -12,5 +12,6 @@
 
 @property (nonatomic, weak, readonly) UILabel *titleLabel;
 @property (nonatomic, weak, readonly) UISwitch *toggleSwitch;
+@property (nonatomic, weak, readonly) UIView *separator;
 
 @end

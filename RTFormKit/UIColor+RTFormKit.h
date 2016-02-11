@@ -17,8 +17,10 @@
 + (UIColor *)formBackgroundColor;
 + (UIColor *)formBackgroundAlternateColor;
 + (UIColor *)formBackgroundSelectedColor;
-+ (UIColor *)formBackgroundHeaderColor;
 + (UIColor *)formBackgroundFooterColor;
+
++ (UIColor *)formTextHeaderColor;
++ (UIColor *)formBackgroundHeaderColor;
 
 + (UIColor *)formSeparatorColor;
 

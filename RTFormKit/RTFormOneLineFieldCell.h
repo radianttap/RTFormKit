@@ -11,5 +11,6 @@
 @interface RTFormOneLineFieldCell : RTFormBaseCell
 
 @property (nonatomic, weak, readonly) UITextField *textField;
+@property (nonatomic, weak, readonly) UIView *separator;
 
 @end

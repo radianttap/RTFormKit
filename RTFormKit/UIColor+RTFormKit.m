@@ -22,18 +22,29 @@
 	return [UIColor colorWithRed:.92 green:.94 blue:.96 alpha:1];
 }
 
-+ (UIColor *)formBackgroundHeaderColor {
-	return [UIColor colorWithRed:.92 green:.94 blue:.96 alpha:1];
-}
-
 + (UIColor *)formBackgroundFooterColor {
 	return [UIColor whiteColor];
 }
 
 
-+ (UIColor *)formSeparatorColor {
-	return [UIColor lightGrayColor];
+
+
++ (UIColor *)formTextHeaderColor {
+	return [UIColor whiteColor];
 }
+
++ (UIColor *)formBackgroundHeaderColor {
+	return [UIColor colorWithRed:.6 green:.63 blue:.96 alpha:1];
+}
+
+
+
+
++ (UIColor *)formSeparatorColor {
+	return [UIColor formBackgroundHeaderColor];
+}
+
+
 
 
 + (UIColor *)formTextMainColor {

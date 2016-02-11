@@ -33,7 +33,7 @@
 	[super awakeFromNib];
 
 	self.innerContentView.backgroundColor = [UIColor formBackgroundHeaderColor];
-	self.titleLabel.textColor = [UIColor formTextMainColor];
+	self.titleLabel.textColor = [UIColor formTextHeaderColor];
 }
 
 @end

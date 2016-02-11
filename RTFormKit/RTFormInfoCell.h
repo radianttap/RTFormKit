@@ -11,5 +11,6 @@
 @interface RTFormInfoCell : RTFormBaseCell
 
 @property (nonatomic, weak, readonly) UILabel *infoLabel;
+@property (nonatomic, weak, readonly) UIView *separator;
 
 @end
