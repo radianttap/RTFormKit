@@ -59,6 +59,7 @@
 				break;
 			}
 			case RTFormConfigValue: {
+				self.dataValue = obj;
 				self.textField.text = obj;
 				break;
 			}
