@@ -52,6 +52,9 @@
 	self.hintLabel.text = nil;
 	self.explainLabel.text = nil;
 
+	self.hintHeightConstraint.active = YES;
+	self.explainHeightConstraint.active = YES;
+
 	[config enumerateKeysAndObjectsUsingBlock:^(NSNumber * _Nonnull key, id  _Nonnull obj, BOOL * _Nonnull stop) {
 		switch ((RTFormConfig)key.integerValue) {
 			case RTFormConfigKey: {
@@ -70,13 +73,11 @@
 			case RTFormConfigHint: {
 				self.hintLabel.text = obj;
 				self.hintHeightConstraint.active = NO;
-				[self setNeedsUpdateConstraints];
 				break;
 			}
 			case RTFormConfigExplanation: {
 				self.explainLabel.text = obj;
 				self.explainHeightConstraint.active = NO;
-				[self setNeedsUpdateConstraints];
 				break;
 			}
 			default: {
@@ -84,6 +85,8 @@
 			}
 		}
 	}];
+
+	[self setNeedsUpdateConstraints];
 }
 
 #pragma mark - Text Field
