@@ -43,8 +43,8 @@
 		D0EFAAC71C6B995000AB4008 /* RTRegisterCustomerController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RTRegisterCustomerController.m; sourceTree = "<group>"; };
 		D0EFAAC91C6B99F800AB4008 /* RTFormDataSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RTFormDataSource.h; sourceTree = "<group>"; };
 		D0EFAACC1C6B9A5500AB4008 /* RTFormKit.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RTFormKit.h; sourceTree = "<group>"; };
-		D0EFAACD1C6BB5C800AB4008 /* LICENSE */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = LICENSE; path = RTFormKit/LICENSE; sourceTree = "<group>"; };
-		D0EFAACE1C6BB5C800AB4008 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = RTFormKit/README.md; sourceTree = "<group>"; };
+		D0EFAACD1C6BB5C800AB4008 /* LICENSE */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
+		D0EFAACE1C6BB5C800AB4008 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		D0EFAAD51C6C9A3600AB4008 /* RTFormInfoCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RTFormInfoCell.h; sourceTree = "<group>"; };
 		D0EFAAD61C6C9A3600AB4008 /* RTFormInfoCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RTFormInfoCell.m; sourceTree = "<group>"; };
 		D0EFAAD71C6C9A3600AB4008 /* RTFormInfoCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RTFormInfoCell.xib; sourceTree = "<group>"; };
