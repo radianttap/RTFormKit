@@ -103,9 +103,10 @@ typedef NS_ENUM(NSInteger, RTFormConfig) {
 @property (nonatomic, weak) id< RTFormCellDelegate > delegate;
 @property (nonatomic) RTFormCellType cellType;
 @property (nonatomic, copy) NSString *key;
-@property (nonatomic, copy) id value;
+@property (nonatomic, copy, readonly) id value;
 @property (nonatomic) BOOL enabled;
 
+- (void)commonInit;
 - (void)setupUsingConfiguration:(NSDictionary< NSNumber*,id > *)config;
 - (void)applyTheme:(NSNotification *)notification;
 

@@ -11,3 +11,6 @@
 #import "RTFormDataSource.h"
 
 #import "RTFormBaseCell.h"
+
+#import "RTFormInfoCell.h"
+

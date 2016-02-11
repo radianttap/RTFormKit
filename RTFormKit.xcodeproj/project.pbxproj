@@ -18,6 +18,8 @@
 		D0EFAACB1C6B99F800AB4008 /* RTFormDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = D0EFAACA1C6B99F800AB4008 /* RTFormDataSource.m */; };
 		D0EFAACF1C6BB5C800AB4008 /* LICENSE in Resources */ = {isa = PBXBuildFile; fileRef = D0EFAACD1C6BB5C800AB4008 /* LICENSE */; };
 		D0EFAAD01C6BB5C800AB4008 /* README.md in Sources */ = {isa = PBXBuildFile; fileRef = D0EFAACE1C6BB5C800AB4008 /* README.md */; };
+		D0EFAAD81C6C9A3600AB4008 /* RTFormInfoCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D0EFAAD61C6C9A3600AB4008 /* RTFormInfoCell.m */; };
+		D0EFAAD91C6C9A3600AB4008 /* RTFormInfoCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D0EFAAD71C6C9A3600AB4008 /* RTFormInfoCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -41,6 +43,9 @@
 		D0EFAACC1C6B9A5500AB4008 /* RTFormKit.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RTFormKit.h; sourceTree = "<group>"; };
 		D0EFAACD1C6BB5C800AB4008 /* LICENSE */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = LICENSE; path = RTFormKit/LICENSE; sourceTree = "<group>"; };
 		D0EFAACE1C6BB5C800AB4008 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = RTFormKit/README.md; sourceTree = "<group>"; };
+		D0EFAAD51C6C9A3600AB4008 /* RTFormInfoCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RTFormInfoCell.h; sourceTree = "<group>"; };
+		D0EFAAD61C6C9A3600AB4008 /* RTFormInfoCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RTFormInfoCell.m; sourceTree = "<group>"; };
+		D0EFAAD71C6C9A3600AB4008 /* RTFormInfoCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RTFormInfoCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -108,8 +113,19 @@
 				D0EFAACC1C6B9A5500AB4008 /* RTFormKit.h */,
 				D0EFAAC01C6B8ED100AB4008 /* RTFormBaseCell.h */,
 				D0EFAAC11C6B8ED100AB4008 /* RTFormBaseCell.m */,
+				D0EFAAD11C6BB64100AB4008 /* Specific Cells */,
 			);
 			path = RTFormKit;
+			sourceTree = "<group>";
+		};
+		D0EFAAD11C6BB64100AB4008 /* Specific Cells */ = {
+			isa = PBXGroup;
+			children = (
+				D0EFAAD51C6C9A3600AB4008 /* RTFormInfoCell.h */,
+				D0EFAAD61C6C9A3600AB4008 /* RTFormInfoCell.m */,
+				D0EFAAD71C6C9A3600AB4008 /* RTFormInfoCell.xib */,
+			);
+			name = "Specific Cells";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -171,6 +187,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				D0EFAACF1C6BB5C800AB4008 /* LICENSE in Resources */,
+				D0EFAAD91C6C9A3600AB4008 /* RTFormInfoCell.xib in Resources */,
 				D0EFAAB51C6B8D1E00AB4008 /* LaunchScreen.storyboard in Resources */,
 				D0EFAAB21C6B8D1E00AB4008 /* Assets.xcassets in Resources */,
 			);
@@ -184,6 +201,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				D0EFAAC51C6B92E400AB4008 /* UIColor+RTFormKit.m in Sources */,
+				D0EFAAD81C6C9A3600AB4008 /* RTFormInfoCell.m in Sources */,
 				D0EFAAC21C6B8ED100AB4008 /* RTFormBaseCell.m in Sources */,
 				D0EFAAC81C6B995000AB4008 /* RTRegisterCustomerController.m in Sources */,
 				D0EFAACB1C6B99F800AB4008 /* RTFormDataSource.m in Sources */,
