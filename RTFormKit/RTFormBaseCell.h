@@ -122,7 +122,26 @@ typedef NS_ENUM(NSInteger, RTFormConfig) {
 @protocol RTFormCellDelegate <NSObject>
 
 @optional
+/**
+ *	Called when data value changes (text field, switch etc)
+ *
+ *	@param cell		Cell where change occured
+ *	@param value	Latest value
+ */
 - (void)formCell:(RTFormBaseCell *)cell didChangeValue:(id)value;
+
+/**
+ *	Called when keyboard-related element (text field, text view) in the cell becomes first responder. Usual action is to slide it into view
+ *
+ *	@param cell	Activated cell.
+ */
+- (void)formCellDidActivate:(RTFormBaseCell *)cell;
+/**
+ *	Called when keyboard-related element (text field, text view) in the cell resigns being first responder. Usual action is to do nothing
+ *
+ *	@param cell	Deactivated cell.
+ */
+- (void)formCellDidDeactivate:(RTFormBaseCell *)cell;
 
 @end
 

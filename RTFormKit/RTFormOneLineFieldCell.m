@@ -94,6 +94,20 @@
 
 #pragma mark - Text Field
 
+- (void)textFieldDidBeginEditing:(UITextField *)textField {
+
+	if ([self.delegate respondsToSelector:@selector(formCellDidActivate:)]) {
+		[self.delegate formCellDidActivate:self];
+	}
+}
+
+- (void)textFieldDidEndEditing:(UITextField *)textField {
+
+	if ([self.delegate respondsToSelector:@selector(formCellDidDeactivate:)]) {
+		[self.delegate formCellDidDeactivate:self];
+	}
+}
+
 - (void)textFieldValueChanged:(UITextField *)sender {
 
 	self.dataValue = sender.text;

@@ -21,7 +21,30 @@
 	self = [super init];
 	if (!self) return nil;
 
+	[[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(handleNotification:) name:UIKeyboardWillShowNotification object:nil];
+	[[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(handleNotification:) name:UIKeyboardWillHideNotification object:nil];
+
 	return self;
+}
+
+- (void)dealloc {
+
+	[[NSNotificationCenter defaultCenter] removeObserver:self];
+}
+
+- (void)handleNotification:(NSNotification *)notification {
+
+	if ([notification.name isEqualToString:UIKeyboardWillShowNotification]) {
+		CGRect endRect = [notification.userInfo[UIKeyboardFrameEndUserInfoKey] CGRectValue];
+		UIEdgeInsets insets = self.tableView.contentInset;
+		insets.bottom = endRect.size.height;
+		self.tableView.contentInset = insets;
+
+	} else if ([notification.name isEqualToString:UIKeyboardWillHideNotification]) {
+		UIEdgeInsets insets = self.tableView.contentInset;
+		insets.bottom = 0;
+		self.tableView.contentInset = insets;
+	}
 }
 
 - (void)loadView {
@@ -114,6 +137,11 @@
 
 - (void)formCell:(RTFormBaseCell *)cell didChangeValue:(id)value {
 
+}
+
+- (void)formCellDidActivate:(RTFormBaseCell *)cell {
+
+	[self.tableView scrollRectToVisible:cell.frame animated:YES];
 }
 
 #pragma mark - RTFormDataSource delegate calls
