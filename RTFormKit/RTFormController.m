@@ -8,7 +8,7 @@
 
 #import "RTFormKit.h"
 
-@interface RTFormController () < UITableViewDelegate >
+@interface RTFormController () < UITableViewDelegate, RTFormDataSource >
 
 @property (nonatomic, strong) UITableView *tableView;
 
@@ -29,10 +29,17 @@
 
 	UITableView *tv = [UITableView new];
 	tv.translatesAutoresizingMaskIntoConstraints = NO;
-	tv.dataSource = self.dataSource;
+	tv.dataSource = self;
 	tv.delegate = self;
+
 	tv.rowHeight = UITableViewAutomaticDimension;
+	tv.sectionHeaderHeight = UITableViewAutomaticDimension;
+	tv.sectionFooterHeight = UITableViewAutomaticDimension;
+
 	tv.estimatedRowHeight = 50;
+	tv.estimatedSectionHeaderHeight = 44;
+	tv.estimatedSectionFooterHeight = 0;
+
 	tv.cellLayoutMarginsFollowReadableWidth = YES;
 	tv.separatorColor = [UIColor formSeparatorColor];
 	tv.separatorStyle = UITableViewCellSeparatorStyleSingleLine;
@@ -53,7 +60,30 @@
 	self.tableView.backgroundColor = [UIColor formBackgroundColor];
 }
 
-#pragma mark - RTFormDataSource delegate calls?
+#pragma mark - Table View data source
+
+- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
+	return 1;
+}
+
+//- (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section {}
+//- (UIView *)tableView:(UITableView *)tableView viewForFooterInSection:(NSInteger)section {}
+
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
+	return 0;
+}
+
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+	return nil;
+}
+
+#pragma mark - RTFormCellDelegate
+
+- (void)formCell:(RTFormBaseCell *)cell didChangeValue:(id)value {
+
+}
+
+#pragma mark - RTFormDataSource delegate calls
 
 
 @end

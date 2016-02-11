@@ -13,6 +13,5 @@
 @interface RTFormController : UIViewController
 
 @property (nonatomic, strong, readonly) UITableView *tableView;
-@property (nonatomic, strong) __kindof RTFormDataSource *dataSource;
 
 @end
