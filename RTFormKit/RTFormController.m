@@ -58,6 +58,9 @@
 
 	self.view.backgroundColor = [UIColor formBackgroundColor];
 	self.tableView.backgroundColor = [UIColor formBackgroundColor];
+
+	[self.tableView registerNib:[RTFormHeader nib] forHeaderFooterViewReuseIdentifier:[RTFormHeader reuseIdentifier]];
+	[self.tableView registerNib:[RTFormInfoCell nib] forCellReuseIdentifier:[RTFormInfoCell reuseIdentifier]];
 }
 
 #pragma mark - Table View data source

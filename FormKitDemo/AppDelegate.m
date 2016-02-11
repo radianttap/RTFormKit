@@ -18,7 +18,11 @@
 - (BOOL)application:(UIApplication *)application willFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
 
 	self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
-	self.window.rootViewController = [RTRegisterCustomerController new];
+
+	UIViewController *vc = [RTRegisterCustomerController new];
+	UINavigationController *nc = [[UINavigationController alloc] initWithRootViewController:vc];
+
+	self.window.rootViewController = nc;
 
 	return YES;
 }

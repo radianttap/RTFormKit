@@ -10,6 +10,7 @@
 #import "RTFormController.h"
 #import "RTFormDataSource.h"
 
+#import "RTFormHeader.h"
 #import "RTFormBaseCell.h"
 
 #import "RTFormInfoCell.h"
