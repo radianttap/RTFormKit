@@ -86,6 +86,7 @@
 	[self.tableView registerNib:[RTFormInfoCell nib] forCellReuseIdentifier:[RTFormInfoCell reuseIdentifier]];
 	[self.tableView registerNib:[RTFormOneLineFieldCell nib] forCellReuseIdentifier:[RTFormOneLineFieldCell reuseIdentifier]];
 	[self.tableView registerNib:[RTFormToggleCell nib] forCellReuseIdentifier:[RTFormToggleCell reuseIdentifier]];
+	[self.tableView registerNib:[RTFormSegmentsCell nib] forCellReuseIdentifier:[RTFormSegmentsCell reuseIdentifier]];
 
 }
 

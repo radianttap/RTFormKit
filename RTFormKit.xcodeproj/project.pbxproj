@@ -25,6 +25,8 @@
 		D0EFAAE41C6CADD700AB4008 /* RTFormOneLineFieldCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D0EFAAE21C6CADD700AB4008 /* RTFormOneLineFieldCell.xib */; };
 		D0EFAAE71C6CD2BA00AB4008 /* RTFormToggleCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D0EFAAE61C6CD2BA00AB4008 /* RTFormToggleCell.m */; };
 		D0EFAAE91C6CD2D700AB4008 /* RTFormToggleCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D0EFAAE81C6CD2D700AB4008 /* RTFormToggleCell.xib */; };
+		D0EFAAED1C6CF52C00AB4008 /* RTFormSegmentsCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D0EFAAEC1C6CF52C00AB4008 /* RTFormSegmentsCell.m */; };
+		D0EFAAEF1C6CFB8E00AB4008 /* RTFormSegmentsCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D0EFAAEE1C6CFB8E00AB4008 /* RTFormSegmentsCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -59,6 +61,9 @@
 		D0EFAAE51C6CD2BA00AB4008 /* RTFormToggleCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RTFormToggleCell.h; sourceTree = "<group>"; };
 		D0EFAAE61C6CD2BA00AB4008 /* RTFormToggleCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RTFormToggleCell.m; sourceTree = "<group>"; };
 		D0EFAAE81C6CD2D700AB4008 /* RTFormToggleCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RTFormToggleCell.xib; sourceTree = "<group>"; };
+		D0EFAAEB1C6CF52C00AB4008 /* RTFormSegmentsCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RTFormSegmentsCell.h; sourceTree = "<group>"; };
+		D0EFAAEC1C6CF52C00AB4008 /* RTFormSegmentsCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RTFormSegmentsCell.m; sourceTree = "<group>"; };
+		D0EFAAEE1C6CFB8E00AB4008 /* RTFormSegmentsCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RTFormSegmentsCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -143,6 +148,9 @@
 				D0EFAAE51C6CD2BA00AB4008 /* RTFormToggleCell.h */,
 				D0EFAAE61C6CD2BA00AB4008 /* RTFormToggleCell.m */,
 				D0EFAAE81C6CD2D700AB4008 /* RTFormToggleCell.xib */,
+				D0EFAAEB1C6CF52C00AB4008 /* RTFormSegmentsCell.h */,
+				D0EFAAEC1C6CF52C00AB4008 /* RTFormSegmentsCell.m */,
+				D0EFAAEE1C6CFB8E00AB4008 /* RTFormSegmentsCell.xib */,
 			);
 			name = "Specific Cells";
 			sourceTree = "<group>";
@@ -222,6 +230,7 @@
 				D0EFAAE41C6CADD700AB4008 /* RTFormOneLineFieldCell.xib in Resources */,
 				D0EFAADF1C6CA74B00AB4008 /* RTFormHeader.xib in Resources */,
 				D0EFAAB21C6B8D1E00AB4008 /* Assets.xcassets in Resources */,
+				D0EFAAEF1C6CFB8E00AB4008 /* RTFormSegmentsCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -243,6 +252,7 @@
 				D0EFAAE71C6CD2BA00AB4008 /* RTFormToggleCell.m in Sources */,
 				D0EFAAD01C6BB5C800AB4008 /* README.md in Sources */,
 				D0EFAAA71C6B8D1E00AB4008 /* main.m in Sources */,
+				D0EFAAED1C6CF52C00AB4008 /* RTFormSegmentsCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

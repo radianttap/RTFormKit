@@ -98,7 +98,12 @@ typedef NS_ENUM(NSInteger, RTFormConfig) {
 	RTFormConfigExplanation,
 };
 
-@protocol RTFormCellDelegate;
+
+
+
+
+
+@protocol RTFormCellDelegate, RTFormCellDataSource;
 @interface RTFormBaseCell : UITableViewCell
 
 + (NSString *)reuseIdentifier;
@@ -106,6 +111,8 @@ typedef NS_ENUM(NSInteger, RTFormConfig) {
 + (instancetype)nibInstance;
 
 @property (nonatomic, weak) id< RTFormCellDelegate > delegate;
+@property (nonatomic, weak) id< RTFormCellDataSource > dataSource;
+
 @property (nonatomic) RTFormCellType cellType;
 @property (nonatomic, copy) NSString *key;
 @property (nonatomic, copy, readonly) id value;
@@ -116,6 +123,19 @@ typedef NS_ENUM(NSInteger, RTFormConfig) {
 - (void)applyTheme:(NSNotification *)notification;
 
 @end
+
+
+
+
+@protocol RTFormCellDataSource <NSObject>
+
+@optional
+- (NSArray< NSString* > *)titlesForMultiValueFormCell:(RTFormBaseCell *)cell;
+- (NSArray *)valuesForMultiValueFormCell:(RTFormBaseCell *)cell;
+
+@end
+
+
 
 
 

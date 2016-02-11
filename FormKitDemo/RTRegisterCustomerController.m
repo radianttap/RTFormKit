@@ -9,7 +9,7 @@
 #import "RTRegisterCustomerController.h"
 #import "RTFormKit.h"
 
-@interface RTRegisterCustomerController () < RTFormDataSource >
+@interface RTRegisterCustomerController () < RTFormDataSource, RTFormCellDataSource >
 
 @property (nonatomic, copy) NSDictionary *dataSource;
 @property (nonatomic, copy) NSArray< NSString* > *sectionNames;
@@ -77,7 +77,7 @@
 	}
 
 	{
-		//	section 2: Notifications
+		//	section 2: Email Notifications
 		NSMutableArray *marr = [NSMutableArray array];
 		{
 			NSMutableDictionary *row = [NSMutableDictionary dictionary];
@@ -97,7 +97,16 @@
 
 			[marr addObject:row];
 		}
-		md[@"Notifications"] = marr;	//	dict key is the section name, to be shown as header
+		{
+			NSMutableDictionary *row = [NSMutableDictionary dictionary];
+			row[@(RTFormConfigCellType)] = @(RTFormCellTypeMultiValueSegments);
+			row[@(RTFormConfigKey)] = @"notifPeriod";
+			row[@(RTFormConfigValue)] = @7;
+			row[@(RTFormConfigTitle)] = @"Notification cycle";
+
+			[marr addObject:row];
+		}
+		md[@"Email Notifications"] = marr;	//	dict key is the section name, to be shown as header
 	}
 
 	self.dataSource = md;
@@ -191,7 +200,13 @@
 			break;
 		}
 		case RTFormCellTypeMultiValueSegments: {
+			RTFormSegmentsCell *cell = [tableView dequeueReusableCellWithIdentifier:[RTFormSegmentsCell reuseIdentifier] forIndexPath:indexPath];
+			cell.delegate = self;
+			cell.dataSource = self;
+			[cell setupUsingConfiguration:config];
 
+			cell.contentView.backgroundColor = (indexPath.row % 2 == 0) ? [UIColor formBackgroundColor] : [UIColor formBackgroundAlternateColor];
+			return cell;
 			break;
 		}
 		default: {
@@ -242,6 +257,25 @@
 }
 
 
+#pragma mark - RTFormCellDataSource
+
+- (NSArray *)valuesForMultiValueFormCell:(RTFormBaseCell *)cell {
+
+	if ([cell.key isEqualToString:@"notifPeriod"]) {
+		return @[@1, @7, @14, @30];
+	}
+
+	return nil;
+}
+
+- (NSArray *)titlesForMultiValueFormCell:(RTFormBaseCell *)cell {
+
+	if ([cell.key isEqualToString:@"notifPeriod"]) {
+		return @[@"Daily", @"Weekly", @"Bi-weekly", @"Monthly"];
+	}
+
+	return nil;
+}
 
 #pragma mark - RTFormDataSource delegate calls
 
