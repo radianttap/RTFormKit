@@ -1,6 +1,6 @@
 # RTFormKit
 
-Fairly extensible and feature-rich library to display forms.
+Fairly extensible and feature-rich library to display forms, using table view.
 
 **Very** work in progress.
 
