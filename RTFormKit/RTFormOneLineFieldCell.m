@@ -108,6 +108,14 @@
 	}
 }
 
+- (BOOL)textFieldShouldReturn:(UITextField *)textField {
+
+	if ([self.delegate respondsToSelector:@selector(formCellDidFinish:)]) {
+		[self.delegate formCellDidFinish:self];
+	}
+	return YES;
+}
+
 - (void)textFieldValueChanged:(UITextField *)sender {
 
 	self.dataValue = sender.text;

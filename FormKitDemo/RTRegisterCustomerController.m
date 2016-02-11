@@ -209,6 +209,40 @@
 	NSLog(@"%@ == %@", cell.key, value);
 }
 
+- (void)formCellDidFinish:(RTFormBaseCell *)cell {
+
+	NSIndexPath *indexPath = [self.tableView indexPathForCell:cell];
+
+	NSString *sectionKey = self.sectionNames[indexPath.section];
+	NSArray *rows = self.dataSource[sectionKey];
+
+	//	now figure out should editing jump to next cell or simply resign keyboard
+	//	check only inside the current section
+	//	look for next text field and if found, auto-activate it
+	BOOL shouldResign = YES;
+	for (NSInteger r = indexPath.row+1; r < rows.count; r++) {
+		NSDictionary *config = rows[r];
+		BOOL shouldBreak = NO;
+		switch ((RTFormCellType)[(NSNumber *)config[@(RTFormConfigCellType)] integerValue]) {
+			case RTFormCellTypeOneLineField: {
+				RTFormOneLineFieldCell *cell = [self.tableView cellForRowAtIndexPath:[NSIndexPath indexPathForRow:r inSection:indexPath.section]];
+				[cell.textField becomeFirstResponder];
+				shouldBreak = YES;
+				shouldResign = NO;
+				break;
+			}
+			default: {
+				break;
+			}
+		}
+		if (shouldBreak) break;
+	}
+
+	if (shouldResign) [cell endEditing:YES];
+}
+
+
+
 #pragma mark - RTFormDataSource delegate calls
 
 

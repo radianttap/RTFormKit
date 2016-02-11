@@ -143,6 +143,13 @@ typedef NS_ENUM(NSInteger, RTFormConfig) {
  */
 - (void)formCellDidDeactivate:(RTFormBaseCell *)cell;
 
+/**
+ *	Called when Return key is tapped on the keyboard for text-field cell. Or when UITextView editing is done
+ *
+ *	@param cell	Calling cell
+ */
+- (void)formCellDidFinish:(RTFormBaseCell *)cell;
+
 @end
 
 NS_ASSUME_NONNULL_END

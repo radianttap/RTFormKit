@@ -144,6 +144,13 @@
 	[self.tableView scrollRectToVisible:cell.frame animated:YES];
 }
 
+- (void)formCellDidFinish:(RTFormBaseCell *)cell {
+
+//	NSIndexPath *indexPath = [self.tableView indexPathForCell:cell];
+	//	now figure out should editing jump to next cell or simply resign keyboard
+	[cell endEditing:YES];
+}
+
 #pragma mark - RTFormDataSource delegate calls
 
 
