@@ -22,7 +22,7 @@ typedef NS_ENUM(NSInteger, RTFormCellType) {
 	/**
 	 *	Cell with just one multi-line UILabel
 	 */
-	RTFormCellTypeLabel,
+	RTFormCellTypeInfo,
 
 	/**
 	 *	Cell with text field or text view

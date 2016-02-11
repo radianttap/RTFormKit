@@ -26,32 +26,26 @@
 
 }
 
+- (void)commonInit {
+	[super commonInit];
+
+	self.cellType = RTFormCellTypeInfo;
+	self.infoLabel.textColor = [UIColor formTextMainColor];
+}
+
 - (void)setupUsingConfiguration:(NSDictionary<NSNumber *,id> *)config {
 
 	[config enumerateKeysAndObjectsUsingBlock:^(NSNumber * _Nonnull key, id  _Nonnull obj, BOOL * _Nonnull stop) {
 		switch ((RTFormConfig)key.integerValue) {
-			case RTFormConfigCellType: {
-				self.cellType = (RTFormCellType)[obj integerValue];
-				break;
-			}
 			case RTFormConfigKey: {
 				self.key = obj;
-				break;
-			}
-			case RTFormConfigTitle: {
 				break;
 			}
 			case RTFormConfigValue: {
 				self.infoLabel.text = obj;
 				break;
 			}
-			case RTFormConfigPlaceholder: {
-				break;
-			}
-			case RTFormConfigHint: {
-				break;
-			}
-			case RTFormConfigExplanation: {
+			default: {
 				break;
 			}
 		}
