@@ -42,6 +42,7 @@
 
 	self.cellType = RTFormCellTypeOneLineField;
 	self.textField.textColor = [UIColor formTextMainColor];
+	self.textField.backgroundColor = [UIColor clearColor];
 	self.hintLabel.textColor = [UIColor formTextNotabeneColor];
 	self.explainLabel.textColor = [UIColor formTextSideColor];
 	self.separator.backgroundColor = [UIColor formSeparatorColor];
