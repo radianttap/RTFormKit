@@ -15,7 +15,7 @@
 }
 
 + (UIColor *)formBackgroundAlternateColor {
-	return [[UIColor lightGrayColor] colorWithAlphaComponent:.2];
+	return [[UIColor lightGrayColor] colorWithAlphaComponent:.1];
 }
 
 + (UIColor *)formBackgroundSelectedColor {

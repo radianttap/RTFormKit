@@ -105,7 +105,7 @@
 - (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section {
 
 	RTFormHeader *v = [tableView dequeueReusableHeaderFooterViewWithIdentifier:[RTFormHeader reuseIdentifier]];
-	v.titleLabel.text = self.sectionNames[section];
+	v.titleLabel.text = [self.sectionNames[section] uppercaseString];
 	return v;
 }
 //- (UIView *)tableView:(UITableView *)tableView viewForFooterInSection:(NSInteger)section {}

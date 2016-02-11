@@ -16,10 +16,10 @@
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <view clipsSubviews="YES" contentMode="scaleToFill" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="ZJF-fs-geq">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="0.0"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="22"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="751" text="Form cell hint text" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7rY-C3-Yi0">
-                                <rect key="frame" x="15" y="8" width="297" height="0.0"/>
+                                <rect key="frame" x="15" y="8" width="297" height="14"/>
                                 <fontDescription key="fontDescription" style="UICTFontTextStyleCaption1"/>
                                 <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
@@ -32,12 +32,17 @@
                             <constraint firstAttribute="trailingMargin" secondItem="7rY-C3-Yi0" secondAttribute="trailing" id="NWo-gm-ABW"/>
                             <constraint firstAttribute="topMargin" secondItem="7rY-C3-Yi0" secondAttribute="top" id="Yfh-Y0-eh0"/>
                         </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="J0c-Ux-cic"/>
+                            </mask>
+                        </variation>
                     </view>
                     <view clipsSubviews="YES" contentMode="scaleToFill" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="JEP-r4-wWe">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="89"/>
+                        <rect key="frame" x="0.0" y="22" width="320" height="45"/>
                         <subviews>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="text field" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="lrQ-cG-A4r">
-                                <rect key="frame" x="15" y="8" width="297" height="73"/>
+                                <rect key="frame" x="15" y="8" width="297" height="29"/>
                                 <color key="backgroundColor" red="0.96078431372549022" green="0.96078431372549022" blue="0.96078431372549022" alpha="1" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
                                 <textInputTraits key="textInputTraits" returnKeyType="next"/>
@@ -54,10 +59,10 @@
                         </constraints>
                     </view>
                     <view clipsSubviews="YES" contentMode="scaleToFill" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="0VC-Gu-Hpj">
-                        <rect key="frame" x="0.0" y="89" width="320" height="0.0"/>
+                        <rect key="frame" x="0.0" y="67" width="320" height="22"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="751" text="Form data explanation text" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BFm-YE-Cmy">
-                                <rect key="frame" x="15" y="-8" width="297" height="0.0"/>
+                                <rect key="frame" x="15" y="0.0" width="297" height="14"/>
                                 <fontDescription key="fontDescription" style="UICTFontTextStyleCaption1"/>
                                 <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
@@ -70,6 +75,11 @@
                             <constraint firstAttribute="trailingMargin" secondItem="BFm-YE-Cmy" secondAttribute="trailing" id="Yj6-TP-c4k"/>
                             <constraint firstAttribute="height" id="vnH-ko-2Js"/>
                         </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="vnH-ko-2Js"/>
+                            </mask>
+                        </variation>
                     </view>
                 </subviews>
                 <constraints>
