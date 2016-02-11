@@ -10,4 +10,6 @@
 
 @interface RTFormInfoCell : RTFormBaseCell
 
+@property (nonatomic, weak, readonly) UILabel *infoLabel;
+
 @end
