@@ -25,9 +25,14 @@ typedef NS_ENUM(NSInteger, RTFormCellType) {
 	RTFormCellTypeInfo,
 
 	/**
-	 *	Cell with text field or text view
+	 *	Cell with text field
 	 */
-	RTFormCellTypeField,
+	RTFormCellTypeOneLineField,
+
+	/**
+	 *	Cell with text view
+	 */
+	RTFormCellTypeMultiLineField,
 
 	/**
 	 *	Cell with single-line UILabel on the leading side and UISwitch on the trailing side

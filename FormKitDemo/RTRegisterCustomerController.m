@@ -42,6 +42,36 @@
 
 			[marr addObject:row];
 		}
+		{
+			NSMutableDictionary *row = [NSMutableDictionary dictionary];
+			row[@(RTFormConfigCellType)] = @(RTFormCellTypeOneLineField);
+			row[@(RTFormConfigKey)] = @"email";
+			row[@(RTFormConfigValue)] = @"";
+			row[@(RTFormConfigPlaceholder)] = @"Email address";
+
+			[marr addObject:row];
+		}
+		{
+			NSMutableDictionary *row = [NSMutableDictionary dictionary];
+			row[@(RTFormConfigCellType)] = @(RTFormCellTypeOneLineField);
+			row[@(RTFormConfigKey)] = @"password";
+			row[@(RTFormConfigValue)] = @"";
+			row[@(RTFormConfigPlaceholder)] = @"password";
+			row[@(RTFormConfigHint)] = @"Minimum is 5 characters, no maximum.";
+			row[@(RTFormConfigExplanation)] = @"Note: go wild here, don't use easy to figure out stuff, like dates of birth or names of family members. We recommend to use password generators, like 1Password or similar.";
+
+			[marr addObject:row];
+		}
+		{
+			NSMutableDictionary *row = [NSMutableDictionary dictionary];
+			row[@(RTFormConfigCellType)] = @(RTFormCellTypeOneLineField);
+			row[@(RTFormConfigKey)] = @"nickname";
+			row[@(RTFormConfigValue)] = @"";
+			row[@(RTFormConfigPlaceholder)] = @"Nickname";
+			row[@(RTFormConfigExplanation)] = @"This is the only bit of info everyone on Blerch will see.";
+
+			[marr addObject:row];
+		}
 		md[@"Essential"] = marr;	//	dict key is the section name, to be shown as header
 	}
 
@@ -57,7 +87,10 @@
 - (void)viewDidLoad {
 	[super viewDidLoad];
 
-	self.title = @"Open Account";
+	self.title = @"Join Blerch";
+
+	//	custom setup
+	self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
 }
 
 
@@ -94,11 +127,23 @@
 		case RTFormCellTypeInfo: {
 			RTFormInfoCell *cell = [tableView dequeueReusableCellWithIdentifier:[RTFormInfoCell reuseIdentifier] forIndexPath:indexPath];
 			[cell setupUsingConfiguration:config];
+
+			cell.contentView.backgroundColor = (indexPath.row % 2 == 0) ? [UIColor formBackgroundColor] : [UIColor formBackgroundAlternateColor];
 			return cell;
 			break;
 		}
-		case RTFormCellTypeField: {
+		case RTFormCellTypeOneLineField: {
+			RTFormOneLineFieldCell *cell = [tableView dequeueReusableCellWithIdentifier:[RTFormOneLineFieldCell reuseIdentifier] forIndexPath:indexPath];
+			[cell setupUsingConfiguration:config];
+			NSString *dataKey = config[@(RTFormConfigKey)];
+			if ([dataKey isEqualToString:@"email"]) {
+				cell.textField.keyboardType = UIKeyboardTypeEmailAddress;
+			} else if ([dataKey isEqualToString:@"password"]) {
+				cell.textField.secureTextEntry = YES;
+			}
 
+			cell.contentView.backgroundColor = (indexPath.row % 2 == 0) ? [UIColor formBackgroundColor] : [UIColor formBackgroundAlternateColor];
+			return cell;
 			break;
 		}
 		case RTFormCellTypeToggle: {

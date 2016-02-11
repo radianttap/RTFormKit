@@ -41,7 +41,7 @@
 }
 
 + (UIColor *)formTextSideColor {
-	return [[UIColor darkTextColor] colorWithAlphaComponent:.8];
+	return [[UIColor darkTextColor] colorWithAlphaComponent:.6];
 }
 
 + (UIColor *)formTextFadeColor {

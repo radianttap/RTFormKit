@@ -33,8 +33,8 @@
 	//	let table view decide the background colors
 	self.backgroundColor = [UIColor clearColor];
 	self.contentView.backgroundColor = [UIColor clearColor];
-	self.selectionStyle = UITableViewCellSelectionStyleNone;
 	self.contentView.clipsToBounds = YES;
+	//	prevent visual cell selection
 	self.selectionStyle = UITableViewCellSelectionStyleNone;
 
 	//	prepare row for self-sizing

@@ -14,4 +14,5 @@
 #import "RTFormBaseCell.h"
 
 #import "RTFormInfoCell.h"
+#import "RTFormOneLineFieldCell.h"
 
