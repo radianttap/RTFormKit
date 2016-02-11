@@ -23,7 +23,7 @@
 }
 
 + (UIColor *)formBackgroundHeaderColor {
-	return [UIColor whiteColor];
+	return [UIColor colorWithRed:.92 green:.94 blue:.96 alpha:1];
 }
 
 + (UIColor *)formBackgroundFooterColor {
