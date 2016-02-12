@@ -201,6 +201,7 @@
 		}
 		case RTFormCellTypeMultiValueSegments: {
 			RTFormSegmentsCell *cell = [tableView dequeueReusableCellWithIdentifier:[RTFormSegmentsCell reuseIdentifier] forIndexPath:indexPath];
+			cell.horizontalLayout = NO;
 			cell.delegate = self;
 			cell.dataSource = self;
 			[cell setupUsingConfiguration:config];

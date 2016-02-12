@@ -14,4 +14,6 @@
 @property (nonatomic, weak, readonly) UISegmentedControl *segmentedControl;
 @property (nonatomic, weak, readonly) UIView *separator;
 
+@property (nonatomic, getter=useHorizontalLayout) BOOL horizontalLayout;
+
 @end
