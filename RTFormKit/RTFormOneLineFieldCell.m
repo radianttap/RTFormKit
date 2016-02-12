@@ -88,6 +88,8 @@
 			}
 		}
 	}];
+
+	[self setNeedsUpdateConstraints];
 }
 
 - (void)updateConstraints {
