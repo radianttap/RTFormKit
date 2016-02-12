@@ -88,8 +88,6 @@
 			}
 		}
 	}];
-
-	[self setNeedsUpdateConstraints];
 }
 
 #pragma mark - Text Field

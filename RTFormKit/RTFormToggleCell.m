@@ -89,8 +89,6 @@
 			}
 		}
 	}];
-
-	[self setNeedsUpdateConstraints];
 }
 
 #pragma mark - Switch
