@@ -28,6 +28,10 @@
 @property (nonatomic, strong) IBOutlet NSLayoutConstraint *verticalCenterConstraint;
 @property (nonatomic, strong) IBOutlet NSLayoutConstraint *verticalSpacingConstraint;
 
+//	YES == title label and segmented control are in one line
+//	NO  == title label is above the segmented control
+@property (nonatomic, getter=useHorizontalLayout) BOOL horizontalLayout;
+
 @end
 
 @implementation RTFormSegmentsCell
@@ -103,7 +107,12 @@
 	NSInteger valueIndex = [values indexOfObject:self.dataValue];
 	self.segmentedControl.selectedSegmentIndex = valueIndex;
 
-	[self.contentView layoutIfNeeded];
+	//	now that content is known, do internal layout pass to figure out do we need to switch to two-line layout
+	[self.innerContentView layoutIfNeeded];
+	CGFloat labelRightEdge = self.titleLabel.frame.origin.x + self.titleLabel.frame.size.width;
+	CGFloat segLeftEdge = self.segmentedControl.frame.origin.x;
+	self.horizontalLayout = (labelRightEdge < segLeftEdge);
+
 	[self setNeedsUpdateConstraints];
 }
 
