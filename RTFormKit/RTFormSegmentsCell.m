@@ -44,7 +44,7 @@
 - (void)commonInit {
 	[super commonInit];
 
-	self.cellType = RTFormCellTypeToggle;
+	self.cellType = RTFormCellTypeMultiValueSegments;
 	self.hintLabel.textColor = [UIColor formTextNotabeneColor];
 	self.explainLabel.textColor = [UIColor formTextSideColor];
 	self.separator.backgroundColor = [UIColor formSeparatorColor];
@@ -104,18 +104,20 @@
 	[self setNeedsUpdateConstraints];
 }
 
-//- (void)layoutSubviews {
-//
-//	[self layoutIfNeeded];
-//	//	do title label and segmented control overlap?
-//	CGFloat labelRightEdge = self.titleLabel.frame.origin.x + self.titleLabel.frame.size.width;
-//	CGFloat segLeftEdge = self.segmentedControl.frame.origin.x;
-//	self.verticalCenterConstraint.active = (labelRightEdge < segLeftEdge);
-//	self.verticalSpacingConstraint.active = (labelRightEdge > segLeftEdge);
-//	[self invalidateIntrinsicContentSize];
-//
-//	[super layoutSubviews];
-//}
+- (void)layoutSubviews {
+
+	//	make a first pass
+	[self.innerContentView layoutIfNeeded];
+	//	do title label and segmented control overlap?
+	CGFloat labelRightEdge = self.titleLabel.frame.origin.x + self.titleLabel.frame.size.width;
+	CGFloat segLeftEdge = self.segmentedControl.frame.origin.x;
+	self.verticalCenterConstraint.active = (labelRightEdge < segLeftEdge);
+	self.verticalSpacingConstraint.active = (labelRightEdge > segLeftEdge);
+	//	make a second pass
+	[self.innerContentView layoutIfNeeded];
+
+	[super layoutSubviews];
+}
 
 #pragma mark - Switch
 
