@@ -90,6 +90,13 @@
 	}];
 }
 
+- (void)updateConstraints {
+	self.hintHeightConstraint.active = (self.hintLabel.text.length == 0);
+	self.explainHeightConstraint.active = (self.explainLabel.text.length == 0);
+
+	[super updateConstraints];
+}
+
 #pragma mark - Text Field
 
 - (void)textFieldDidBeginEditing:(UITextField *)textField {

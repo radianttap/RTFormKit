@@ -63,9 +63,6 @@
 	self.hintLabel.text = nil;
 	self.explainLabel.text = nil;
 
-	self.hintHeightConstraint.active = YES;
-	self.explainHeightConstraint.active = YES;
-
 	[config enumerateKeysAndObjectsUsingBlock:^(NSNumber * _Nonnull key, id  _Nonnull obj, BOOL * _Nonnull stop) {
 		switch ((RTFormConfig)key.integerValue) {
 			case RTFormConfigKey: {
@@ -82,12 +79,10 @@
 			}
 			case RTFormConfigHint: {
 				self.hintLabel.text = obj;
-				self.hintHeightConstraint.active = NO;
 				break;
 			}
 			case RTFormConfigExplanation: {
 				self.explainLabel.text = obj;
-				self.explainHeightConstraint.active = NO;
 				break;
 			}
 			default: {
@@ -117,6 +112,8 @@
 }
 
 - (void)updateConstraints {
+	self.hintHeightConstraint.active = (self.hintLabel.text.length == 0);
+	self.explainHeightConstraint.active = (self.explainLabel.text.length == 0);
 	self.verticalCenterConstraint.active = self.useHorizontalLayout;
 	self.verticalSpacingConstraint.active = !self.useHorizontalLayout;
 
