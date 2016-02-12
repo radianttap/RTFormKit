@@ -105,6 +105,7 @@
 	[self setNeedsUpdateConstraints];
 }
 
+//	ISSUE: remaining problem is layout is not adjusted on rotation (portrait, to landscape, then portrait)
 - (void)updateConstraints {
 	//	this method is called twice for the cell
 
