@@ -39,7 +39,7 @@
 			NSMutableDictionary *row = [NSMutableDictionary dictionary];
 			row[@(RTFormConfigCellType)] = @(RTFormCellTypeInfo);
 			row[@(RTFormConfigKey)] = @"essentialIntro";
-			row[@(RTFormConfigValue)] = @"The following 5 fields are all mandatory, please fill them in";
+			row[@(RTFormConfigValue)] = @"The following fields are all mandatory, please fill them in";
 
 			[marr addObject:row];
 		}
@@ -70,6 +70,15 @@
 			row[@(RTFormConfigValue)] = @"";
 			row[@(RTFormConfigPlaceholder)] = @"Nickname";
 			row[@(RTFormConfigExplanation)] = @"This is the only bit of info everyone on Blerch will see.";
+
+			[marr addObject:row];
+		}
+		{
+			NSMutableDictionary *row = [NSMutableDictionary dictionary];
+			row[@(RTFormConfigCellType)] = @(RTFormCellTypeMultiValueSegments);
+			row[@(RTFormConfigKey)] = @"gender";
+			row[@(RTFormConfigValue)] = @"Unknown";
+			row[@(RTFormConfigTitle)] = @"Gender";
 
 			[marr addObject:row];
 		}
@@ -263,6 +272,9 @@
 
 	if ([cell.key isEqualToString:@"notifPeriod"]) {
 		return @[@1, @7, @14, @30];
+
+	} else if ([cell.key isEqualToString:@"gender"]) {
+		return @[@"Male", @"Female", @"Unknown"];
 	}
 
 	return nil;
@@ -272,6 +284,9 @@
 
 	if ([cell.key isEqualToString:@"notifPeriod"]) {
 		return @[@"Daily", @"Weekly", @"Bi-weekly", @"Monthly"];
+
+	} else if ([cell.key isEqualToString:@"gender"]) {
+		return @[@"Male", @"Female", @"/won't say/"];
 	}
 
 	return nil;
