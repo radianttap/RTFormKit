@@ -27,6 +27,8 @@
 		D0EFAAE91C6CD2D700AB4008 /* RTFormToggleCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D0EFAAE81C6CD2D700AB4008 /* RTFormToggleCell.xib */; };
 		D0EFAAED1C6CF52C00AB4008 /* RTFormSegmentsCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D0EFAAEC1C6CF52C00AB4008 /* RTFormSegmentsCell.m */; };
 		D0EFAAEF1C6CFB8E00AB4008 /* RTFormSegmentsCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D0EFAAEE1C6CFB8E00AB4008 /* RTFormSegmentsCell.xib */; };
+		D0EFAAF31C6F9CA700AB4008 /* RTFormDateCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D0EFAAF21C6F9CA700AB4008 /* RTFormDateCell.m */; };
+		D0EFAAF51C6F9DC500AB4008 /* RTFormDateCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D0EFAAF41C6F9DC500AB4008 /* RTFormDateCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -64,6 +66,9 @@
 		D0EFAAEB1C6CF52C00AB4008 /* RTFormSegmentsCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RTFormSegmentsCell.h; sourceTree = "<group>"; };
 		D0EFAAEC1C6CF52C00AB4008 /* RTFormSegmentsCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RTFormSegmentsCell.m; sourceTree = "<group>"; };
 		D0EFAAEE1C6CFB8E00AB4008 /* RTFormSegmentsCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RTFormSegmentsCell.xib; sourceTree = "<group>"; };
+		D0EFAAF11C6F9CA700AB4008 /* RTFormDateCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RTFormDateCell.h; sourceTree = "<group>"; };
+		D0EFAAF21C6F9CA700AB4008 /* RTFormDateCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RTFormDateCell.m; sourceTree = "<group>"; };
+		D0EFAAF41C6F9DC500AB4008 /* RTFormDateCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RTFormDateCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -151,6 +156,9 @@
 				D0EFAAEB1C6CF52C00AB4008 /* RTFormSegmentsCell.h */,
 				D0EFAAEC1C6CF52C00AB4008 /* RTFormSegmentsCell.m */,
 				D0EFAAEE1C6CFB8E00AB4008 /* RTFormSegmentsCell.xib */,
+				D0EFAAF11C6F9CA700AB4008 /* RTFormDateCell.h */,
+				D0EFAAF21C6F9CA700AB4008 /* RTFormDateCell.m */,
+				D0EFAAF41C6F9DC500AB4008 /* RTFormDateCell.xib */,
 			);
 			name = "Specific Cells";
 			sourceTree = "<group>";
@@ -228,6 +236,7 @@
 				D0EFAAB51C6B8D1E00AB4008 /* LaunchScreen.storyboard in Resources */,
 				D0EFAAE91C6CD2D700AB4008 /* RTFormToggleCell.xib in Resources */,
 				D0EFAAE41C6CADD700AB4008 /* RTFormOneLineFieldCell.xib in Resources */,
+				D0EFAAF51C6F9DC500AB4008 /* RTFormDateCell.xib in Resources */,
 				D0EFAADF1C6CA74B00AB4008 /* RTFormHeader.xib in Resources */,
 				D0EFAAB21C6B8D1E00AB4008 /* Assets.xcassets in Resources */,
 				D0EFAAEF1C6CFB8E00AB4008 /* RTFormSegmentsCell.xib in Resources */,
@@ -252,6 +261,7 @@
 				D0EFAAE71C6CD2BA00AB4008 /* RTFormToggleCell.m in Sources */,
 				D0EFAAD01C6BB5C800AB4008 /* README.md in Sources */,
 				D0EFAAA71C6B8D1E00AB4008 /* main.m in Sources */,
+				D0EFAAF31C6F9CA700AB4008 /* RTFormDateCell.m in Sources */,
 				D0EFAAED1C6CF52C00AB4008 /* RTFormSegmentsCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

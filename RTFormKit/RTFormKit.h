@@ -17,3 +17,4 @@
 #import "RTFormOneLineFieldCell.h"
 #import "RTFormToggleCell.h"
 #import "RTFormSegmentsCell.h"
+#import "RTFormDateCell.h"

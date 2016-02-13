@@ -30,6 +30,11 @@ typedef NS_ENUM(NSInteger, RTFormCellType) {
 	RTFormCellTypeOneLineField,
 
 	/**
+	 *	Cell with inline-date picker, shown on tap
+	 */
+	RTFormCellTypeDatePicker,
+
+	/**
 	 *	Cell with text view
 	 */
 	RTFormCellTypeMultiLineField,

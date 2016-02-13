@@ -14,6 +14,8 @@
 @property (nonatomic, copy) NSDictionary *dataSource;
 @property (nonatomic, copy) NSArray< NSString* > *sectionNames;
 
+@property (nonatomic, strong) NSDateFormatter *dateFormatter;
+
 @end
 
 @implementation RTRegisterCustomerController
@@ -22,6 +24,10 @@
 
 	self = [super init];
 	if (!self) return nil;
+
+	NSDateFormatter *df = [NSDateFormatter new];
+	df.dateStyle = NSDateFormatterMediumStyle;
+	self.dateFormatter = df;
 
 	[self createDataSource];
 
@@ -118,6 +124,21 @@
 		md[@"Email Notifications"] = marr;	//	dict key is the section name, to be shown as header
 	}
 
+	{
+		//	section 3: Details
+		NSMutableArray *marr = [NSMutableArray array];
+		{
+			NSMutableDictionary *row = [NSMutableDictionary dictionary];
+			row[@(RTFormConfigCellType)] = @(RTFormCellTypeDatePicker);
+			row[@(RTFormConfigKey)] = @"dateOfBirth";
+			row[@(RTFormConfigValue)] = [NSDate date];
+			row[@(RTFormConfigTitle)] = @"Date of Birth";
+
+			[marr addObject:row];
+		}
+		md[@"Personal Details"] = marr;	//	dict key is the section name, to be shown as header
+	}
+
 	self.dataSource = md;
 	self.sectionNames = [self.dataSource allKeys];
 }
@@ -212,6 +233,16 @@
 			RTFormSegmentsCell *cell = [tableView dequeueReusableCellWithIdentifier:[RTFormSegmentsCell reuseIdentifier] forIndexPath:indexPath];
 			cell.delegate = self;
 			cell.dataSource = self;
+			[cell setupUsingConfiguration:config];
+
+			cell.contentView.backgroundColor = (indexPath.row % 2 == 0) ? [UIColor formBackgroundColor] : [UIColor formBackgroundAlternateColor];
+			return cell;
+			break;
+		}
+		case RTFormCellTypeDatePicker: {
+			RTFormDateCell *cell = [tableView dequeueReusableCellWithIdentifier:[RTFormDateCell reuseIdentifier] forIndexPath:indexPath];
+			cell.dateFormatter = self.dateFormatter;
+			cell.delegate = self;
 			[cell setupUsingConfiguration:config];
 
 			cell.contentView.backgroundColor = (indexPath.row % 2 == 0) ? [UIColor formBackgroundColor] : [UIColor formBackgroundAlternateColor];
