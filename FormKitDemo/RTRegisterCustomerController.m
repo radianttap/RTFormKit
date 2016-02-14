@@ -9,7 +9,7 @@
 #import "RTRegisterCustomerController.h"
 #import "RTFormKit.h"
 
-@interface RTRegisterCustomerController () < RTFormDataSource, RTFormCellDataSource >
+@interface RTRegisterCustomerController () < RTFormCellDataSource >
 
 @property (nonatomic, copy) NSDictionary *dataSource;
 @property (nonatomic, copy) NSArray< NSString* > *sectionNames;
@@ -260,14 +260,26 @@
 	return nil;
 }
 
+#pragma mark - Table view delegate
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+	[super tableView:tableView didSelectRowAtIndexPath:indexPath];
+
+}
+
+
+
+
 #pragma mark - RTFormCellDelegate
 
 - (void)formCell:(RTFormBaseCell *)cell didChangeValue:(id)value {
+	[super formCell:cell didChangeValue:value];
 
 	NSLog(@"%@ == %@", cell.key, value);
 }
 
 - (void)formCellDidFinish:(RTFormBaseCell *)cell {
+	[super formCellDidFinish:cell];
 
 	NSIndexPath *indexPath = [self.tableView indexPathForCell:cell];
 

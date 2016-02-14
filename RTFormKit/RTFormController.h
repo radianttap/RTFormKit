@@ -6,11 +6,12 @@
 //  Copyright © 2016. Radiant Tap. All rights reserved.
 //
 
-#import <UIKit/UIKit.h>
+@import UIKit;
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface RTFormController : UIViewController
+@protocol RTFormDataSource;
+@interface RTFormController : UIViewController < UITableViewDelegate, RTFormDataSource >
 
 @property (nonatomic, strong, readonly) UITableView *tableView;
 @property (nonatomic, strong, nullable, readonly) NSIndexPath *dateEditingIndexPath;

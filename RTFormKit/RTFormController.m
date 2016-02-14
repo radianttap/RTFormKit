@@ -8,7 +8,7 @@
 
 #import "RTFormKit.h"
 
-@interface RTFormController () < UITableViewDelegate, RTFormDataSource >
+@interface RTFormController ()
 
 @property (nonatomic, strong) UITableView *tableView;
 @property (nonatomic, strong, nullable) NSIndexPath *dateEditingIndexPath;
@@ -114,7 +114,6 @@
 #pragma mark Delegate
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-	[tableView deselectRowAtIndexPath:indexPath animated:NO];
 
 	RTFormBaseCell *cell = [tableView cellForRowAtIndexPath:indexPath];
 	switch (cell.cellType) {
@@ -124,12 +123,6 @@
 			break;
 		}
 		case RTFormCellTypeMultiLineField: {
-			break;
-		}
-		case RTFormCellTypeMultiValuePicker: {
-			break;
-		}
-		case RTFormCellTypeDatePicker: {
 			break;
 		}
 		default: {
