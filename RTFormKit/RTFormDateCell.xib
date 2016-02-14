@@ -8,18 +8,18 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <tableViewCell contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" id="KGk-i7-Jjw" customClass="RTFormDateCell">
-            <rect key="frame" x="0.0" y="0.0" width="320" height="88"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" rowHeight="117" id="KGk-i7-Jjw" customClass="RTFormDateCell">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="117"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
-                <rect key="frame" x="0.0" y="0.0" width="320" height="87"/>
+                <rect key="frame" x="0.0" y="0.0" width="320" height="116"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <view clipsSubviews="YES" contentMode="scaleToFill" verticalHuggingPriority="750" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ZJF-fs-geq">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="20"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="22"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="751" ambiguous="YES" misplaced="YES" text="Form cell hint text" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7rY-C3-Yi0">
-                                <rect key="frame" x="15" y="8" width="297" height="12"/>
+                                <rect key="frame" x="15" y="8" width="297" height="14"/>
                                 <fontDescription key="fontDescription" style="UICTFontTextStyleCaption1"/>
                                 <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
@@ -39,35 +39,71 @@
                         </variation>
                     </view>
                     <view clipsSubviews="YES" contentMode="scaleToFill" verticalHuggingPriority="750" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="JEP-r4-wWe">
-                        <rect key="frame" x="0.0" y="20" width="320" height="47"/>
+                        <rect key="frame" x="0.0" y="22" width="320" height="44"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="751" ambiguous="YES" misplaced="YES" text="Title label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dbw-um-ouF">
-                                <rect key="frame" x="15" y="13" width="149" height="20"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="751" ambiguous="YES" text="Title label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dbw-um-ouF">
+                                <rect key="frame" x="15" y="8" width="70" height="28"/>
                                 <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="751" verticalHuggingPriority="751" horizontalCompressionResistancePriority="1000" ambiguous="YES" misplaced="YES" text="24 Sep 1999" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HRk-Nn-Gfg">
-                                <rect key="frame" x="193" y="13" width="119" height="20"/>
+                            <datePicker clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="date" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="Q0Y-Jm-9Hj">
+                                <rect key="frame" x="0.0" y="44" width="320" height="216"/>
+                                <date key="date" timeIntervalSinceReferenceDate="477133159.65794098">
+                                    <!--2016-02-14 08:59:19 +0000-->
+                                </date>
+                                <connections>
+                                    <action selector="pickerValueChanged:" destination="KGk-i7-Jjw" eventType="valueChanged" id="uCb-Ww-ZAY"/>
+                                </connections>
+                            </datePicker>
+                            <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="751" verticalHuggingPriority="751" verticalCompressionResistancePriority="1000" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="345-fF-HBa">
+                                <rect key="frame" x="203" y="8" width="109" height="28"/>
                                 <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                                <inset key="contentEdgeInsets" minX="8" minY="4" maxX="8" maxY="4"/>
+                                <state key="normal" title="24 Sep 1999">
+                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="4"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.borderWidth">
+                                        <integer key="value" value="1"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="layer.borderColor">
+                                        <color key="value" red="0.50196081400000003" green="0.50196081400000003" blue="0.50196081400000003" alpha="1" colorSpace="calibratedRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="buttonTapped:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="iaj-qe-ebV"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <constraints>
-                            <constraint firstAttribute="bottomMargin" secondItem="dbw-um-ouF" secondAttribute="bottom" priority="999" id="9FE-Hp-PaI"/>
+                            <constraint firstAttribute="topMargin" secondItem="345-fF-HBa" secondAttribute="top" id="2g5-Lh-Cj6"/>
+                            <constraint firstItem="345-fF-HBa" firstAttribute="centerY" secondItem="dbw-um-ouF" secondAttribute="centerY" id="2oD-69-Ipe"/>
+                            <constraint firstItem="Q0Y-Jm-9Hj" firstAttribute="leading" secondItem="JEP-r4-wWe" secondAttribute="leading" id="70u-dH-b01"/>
                             <constraint firstItem="dbw-um-ouF" firstAttribute="top" secondItem="JEP-r4-wWe" secondAttribute="topMargin" id="9mZ-eo-e4x"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="HRk-Nn-Gfg" secondAttribute="trailing" id="MTI-7y-UNb"/>
-                            <constraint firstItem="HRk-Nn-Gfg" firstAttribute="centerY" secondItem="dbw-um-ouF" secondAttribute="centerY" id="qKE-8O-5gl"/>
-                            <constraint firstItem="HRk-Nn-Gfg" firstAttribute="leading" secondItem="dbw-um-ouF" secondAttribute="trailing" constant="8" id="zB6-xE-FBa"/>
+                            <constraint firstItem="345-fF-HBa" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="dbw-um-ouF" secondAttribute="trailing" constant="8" id="Enk-9q-cXH"/>
+                            <constraint firstAttribute="bottom" secondItem="Q0Y-Jm-9Hj" secondAttribute="bottom" priority="999" id="Pzx-bl-UWO"/>
+                            <constraint firstItem="Q0Y-Jm-9Hj" firstAttribute="top" relation="greaterThanOrEqual" secondItem="dbw-um-ouF" secondAttribute="bottom" constant="8" id="QhI-yQ-RIo"/>
+                            <constraint firstAttribute="trailing" secondItem="Q0Y-Jm-9Hj" secondAttribute="trailing" id="S6k-uB-0Qx"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="345-fF-HBa" secondAttribute="trailing" id="a65-KB-NE4"/>
+                            <constraint firstAttribute="bottomMargin" secondItem="345-fF-HBa" secondAttribute="bottom" id="aSX-gp-xU4"/>
+                            <constraint firstItem="Q0Y-Jm-9Hj" firstAttribute="top" relation="greaterThanOrEqual" secondItem="345-fF-HBa" secondAttribute="bottom" constant="8" id="pfD-wa-7gb"/>
                             <constraint firstItem="dbw-um-ouF" firstAttribute="leading" secondItem="JEP-r4-wWe" secondAttribute="leadingMargin" constant="7" id="zec-ha-D2b"/>
                         </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="Pzx-bl-UWO"/>
+                            </mask>
+                        </variation>
                     </view>
                     <view clipsSubviews="YES" contentMode="scaleToFill" verticalHuggingPriority="750" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="0VC-Gu-Hpj">
-                        <rect key="frame" x="0.0" y="67" width="320" height="22"/>
+                        <rect key="frame" x="0.0" y="66" width="320" height="50"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="751" ambiguous="YES" text="Form data explanation text" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BFm-YE-Cmy">
-                                <rect key="frame" x="15" y="0.0" width="297" height="14"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="751" ambiguous="YES" misplaced="YES" text="Form data explanation text" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BFm-YE-Cmy">
+                                <rect key="frame" x="15" y="0.0" width="297" height="42"/>
                                 <fontDescription key="fontDescription" style="UICTFontTextStyleCaption1"/>
                                 <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
@@ -110,7 +146,9 @@
                 </constraints>
             </tableViewCellContentView>
             <connections>
-                <outlet property="dateLabel" destination="HRk-Nn-Gfg" id="EDM-m8-ckR"/>
+                <outlet property="buttonBottomEdgeConstraint" destination="aSX-gp-xU4" id="rgH-rG-3C2"/>
+                <outlet property="dateButton" destination="345-fF-HBa" id="S13-YV-tSm"/>
+                <outlet property="datePicker" destination="Q0Y-Jm-9Hj" id="13T-JD-1Qe"/>
                 <outlet property="explainContainer" destination="0VC-Gu-Hpj" id="HjE-sA-ygF"/>
                 <outlet property="explainHeightConstraint" destination="vnH-ko-2Js" id="pAR-fX-AAR"/>
                 <outlet property="explainLabel" destination="BFm-YE-Cmy" id="lhn-oW-uLQ"/>
@@ -118,10 +156,11 @@
                 <outlet property="hintHeightConstraint" destination="J0c-Ux-cic" id="sbl-he-rGd"/>
                 <outlet property="hintLabel" destination="7rY-C3-Yi0" id="JIV-Or-UYX"/>
                 <outlet property="innerContentView" destination="JEP-r4-wWe" id="tma-cf-ykW"/>
+                <outlet property="pickerBottomEdgeConstraint" destination="Pzx-bl-UWO" id="uzt-eS-9a6"/>
                 <outlet property="separator" destination="S98-p4-yIC" id="wT8-Bd-MiT"/>
                 <outlet property="titleLabel" destination="dbw-um-ouF" id="qCx-lJ-Zbd"/>
             </connections>
-            <point key="canvasLocation" x="288" y="401"/>
+            <point key="canvasLocation" x="-705" y="-126.5"/>
         </tableViewCell>
     </objects>
 </document>

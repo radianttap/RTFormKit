@@ -14,7 +14,7 @@
 @property (nonatomic, copy) NSDictionary *dataSource;
 @property (nonatomic, copy) NSArray< NSString* > *sectionNames;
 
-@property (nonatomic, strong) NSDateFormatter *dateFormatter;
+@property (nonatomic, strong) NSDateFormatter *dobFormatter;
 
 @end
 
@@ -27,7 +27,7 @@
 
 	NSDateFormatter *df = [NSDateFormatter new];
 	df.dateStyle = NSDateFormatterMediumStyle;
-	self.dateFormatter = df;
+	self.dobFormatter = df;
 
 	[self createDataSource];
 
@@ -240,8 +240,11 @@
 			break;
 		}
 		case RTFormCellTypeDatePicker: {
-			RTFormDateCell *cell = [tableView dequeueReusableCellWithIdentifier:[RTFormDateCell reuseIdentifier] forIndexPath:indexPath];
-			cell.dateFormatter = self.dateFormatter;
+			BOOL isDateEditing = [indexPath isEqual:self.dateEditingIndexPath];
+			RTFormDateCell *cell = [tableView dequeueReusableCellWithIdentifier:(isDateEditing) ? [RTFormDateCell reuseIdentifierEditing] : [RTFormDateCell reuseIdentifier]
+																   forIndexPath:indexPath];
+			cell.dateEditingEnabled = isDateEditing;
+			cell.dateFormatter = self.dobFormatter;
 			cell.delegate = self;
 			[cell setupUsingConfiguration:config];
 

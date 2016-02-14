@@ -11,6 +11,7 @@
 @interface RTFormController () < UITableViewDelegate, RTFormDataSource >
 
 @property (nonatomic, strong) UITableView *tableView;
+@property (nonatomic, strong, nullable) NSIndexPath *dateEditingIndexPath;
 
 @end
 
@@ -21,6 +22,7 @@
 	self = [super init];
 	if (!self) return nil;
 
+	_dateEditingIndexPath = nil;
 	[[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(handleNotification:) name:UIKeyboardWillShowNotification object:nil];
 	[[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(handleNotification:) name:UIKeyboardWillHideNotification object:nil];
 
@@ -88,6 +90,7 @@
 	[self.tableView registerNib:[RTFormToggleCell nib] forCellReuseIdentifier:[RTFormToggleCell reuseIdentifier]];
 	[self.tableView registerNib:[RTFormSegmentsCell nib] forCellReuseIdentifier:[RTFormSegmentsCell reuseIdentifier]];
 	[self.tableView registerNib:[RTFormDateCell nib] forCellReuseIdentifier:[RTFormDateCell reuseIdentifier]];
+	[self.tableView registerNib:[RTFormDateCell nib] forCellReuseIdentifier:[RTFormDateCell reuseIdentifierEditing]];
 
 }
 
@@ -124,7 +127,9 @@
 			break;
 		}
 		case RTFormCellTypeMultiValuePicker: {
-
+			break;
+		}
+		case RTFormCellTypeDatePicker: {
 			break;
 		}
 		default: {
@@ -143,13 +148,46 @@
 
 - (void)formCellDidActivate:(RTFormBaseCell *)cell {
 
-	[self.tableView scrollRectToVisible:cell.frame animated:YES];
+	NSIndexPath *indexPath = [self.tableView indexPathForCell:cell];
+	if ([cell isKindOfClass:[RTFormDateCell class]]) {
+		//	is some other date cell active? close it up before activating new one
+		if (self.dateEditingIndexPath) {
+			self.dateEditingIndexPath = nil;
+			[self.tableView reloadRowsAtIndexPaths:@[self.dateEditingIndexPath] withRowAnimation:UITableViewRowAnimationNone];
+		}
+		self.dateEditingIndexPath = indexPath;
+		[self.tableView reloadRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationAutomatic];
+	} else {
+		//	close-up the date cell if some other type of cell is activated
+		if (self.dateEditingIndexPath) {
+			self.dateEditingIndexPath = nil;
+			[self.tableView reloadRowsAtIndexPaths:@[self.dateEditingIndexPath] withRowAnimation:UITableViewRowAnimationAutomatic];
+		}
+	}
+
+	[self.tableView scrollToRowAtIndexPath:indexPath atScrollPosition:UITableViewScrollPositionMiddle animated:YES];
+}
+
+- (void)formCellDidDeactivate:(RTFormBaseCell *)cell {
+
+	NSIndexPath *indexPath = [self.tableView indexPathForCell:cell];
+	if ([cell isKindOfClass:[RTFormDateCell class]]) {
+		self.dateEditingIndexPath = nil;
+		[self.tableView reloadRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationAutomatic];
+	}
 }
 
 - (void)formCellDidFinish:(RTFormBaseCell *)cell {
 
-//	NSIndexPath *indexPath = [self.tableView indexPathForCell:cell];
-	//	now figure out should editing jump to next cell or simply resign keyboard
+	NSIndexPath *indexPath = [self.tableView indexPathForCell:cell];
+	if ([cell isKindOfClass:[RTFormDateCell class]]) {
+		self.dateEditingIndexPath = nil;
+		[self.tableView reloadRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationAutomatic];
+		return;
+	}
+
+	//	for textfield cell
+	//	figure out should editing jump to next cell or simply resign keyboard
 	[cell endEditing:YES];
 }
 

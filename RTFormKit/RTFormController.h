@@ -8,8 +8,13 @@
 
 #import <UIKit/UIKit.h>
 
+NS_ASSUME_NONNULL_BEGIN
+
 @interface RTFormController : UIViewController
 
 @property (nonatomic, strong, readonly) UITableView *tableView;
+@property (nonatomic, strong, nullable, readonly) NSIndexPath *dateEditingIndexPath;
 
 @end
+
+NS_ASSUME_NONNULL_END
