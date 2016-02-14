@@ -276,6 +276,13 @@
 	[super formCell:cell didChangeValue:value];
 
 	NSLog(@"%@ == %@", cell.key, value);
+
+	//	udpate value in data source
+	NSIndexPath *indexPath = [self.tableView indexPathForCell:cell];
+	NSString *sectionKey = self.sectionNames[indexPath.section];
+	NSArray *rows = self.dataSource[sectionKey];
+	NSMutableDictionary *md = rows[indexPath.row];
+	md[@(RTFormConfigValue)] = value;
 }
 
 - (void)formCellDidFinish:(RTFormBaseCell *)cell {
@@ -310,7 +317,6 @@
 
 	if (shouldResign) [cell endEditing:YES];
 }
-
 
 #pragma mark - RTFormCellDataSource
 
