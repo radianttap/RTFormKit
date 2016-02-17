@@ -51,6 +51,7 @@ typedef NS_ENUM(NSInteger, RTFormCellType) {
 
 	/**
 	 *	Cell with multiple possible options. When you tap the value, it expands to reveal picker with list of possible options
+	 *	This picker is implemented as simple nested table view. If there are more than 10 options, it also shows a text field to filter the list of options
 	 */
 	RTFormCellTypeMultiValuePicker,
 
@@ -86,6 +87,11 @@ typedef NS_ENUM(NSInteger, RTFormConfig) {
 	RTFormConfigValue,
 
 	/**
+	 *	id, value to display if actual value (above) is not yet set. Each cell type will handle this as appropriate
+	 */
+	RTFormConfigDefaultValue,
+
+	/**
 	 *	NSString, placeholder value to show if there is no currently set value (think UITextField.placeholder)
 	 */
 	RTFormConfigPlaceholder,
@@ -101,6 +107,16 @@ typedef NS_ENUM(NSInteger, RTFormConfig) {
 	 *	Use with any cell type when you need to explain that particular data / data options mean. Easy example is with RTFormCellTypeToggle where title UILabel is short one-liner
 	 */
 	RTFormConfigExplanation,
+
+	/**
+	 *	BOOL. Set this to @YES if you want to disable editing of particular field
+	 */
+	RTFormConfigDisabled,
+
+	/**
+	 *	BOOL. Set this to @YES if the given field must be set
+	 */
+	RTFormConfigMandatory,
 };
 
 

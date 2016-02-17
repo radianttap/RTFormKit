@@ -9,6 +9,12 @@
 #import "UIColor+RTFormKit.h"
 #import "RTFormBaseCell.h"
 
+@interface RTFormBaseCell ()
+
+@property (nonatomic, weak) IBOutlet UIView *innerContentView;
+
+@end
+
 @implementation RTFormBaseCell
 
 + (NSString *)reuseIdentifier {
@@ -56,6 +62,7 @@
 
 - (void)commonInit {
 
+	_innerContentView = nil;
 	_delegate = nil;
 	_enabled = YES;
 	_cellType = RTFormCellTypeUnknown;
@@ -76,8 +83,13 @@
 
 - (void)setEnabled:(BOOL)enabled {
 
-	self.contentView.userInteractionEnabled = enabled;
-	self.contentView.alpha = (enabled) ? 1.0 : .35;
+	if (self.innerContentView) {
+		self.innerContentView.userInteractionEnabled = enabled;
+		self.innerContentView.alpha = (enabled) ? 1.0 : .5;
+	} else {
+		self.contentView.userInteractionEnabled = enabled;
+		self.contentView.alpha = (enabled) ? 1.0 : .5;
+	}
 }
 
 @end
