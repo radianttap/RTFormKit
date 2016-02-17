@@ -44,7 +44,7 @@
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="751" ambiguous="YES" text="Title label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dbw-um-ouF">
                                 <rect key="frame" x="15" y="8" width="70" height="28"/>
                                 <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <datePicker clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="date" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="Q0Y-Jm-9Hj">
@@ -133,7 +133,7 @@
                     <constraint firstItem="JEP-r4-wWe" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="0wc-vR-1Ar"/>
                     <constraint firstAttribute="trailing" secondItem="0VC-Gu-Hpj" secondAttribute="trailing" id="30N-Gn-ynC"/>
                     <constraint firstAttribute="trailing" secondItem="JEP-r4-wWe" secondAttribute="trailing" id="370-6x-U3m"/>
-                    <constraint firstItem="ZJF-fs-geq" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="4LL-Kc-Gg1"/>
+                    <constraint firstItem="ZJF-fs-geq" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="8" id="4LL-Kc-Gg1"/>
                     <constraint firstAttribute="trailing" secondItem="ZJF-fs-geq" secondAttribute="trailing" id="5Nc-h8-Km1"/>
                     <constraint firstItem="S98-p4-yIC" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="6UP-dK-ARn"/>
                     <constraint firstItem="ZJF-fs-geq" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="8OG-09-n5X"/>
@@ -141,7 +141,7 @@
                     <constraint firstItem="0VC-Gu-Hpj" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="Gb5-nq-SkL"/>
                     <constraint firstItem="0VC-Gu-Hpj" firstAttribute="top" secondItem="JEP-r4-wWe" secondAttribute="bottom" id="IP9-xs-Gt5"/>
                     <constraint firstItem="S98-p4-yIC" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="KUM-iP-V61"/>
-                    <constraint firstAttribute="bottom" secondItem="0VC-Gu-Hpj" secondAttribute="bottom" id="PuQ-1K-x6e"/>
+                    <constraint firstAttribute="bottom" secondItem="0VC-Gu-Hpj" secondAttribute="bottom" constant="8" id="PuQ-1K-x6e"/>
                     <constraint firstItem="JEP-r4-wWe" firstAttribute="top" secondItem="ZJF-fs-geq" secondAttribute="bottom" id="aar-Ql-okT"/>
                 </constraints>
             </tableViewCellContentView>
