@@ -61,6 +61,10 @@
 				if (self.dataValue.length == 0) self.infoLabel.text = obj;
 				break;
 			}
+			case RTFormConfigDisabled: {
+				self.enabled = ![(NSNumber *)obj boolValue];
+				break;
+			}
 			default: {
 				break;
 			}

@@ -88,6 +88,10 @@
 				self.explainLabel.text = obj;
 				break;
 			}
+			case RTFormConfigDisabled: {
+				self.enabled = ![(NSNumber *)obj boolValue];
+				break;
+			}
 			default: {
 				break;
 			}
