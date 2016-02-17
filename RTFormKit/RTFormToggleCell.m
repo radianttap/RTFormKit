@@ -45,6 +45,7 @@
 	self.hintLabel.textColor = [UIColor formTextNotabeneColor];
 	self.explainLabel.textColor = [UIColor formTextSideColor];
 	self.separator.backgroundColor = [UIColor formSeparatorColor];
+	self.separator.hidden = YES;
 
 	self.titleLabel.textColor = [UIColor formTextMainColor];
 //	[self.toggleSwitch setTintColor:[UIColor lightGrayColor]];

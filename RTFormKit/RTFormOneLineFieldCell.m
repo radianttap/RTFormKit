@@ -46,6 +46,7 @@
 	self.hintLabel.textColor = [UIColor formTextNotabeneColor];
 	self.explainLabel.textColor = [UIColor formTextSideColor];
 	self.separator.backgroundColor = [UIColor formSeparatorColor];
+	self.separator.hidden = YES;
 
 	[self.textField addTarget:self action:@selector(textFieldValueChanged:) forControlEvents:UIControlEventEditingChanged];
 }
@@ -81,6 +82,10 @@
 			case RTFormConfigExplanation: {
 				self.explainLabel.text = obj;
 				self.explainHeightConstraint.active = NO;
+				break;
+			}
+			case RTFormConfigDisabled: {
+				self.enabled = ![(NSNumber *)obj boolValue];
 				break;
 			}
 			default: {

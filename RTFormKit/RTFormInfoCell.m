@@ -33,6 +33,9 @@
 	self.cellType = RTFormCellTypeInfo;
 	self.infoLabel.textColor = [UIColor formTextMainColor];
 	self.separator.backgroundColor = [UIColor formSeparatorColor];
+	self.separator.hidden = YES;
+
+	self.infoLabel.text = nil;
 }
 
 - (void)setupUsingConfiguration:(NSDictionary<NSNumber *,id> *)config {
