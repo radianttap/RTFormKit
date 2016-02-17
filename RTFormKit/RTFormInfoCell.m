@@ -11,6 +11,8 @@
 @interface RTFormInfoCell ()
 
 @property (nonatomic, copy) NSString *dataValue;
+@property (nonatomic, copy) NSString *defaultValue;
+
 @property (nonatomic, weak) IBOutlet UILabel *infoLabel;
 @property (nonatomic, weak) IBOutlet UIView *separator;
 
@@ -29,6 +31,9 @@
 
 - (void)commonInit {
 	[super commonInit];
+
+	_dataValue = nil;
+	_defaultValue = nil;
 
 	self.cellType = RTFormCellTypeInfo;
 	self.infoLabel.textColor = [UIColor formTextMainColor];
@@ -49,6 +54,11 @@
 			case RTFormConfigValue: {
 				self.dataValue = obj;
 				self.infoLabel.text = obj;
+				break;
+			}
+			case RTFormConfigDefaultValue: {
+				self.defaultValue = obj;
+				if (self.dataValue.length == 0) self.infoLabel.text = obj;
 				break;
 			}
 			default: {

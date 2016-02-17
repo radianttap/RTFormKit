@@ -11,6 +11,7 @@
 @interface RTFormSegmentsCell ()
 
 @property (nonatomic, copy) NSString *dataValue;
+@property (nonatomic, copy) NSString *defaultValue;
 
 @property (nonatomic, weak) IBOutlet UIView *separator;
 @property (nonatomic, weak) IBOutlet UIView *innerContentView;
@@ -44,6 +45,9 @@
 - (void)commonInit {
 	[super commonInit];
 
+	_dataValue = nil;
+	_defaultValue = nil;
+
 	self.cellType = RTFormCellTypeMultiValueSegments;
 	self.hintLabel.textColor = [UIColor formTextNotabeneColor];
 	self.explainLabel.textColor = [UIColor formTextSideColor];
@@ -66,6 +70,10 @@
 			}
 			case RTFormConfigValue: {
 				self.dataValue = obj;
+				break;
+			}
+			case RTFormConfigDefaultValue: {
+				self.defaultValue = obj;
 				break;
 			}
 			case RTFormConfigTitle: {

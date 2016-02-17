@@ -11,6 +11,7 @@
 @interface RTFormOneLineFieldCell () < UITextFieldDelegate >
 
 @property (nonatomic, copy) NSString *dataValue;
+@property (nonatomic, copy) NSString *defaultValue;
 
 @property (nonatomic, weak) IBOutlet UIView *separator;
 @property (nonatomic, weak) IBOutlet UIView *innerContentView;
@@ -40,6 +41,9 @@
 - (void)commonInit {
 	[super commonInit];
 
+	_dataValue = nil;
+	_defaultValue = nil;
+
 	self.cellType = RTFormCellTypeOneLineField;
 	self.textField.textColor = [UIColor formTextMainColor];
 	self.textField.backgroundColor = [UIColor clearColor];
@@ -68,6 +72,11 @@
 			case RTFormConfigValue: {
 				self.dataValue = obj;
 				self.textField.text = obj;
+				break;
+			}
+			case RTFormConfigDefaultValue: {
+				self.defaultValue = obj;
+				if (self.dataValue.length == 0) self.textField.text = obj;
 				break;
 			}
 			case RTFormConfigPlaceholder: {

@@ -11,6 +11,7 @@
 @interface RTFormDateCell ()
 
 @property (nonatomic, copy) NSDate *dataValue;
+@property (nonatomic, copy) NSDate *defaultValue;
 
 @property (nonatomic, weak) IBOutlet UIView *separator;
 @property (nonatomic, weak) IBOutlet UIView *innerContentView;
@@ -49,6 +50,9 @@
 - (void)commonInit {
 	[super commonInit];
 
+	_dataValue = nil;
+	_defaultValue = nil;
+
 	_dateEditingEnabled = NO;
 	self.cellType = RTFormCellTypeDatePicker;
 	self.hintLabel.textColor = [UIColor formTextNotabeneColor];
@@ -75,6 +79,14 @@
 				self.dataValue = obj;
 				self.datePicker.date = obj;
 				[self updateShownDate];
+				break;
+			}
+			case RTFormConfigDefaultValue: {
+				self.defaultValue = obj;
+				if (!self.dataValue) {
+					self.datePicker.date = obj;
+					[self updateShownDate];
+				}
 				break;
 			}
 			case RTFormConfigTitle: {
@@ -122,10 +134,14 @@
 
 - (void)updateShownDate {
 
-	if (self.dateFormatter) {
-		[self.dateButton setTitle:[self.dateFormatter stringFromDate:self.dataValue] forState:UIControlStateNormal];
+	if (self.dataValue) {
+		if (self.dateFormatter) {
+			[self.dateButton setTitle:[self.dateFormatter stringFromDate:self.dataValue] forState:UIControlStateNormal];
+		} else {
+			[self.dateButton setTitle:[self.dataValue description] forState:UIControlStateNormal];
+		}
 	} else {
-		[self.dateButton setTitle:[self.dataValue description] forState:UIControlStateNormal];
+		[self.dateButton setTitle:NSLocalizedString(@"Tap to Set", nil) forState:UIControlStateNormal];
 	}
 }
 

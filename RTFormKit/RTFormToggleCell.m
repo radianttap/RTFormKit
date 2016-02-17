@@ -11,6 +11,7 @@
 @interface RTFormToggleCell ()
 
 @property (nonatomic, copy) NSNumber *dataValue;	//	@YES or @NO
+@property (nonatomic, copy) NSNumber *defaultValue;
 
 @property (nonatomic, weak) IBOutlet UIView *separator;
 @property (nonatomic, weak) IBOutlet UIView *innerContentView;
@@ -41,6 +42,9 @@
 - (void)commonInit {
 	[super commonInit];
 
+	_dataValue = nil;
+	_defaultValue = nil;
+
 	self.cellType = RTFormCellTypeToggle;
 	self.hintLabel.textColor = [UIColor formTextNotabeneColor];
 	self.explainLabel.textColor = [UIColor formTextSideColor];
@@ -66,6 +70,11 @@
 			case RTFormConfigValue: {
 				self.dataValue = obj;
 				self.toggleSwitch.on = [obj boolValue];
+				break;
+			}
+			case RTFormConfigDefaultValue: {
+				self.defaultValue = obj;
+				if (!self.dataValue) self.toggleSwitch.on = [obj boolValue];
 				break;
 			}
 			case RTFormConfigTitle: {
