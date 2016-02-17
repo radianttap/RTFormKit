@@ -16,9 +16,9 @@
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="751" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dsU-ui-pWB">
-                        <rect key="frame" x="15" y="8" width="297" height="27"/>
+                        <rect key="frame" x="15" y="16" width="297" height="11"/>
                         <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
-                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                         <nil key="highlightedColor"/>
                     </label>
                     <view clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ySo-wM-zAM">
@@ -30,9 +30,9 @@
                 </subviews>
                 <constraints>
                     <constraint firstAttribute="trailing" secondItem="ySo-wM-zAM" secondAttribute="trailing" id="8hh-fD-FqR"/>
-                    <constraint firstAttribute="bottomMargin" secondItem="dsU-ui-pWB" secondAttribute="bottom" id="8uf-oc-UfV"/>
+                    <constraint firstAttribute="bottomMargin" secondItem="dsU-ui-pWB" secondAttribute="bottom" constant="8" id="8uf-oc-UfV"/>
                     <constraint firstItem="ySo-wM-zAM" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="FF6-OP-JVU"/>
-                    <constraint firstItem="dsU-ui-pWB" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" id="hec-9P-XkW"/>
+                    <constraint firstItem="dsU-ui-pWB" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" constant="8" id="hec-9P-XkW"/>
                     <constraint firstItem="dsU-ui-pWB" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" constant="7" id="m48-mo-FqS"/>
                     <constraint firstItem="ySo-wM-zAM" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="qaf-f2-xhX"/>
                     <constraint firstAttribute="trailingMargin" secondItem="dsU-ui-pWB" secondAttribute="trailing" id="vEZ-lf-zQd"/>
@@ -42,7 +42,7 @@
                 <outlet property="infoLabel" destination="dsU-ui-pWB" id="XWE-AR-n2M"/>
                 <outlet property="separator" destination="ySo-wM-zAM" id="EHd-4i-JBZ"/>
             </connections>
-            <point key="canvasLocation" x="106" y="249"/>
+            <point key="canvasLocation" x="246" y="231"/>
         </tableViewCell>
     </objects>
 </document>

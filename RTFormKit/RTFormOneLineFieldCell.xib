@@ -15,10 +15,10 @@
                 <rect key="frame" x="0.0" y="0.0" width="320" height="87"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <view clipsSubviews="YES" contentMode="scaleToFill" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="ZJF-fs-geq">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="22"/>
+                    <view clipsSubviews="YES" contentMode="scaleToFill" verticalHuggingPriority="750" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ZJF-fs-geq">
+                        <rect key="frame" x="0.0" y="8" width="320" height="22"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="751" text="Form cell hint text" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7rY-C3-Yi0">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="751" ambiguous="YES" text="Form cell hint text" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7rY-C3-Yi0">
                                 <rect key="frame" x="15" y="8" width="297" height="14"/>
                                 <fontDescription key="fontDescription" style="UICTFontTextStyleCaption1"/>
                                 <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
@@ -38,14 +38,14 @@
                             </mask>
                         </variation>
                     </view>
-                    <view clipsSubviews="YES" contentMode="scaleToFill" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="JEP-r4-wWe">
-                        <rect key="frame" x="0.0" y="22" width="320" height="45"/>
+                    <view clipsSubviews="YES" contentMode="scaleToFill" verticalHuggingPriority="750" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="JEP-r4-wWe">
+                        <rect key="frame" x="0.0" y="30" width="320" height="27"/>
                         <subviews>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="text field" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="lrQ-cG-A4r">
-                                <rect key="frame" x="15" y="8" width="297" height="29"/>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="text field" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="lrQ-cG-A4r">
+                                <rect key="frame" x="15" y="8" width="297" height="11"/>
                                 <color key="backgroundColor" red="0.96078431372549022" green="0.96078431372549022" blue="0.96078431372549022" alpha="1" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
-                                <textInputTraits key="textInputTraits" returnKeyType="next"/>
+                                <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" returnKeyType="next"/>
                                 <connections>
                                     <outlet property="delegate" destination="KGk-i7-Jjw" id="VzZ-hj-NiQ"/>
                                 </connections>
@@ -58,10 +58,10 @@
                             <constraint firstAttribute="bottomMargin" secondItem="lrQ-cG-A4r" secondAttribute="bottom" id="d1W-eW-e9e"/>
                         </constraints>
                     </view>
-                    <view clipsSubviews="YES" contentMode="scaleToFill" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="0VC-Gu-Hpj">
-                        <rect key="frame" x="0.0" y="67" width="320" height="22"/>
+                    <view clipsSubviews="YES" contentMode="scaleToFill" verticalHuggingPriority="750" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="0VC-Gu-Hpj">
+                        <rect key="frame" x="0.0" y="57" width="320" height="22"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="751" text="Form data explanation text" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BFm-YE-Cmy">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="751" ambiguous="YES" misplaced="YES" text="Form data explanation text" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BFm-YE-Cmy">
                                 <rect key="frame" x="15" y="0.0" width="297" height="14"/>
                                 <fontDescription key="fontDescription" style="UICTFontTextStyleCaption1"/>
                                 <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
@@ -92,13 +92,13 @@
                     <constraint firstItem="JEP-r4-wWe" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="0wc-vR-1Ar"/>
                     <constraint firstAttribute="trailing" secondItem="0VC-Gu-Hpj" secondAttribute="trailing" id="30N-Gn-ynC"/>
                     <constraint firstAttribute="trailing" secondItem="JEP-r4-wWe" secondAttribute="trailing" id="370-6x-U3m"/>
-                    <constraint firstItem="ZJF-fs-geq" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="4LL-Kc-Gg1"/>
+                    <constraint firstItem="ZJF-fs-geq" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="8" id="4LL-Kc-Gg1"/>
                     <constraint firstAttribute="trailing" secondItem="ZJF-fs-geq" secondAttribute="trailing" id="5Nc-h8-Km1"/>
                     <constraint firstItem="ZJF-fs-geq" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="8OG-09-n5X"/>
                     <constraint firstItem="0VC-Gu-Hpj" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="Gb5-nq-SkL"/>
                     <constraint firstItem="0VC-Gu-Hpj" firstAttribute="top" secondItem="JEP-r4-wWe" secondAttribute="bottom" id="IP9-xs-Gt5"/>
                     <constraint firstItem="vqa-8Y-If3" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="OdI-MA-mhX"/>
-                    <constraint firstAttribute="bottom" secondItem="0VC-Gu-Hpj" secondAttribute="bottom" constant="-2" id="PuQ-1K-x6e"/>
+                    <constraint firstAttribute="bottom" secondItem="0VC-Gu-Hpj" secondAttribute="bottom" constant="8" id="PuQ-1K-x6e"/>
                     <constraint firstItem="JEP-r4-wWe" firstAttribute="top" secondItem="ZJF-fs-geq" secondAttribute="bottom" id="aar-Ql-okT"/>
                     <constraint firstAttribute="trailing" secondItem="vqa-8Y-If3" secondAttribute="trailing" id="edx-WR-xjV"/>
                     <constraint firstItem="vqa-8Y-If3" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="yY7-d6-KRK"/>
