@@ -105,9 +105,13 @@
 		[self.segmentedControl insertSegmentWithTitle:obj atIndex:idx animated:NO];
 	}];
 	//	select current value
-	NSArray *values = [self.dataSource valuesForMultiValueFormCell:self];
-	NSInteger valueIndex = [values indexOfObject:self.dataValue];
-	self.segmentedControl.selectedSegmentIndex = valueIndex;
+	if (self.dataValue) {
+		NSArray *values = [self.dataSource valuesForMultiValueFormCell:self];
+		NSInteger valueIndex = [values indexOfObject:self.dataValue];
+		if (valueIndex != NSNotFound) {
+			self.segmentedControl.selectedSegmentIndex = valueIndex;
+		}
+	}
 
 	//	now that content is known, do internal layout pass to figure out do we need to switch to two-line layout
 	[self.innerContentView layoutIfNeeded];
