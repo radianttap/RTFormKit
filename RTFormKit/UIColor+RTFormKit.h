@@ -8,11 +8,15 @@
 
 #import <UIKit/UIKit.h>
 
+NS_ASSUME_NONNULL_BEGIN
+
 /**
  *	Define base colors for the various form elements
  */
 
 @interface UIColor (RTFormKit)
+
++ (nullable UIColor *)formTintColor;
 
 + (UIColor *)formBackgroundColor;
 + (UIColor *)formBackgroundAlternateColor;
@@ -31,3 +35,5 @@
 + (UIColor *)formTextNotabeneColor;
 
 @end
+
+NS_ASSUME_NONNULL_END

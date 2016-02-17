@@ -59,7 +59,7 @@
 	self.explainLabel.textColor = [UIColor formTextSideColor];
 	self.separator.backgroundColor = [UIColor formSeparatorColor];
 	self.separator.hidden = YES;
-	self.dateButton.layer.borderColor = self.tintColor.CGColor;
+	self.dateButton.layer.borderColor = [UIColor formTintColor].CGColor;
 
 	self.titleLabel.textColor = [UIColor formTextMainColor];
 }

@@ -10,6 +10,10 @@
 
 @implementation UIColor (RTFormKit)
 
++ (UIColor *)formTintColor {
+	return nil;
+}
+
 + (UIColor *)formBackgroundColor {
 	return [UIColor whiteColor];
 }

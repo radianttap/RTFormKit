@@ -61,7 +61,7 @@
 	self.explainLabel.textColor = [UIColor formTextSideColor];
 	self.separator.backgroundColor = [UIColor formSeparatorColor];
 	self.separator.hidden = YES;
-	self.valueButton.layer.borderColor = self.tintColor.CGColor;
+	self.valueButton.layer.borderColor = [UIColor formTintColor].CGColor;
 
 	self.titleLabel.textColor = [UIColor formTextMainColor];
 }

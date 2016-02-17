@@ -53,7 +53,7 @@
 
 	self.titleLabel.textColor = [UIColor formTextMainColor];
 //	[self.toggleSwitch setTintColor:[UIColor lightGrayColor]];
-	[self.toggleSwitch setOnTintColor:self.tintColor];
+	[self.toggleSwitch setOnTintColor:[UIColor formTintColor]];
 }
 
 - (void)setupUsingConfiguration:(NSDictionary<NSNumber *,id> *)config {
