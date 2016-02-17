@@ -18,3 +18,4 @@
 #import "RTFormToggleCell.h"
 #import "RTFormSegmentsCell.h"
 #import "RTFormDateCell.h"
+#import "RTFormPickerCell.h"

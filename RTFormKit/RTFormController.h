@@ -15,6 +15,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 @property (nonatomic, strong, readonly) UITableView *tableView;
 @property (nonatomic, strong, nullable) NSIndexPath *dateEditingIndexPath;
+@property (nonatomic, strong, nullable) NSIndexPath *pickerEditingIndexPath;
 
 @end
 

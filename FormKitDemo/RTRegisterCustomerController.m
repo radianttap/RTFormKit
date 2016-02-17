@@ -137,6 +137,16 @@
 			[marr addObject:row];
 		}
 		md[@"Personal Details"] = marr;	//	dict key is the section name, to be shown as header
+		{
+			NSMutableDictionary *row = [NSMutableDictionary dictionary];
+			row[@(RTFormConfigCellType)] = @(RTFormCellTypeMultiValuePicker);
+			row[@(RTFormConfigKey)] = @"country";
+//			row[@(RTFormConfigValue)] = @"RS";
+			row[@(RTFormConfigDefaultValue)] = @"RS";
+			row[@(RTFormConfigTitle)] = @"Country";
+
+			[marr addObject:row];
+		}
 	}
 
 	self.dataSource = md;
@@ -226,7 +236,16 @@
 			break;
 		}
 		case RTFormCellTypeMultiValuePicker: {
+			BOOL isValueEditing = [indexPath isEqual:self.pickerEditingIndexPath];
+			RTFormPickerCell *cell = [tableView dequeueReusableCellWithIdentifier:(isValueEditing) ? [RTFormPickerCell reuseIdentifierEditing] : [RTFormPickerCell reuseIdentifier]
+																	 forIndexPath:indexPath];
+			cell.valueEditingEnabled = isValueEditing;
+			cell.delegate = self;
+			cell.dataSource = self;
+			[cell setupUsingConfiguration:config];
 
+			cell.contentView.backgroundColor = (indexPath.row % 2 == 0) ? [UIColor formBackgroundColor] : [UIColor formBackgroundAlternateColor];
+			return cell;
 			break;
 		}
 		case RTFormCellTypeMultiValueSegments: {
@@ -327,6 +346,10 @@
 
 	} else if ([cell.key isEqualToString:@"gender"]) {
 		return @[@"Male", @"Female", @"Unknown"];
+
+	} else if ([cell.key isEqualToString:@"country"]) {
+		//	get	all country codes from iOS
+		return [NSLocale ISOCountryCodes];
 	}
 
 	return nil;
@@ -339,6 +362,15 @@
 
 	} else if ([cell.key isEqualToString:@"gender"]) {
 		return @[@"Male", @"Female", @"/won't say/"];
+
+	} else if ([cell.key isEqualToString:@"country"]) {
+		//	figure out all the country names
+		NSMutableArray *marr = [NSMutableArray array];
+		[[NSLocale ISOCountryCodes] enumerateObjectsUsingBlock:^(NSString * _Nonnull countryCode, NSUInteger idx, BOOL * _Nonnull stop) {
+			NSString *name = [[NSLocale currentLocale] displayNameForKey:NSLocaleCountryCode value:countryCode];
+			[marr addObject:name];
+		}];
+		return marr;
 	}
 
 	return nil;

@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		D099EF771C748608008326C0 /* RTFormPickerCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D099EF761C748608008326C0 /* RTFormPickerCell.m */; };
+		D099EF791C748722008326C0 /* RTFormPickerCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D099EF781C748722008326C0 /* RTFormPickerCell.xib */; };
 		D0EFAAA71C6B8D1E00AB4008 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = D0EFAAA61C6B8D1E00AB4008 /* main.m */; };
 		D0EFAAAA1C6B8D1E00AB4008 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = D0EFAAA91C6B8D1E00AB4008 /* AppDelegate.m */; };
 		D0EFAAB21C6B8D1E00AB4008 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D0EFAAB11C6B8D1E00AB4008 /* Assets.xcassets */; };
@@ -32,6 +34,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		D099EF751C748608008326C0 /* RTFormPickerCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RTFormPickerCell.h; sourceTree = "<group>"; };
+		D099EF761C748608008326C0 /* RTFormPickerCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RTFormPickerCell.m; sourceTree = "<group>"; };
+		D099EF781C748722008326C0 /* RTFormPickerCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RTFormPickerCell.xib; sourceTree = "<group>"; };
 		D0EFAAA21C6B8D1E00AB4008 /* RTFormKit.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RTFormKit.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D0EFAAA61C6B8D1E00AB4008 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		D0EFAAA81C6B8D1E00AB4008 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -159,6 +164,9 @@
 				D0EFAAF11C6F9CA700AB4008 /* RTFormDateCell.h */,
 				D0EFAAF21C6F9CA700AB4008 /* RTFormDateCell.m */,
 				D0EFAAF41C6F9DC500AB4008 /* RTFormDateCell.xib */,
+				D099EF751C748608008326C0 /* RTFormPickerCell.h */,
+				D099EF761C748608008326C0 /* RTFormPickerCell.m */,
+				D099EF781C748722008326C0 /* RTFormPickerCell.xib */,
 			);
 			name = "Specific Cells";
 			sourceTree = "<group>";
@@ -238,6 +246,7 @@
 				D0EFAAE41C6CADD700AB4008 /* RTFormOneLineFieldCell.xib in Resources */,
 				D0EFAAF51C6F9DC500AB4008 /* RTFormDateCell.xib in Resources */,
 				D0EFAADF1C6CA74B00AB4008 /* RTFormHeader.xib in Resources */,
+				D099EF791C748722008326C0 /* RTFormPickerCell.xib in Resources */,
 				D0EFAAB21C6B8D1E00AB4008 /* Assets.xcassets in Resources */,
 				D0EFAAEF1C6CFB8E00AB4008 /* RTFormSegmentsCell.xib in Resources */,
 			);
@@ -255,6 +264,7 @@
 				D0EFAAC21C6B8ED100AB4008 /* RTFormBaseCell.m in Sources */,
 				D0EFAAE31C6CADD700AB4008 /* RTFormOneLineFieldCell.m in Sources */,
 				D0EFAAC81C6B995000AB4008 /* RTRegisterCustomerController.m in Sources */,
+				D099EF771C748608008326C0 /* RTFormPickerCell.m in Sources */,
 				D0EFAADC1C6CA72400AB4008 /* RTFormHeader.m in Sources */,
 				D0EFAAAA1C6B8D1E00AB4008 /* AppDelegate.m in Sources */,
 				D0EFAABF1C6B8EA000AB4008 /* RTFormController.m in Sources */,

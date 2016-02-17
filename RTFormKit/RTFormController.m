@@ -22,6 +22,7 @@
 	if (!self) return nil;
 
 	_dateEditingIndexPath = nil;
+	_pickerEditingIndexPath = nil;
 	[[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(handleNotification:) name:UIKeyboardWillShowNotification object:nil];
 	[[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(handleNotification:) name:UIKeyboardWillHideNotification object:nil];
 
@@ -92,6 +93,8 @@
 	[self.tableView registerNib:[RTFormSegmentsCell nib] forCellReuseIdentifier:[RTFormSegmentsCell reuseIdentifier]];
 	[self.tableView registerNib:[RTFormDateCell nib] forCellReuseIdentifier:[RTFormDateCell reuseIdentifier]];
 	[self.tableView registerNib:[RTFormDateCell nib] forCellReuseIdentifier:[RTFormDateCell reuseIdentifierEditing]];
+	[self.tableView registerNib:[RTFormPickerCell nib] forCellReuseIdentifier:[RTFormPickerCell reuseIdentifier]];
+	[self.tableView registerNib:[RTFormPickerCell nib] forCellReuseIdentifier:[RTFormPickerCell reuseIdentifierEditing]];
 
 }
 
@@ -146,16 +149,29 @@
 	if ([cell isKindOfClass:[RTFormDateCell class]]) {
 		//	is some other date cell active? close it up before activating new one
 		if (self.dateEditingIndexPath) {
-			self.dateEditingIndexPath = nil;
 			[self.tableView reloadRowsAtIndexPaths:@[self.dateEditingIndexPath] withRowAnimation:UITableViewRowAnimationNone];
+			self.dateEditingIndexPath = nil;
 		}
 		self.dateEditingIndexPath = indexPath;
 		[self.tableView reloadRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationAutomatic];
+
+	} else if ([cell isKindOfClass:[RTFormPickerCell class]]) {
+		//	is some other picker cell active? close it up before activating new one
+		if (self.pickerEditingIndexPath) {
+			[self.tableView reloadRowsAtIndexPaths:@[self.pickerEditingIndexPath] withRowAnimation:UITableViewRowAnimationNone];
+			self.pickerEditingIndexPath = nil;
+		}
+		self.pickerEditingIndexPath = indexPath;
+		[self.tableView reloadRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationAutomatic];
+
 	} else {
-		//	close-up the date cell if some other type of cell is activated
+		//	close-up the date/picker cell if some other type of cell is activated
 		if (self.dateEditingIndexPath) {
-			self.dateEditingIndexPath = nil;
 			[self.tableView reloadRowsAtIndexPaths:@[self.dateEditingIndexPath] withRowAnimation:UITableViewRowAnimationAutomatic];
+			self.dateEditingIndexPath = nil;
+		} else if (self.pickerEditingIndexPath) {
+			[self.tableView reloadRowsAtIndexPaths:@[self.pickerEditingIndexPath] withRowAnimation:UITableViewRowAnimationAutomatic];
+			self.pickerEditingIndexPath = nil;
 		}
 	}
 
@@ -168,6 +184,10 @@
 	if ([cell isKindOfClass:[RTFormDateCell class]]) {
 		self.dateEditingIndexPath = nil;
 		[self.tableView reloadRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationAutomatic];
+
+	} else if ([cell isKindOfClass:[RTFormPickerCell class]]) {
+		self.pickerEditingIndexPath = nil;
+		[self.tableView reloadRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationAutomatic];
 	}
 }
 
@@ -176,6 +196,11 @@
 	NSIndexPath *indexPath = [self.tableView indexPathForCell:cell];
 	if ([cell isKindOfClass:[RTFormDateCell class]]) {
 		self.dateEditingIndexPath = nil;
+		[self.tableView reloadRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationAutomatic];
+		return;
+
+	} else if ([cell isKindOfClass:[RTFormPickerCell class]]) {
+		self.pickerEditingIndexPath = nil;
 		[self.tableView reloadRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationAutomatic];
 		return;
 	}
