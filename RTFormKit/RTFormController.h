@@ -7,14 +7,14 @@
 //
 
 @import UIKit;
+#import "RTFormDataSource.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
-@protocol RTFormDataSource;
 @interface RTFormController : UIViewController < UITableViewDelegate, RTFormDataSource >
 
 @property (nonatomic, strong, readonly) UITableView *tableView;
-@property (nonatomic, strong, nullable, readonly) NSIndexPath *dateEditingIndexPath;
+@property (nonatomic, strong, nullable) NSIndexPath *dateEditingIndexPath;
 
 @end
 

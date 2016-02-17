@@ -11,7 +11,6 @@
 @interface RTFormController ()
 
 @property (nonatomic, strong) UITableView *tableView;
-@property (nonatomic, strong, nullable) NSIndexPath *dateEditingIndexPath;
 
 @end
 
@@ -65,7 +64,9 @@
 	tv.estimatedSectionHeaderHeight = 44;
 	tv.estimatedSectionFooterHeight = 0;
 
-	tv.cellLayoutMarginsFollowReadableWidth = YES;
+	if ([tv respondsToSelector:@selector(cellLayoutMarginsFollowReadableWidth)]) {
+		tv.cellLayoutMarginsFollowReadableWidth = YES;
+	}
 	tv.separatorColor = [UIColor formSeparatorColor];
 	tv.separatorStyle = UITableViewCellSeparatorStyleSingleLine;
 	[self.view addSubview:tv];
