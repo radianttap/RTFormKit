@@ -87,12 +87,12 @@
                             <constraint firstItem="Iot-Wi-CYn" firstAttribute="top" relation="greaterThanOrEqual" secondItem="345-fF-HBa" secondAttribute="bottom" constant="8" id="5zF-TG-ErM"/>
                             <constraint firstItem="dbw-um-ouF" firstAttribute="top" secondItem="JEP-r4-wWe" secondAttribute="topMargin" id="9mZ-eo-e4x"/>
                             <constraint firstItem="345-fF-HBa" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="dbw-um-ouF" secondAttribute="trailing" constant="8" id="Enk-9q-cXH"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="Iot-Wi-CYn" secondAttribute="trailing" id="Idf-EP-rNc"/>
+                            <constraint firstAttribute="trailing" secondItem="Iot-Wi-CYn" secondAttribute="trailing" id="Idf-EP-rNc"/>
                             <constraint firstItem="Iot-Wi-CYn" firstAttribute="top" relation="greaterThanOrEqual" secondItem="dbw-um-ouF" secondAttribute="bottom" constant="8" id="MnL-tp-yUW"/>
                             <constraint firstAttribute="trailingMargin" secondItem="345-fF-HBa" secondAttribute="trailing" id="a65-KB-NE4"/>
                             <constraint firstAttribute="bottomMargin" secondItem="345-fF-HBa" secondAttribute="bottom" id="aSX-gp-xU4"/>
                             <constraint firstAttribute="bottomMargin" secondItem="Iot-Wi-CYn" secondAttribute="bottom" priority="999" id="gqq-50-UHy"/>
-                            <constraint firstItem="Iot-Wi-CYn" firstAttribute="leading" secondItem="JEP-r4-wWe" secondAttribute="leadingMargin" id="vRC-an-Krx"/>
+                            <constraint firstItem="Iot-Wi-CYn" firstAttribute="leading" secondItem="JEP-r4-wWe" secondAttribute="leading" id="vRC-an-Krx"/>
                             <constraint firstItem="dbw-um-ouF" firstAttribute="leading" secondItem="JEP-r4-wWe" secondAttribute="leadingMargin" constant="7" id="zec-ha-D2b"/>
                         </constraints>
                         <variation key="default">
