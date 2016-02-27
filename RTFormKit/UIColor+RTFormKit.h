@@ -21,6 +21,7 @@ NS_ASSUME_NONNULL_BEGIN
 + (UIColor *)formBackgroundColor;
 + (UIColor *)formBackgroundAlternateColor;
 + (UIColor *)formBackgroundSelectedColor;
++ (UIColor *)formBackgroundActiveColor;
 + (UIColor *)formBackgroundFooterColor;
 
 + (UIColor *)formTextHeaderColor;

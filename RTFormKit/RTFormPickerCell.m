@@ -63,21 +63,17 @@
 	self.separator.backgroundColor = [UIColor formSeparatorColor];
 	self.separator.hidden = YES;
 	self.valueButton.layer.borderColor = [UIColor formTintColor].CGColor;
-	self.tableView.backgroundColor = self.contentView.backgroundColor;
+	self.tableView.backgroundColor = [UIColor clearColor];
 
 	self.titleLabel.textColor = [UIColor formTextMainColor];
-}
-
-- (void)prepareForReuse {
-	[super prepareForReuse];
-
-	[self.tableView reloadData];
 }
 
 - (void)setupUsingConfiguration:(NSDictionary<NSNumber *,id> *)config {
 
 	self.hintLabel.text = nil;
 	self.explainLabel.text = nil;
+
+	self.contentView.backgroundColor = (self.isValueEditingEnabled) ? [UIColor formBackgroundActiveColor] : [UIColor formBackgroundColor];
 
 	[config enumerateKeysAndObjectsUsingBlock:^(NSNumber * _Nonnull key, id  _Nonnull obj, BOOL * _Nonnull stop) {
 		switch ((RTFormConfig)key.integerValue) {
@@ -87,12 +83,10 @@
 			}
 			case RTFormConfigValue: {
 				self.dataValue = obj;
-				[self updateShownValue];
 				break;
 			}
 			case RTFormConfigDefaultValue: {
 				self.defaultValue = obj;
-				[self updateShownValue];
 				break;
 			}
 			case RTFormConfigTitle: {
@@ -117,6 +111,8 @@
 		}
 	}];
 
+	[self.tableView reloadData];
+	[self updateShownValue];
 	[self setNeedsUpdateConstraints];
 }
 

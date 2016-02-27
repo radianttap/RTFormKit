@@ -47,7 +47,7 @@
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <segmentedControl opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="950" verticalHuggingPriority="750" horizontalCompressionResistancePriority="999" verticalCompressionResistancePriority="1000" ambiguous="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="n9R-xI-G9u">
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="950" verticalHuggingPriority="750" horizontalCompressionResistancePriority="999" verticalCompressionResistancePriority="1000" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="n9R-xI-G9u">
                                 <rect key="frame" x="191" y="8" width="121" height="29"/>
                                 <segments>
                                     <segment title="First"/>
@@ -62,10 +62,10 @@
                             <constraint firstItem="QeY-Kr-N0V" firstAttribute="leading" secondItem="JEP-r4-wWe" secondAttribute="leadingMargin" constant="7" id="2MF-F6-mG8"/>
                             <constraint firstItem="QeY-Kr-N0V" firstAttribute="top" relation="greaterThanOrEqual" secondItem="JEP-r4-wWe" secondAttribute="topMargin" id="8u9-LJ-rEH"/>
                             <constraint firstAttribute="trailingMargin" secondItem="n9R-xI-G9u" secondAttribute="trailing" id="GAa-xA-Or2"/>
-                            <constraint firstAttribute="topMargin" secondItem="n9R-xI-G9u" secondAttribute="top" priority="900" id="QK8-Ip-Nk2"/>
+                            <constraint firstItem="n9R-xI-G9u" firstAttribute="top" secondItem="JEP-r4-wWe" secondAttribute="topMargin" priority="900" constant="8" id="QK8-Ip-Nk2"/>
                             <constraint firstItem="n9R-xI-G9u" firstAttribute="top" secondItem="QeY-Kr-N0V" secondAttribute="bottom" constant="8" id="Qva-Fo-Ie4"/>
                             <constraint firstItem="QeY-Kr-N0V" firstAttribute="centerY" secondItem="n9R-xI-G9u" secondAttribute="centerY" priority="900" id="exB-hC-ldW"/>
-                            <constraint firstAttribute="bottomMargin" secondItem="n9R-xI-G9u" secondAttribute="bottom" id="zfd-L2-4vx"/>
+                            <constraint firstAttribute="bottomMargin" secondItem="n9R-xI-G9u" secondAttribute="bottom" constant="8" id="zfd-L2-4vx"/>
                         </constraints>
                         <variation key="default">
                             <mask key="constraints">
@@ -107,13 +107,13 @@
                     <constraint firstItem="JEP-r4-wWe" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="0wc-vR-1Ar"/>
                     <constraint firstAttribute="trailing" secondItem="0VC-Gu-Hpj" secondAttribute="trailing" id="30N-Gn-ynC"/>
                     <constraint firstAttribute="trailing" secondItem="JEP-r4-wWe" secondAttribute="trailing" id="370-6x-U3m"/>
-                    <constraint firstItem="ZJF-fs-geq" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="8" id="4LL-Kc-Gg1"/>
+                    <constraint firstItem="ZJF-fs-geq" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="4LL-Kc-Gg1"/>
                     <constraint firstAttribute="trailing" secondItem="ZJF-fs-geq" secondAttribute="trailing" id="5Nc-h8-Km1"/>
                     <constraint firstItem="ZJF-fs-geq" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="8OG-09-n5X"/>
                     <constraint firstItem="0VC-Gu-Hpj" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="Gb5-nq-SkL"/>
                     <constraint firstItem="0VC-Gu-Hpj" firstAttribute="top" secondItem="JEP-r4-wWe" secondAttribute="bottom" id="IP9-xs-Gt5"/>
                     <constraint firstItem="vqa-8Y-If3" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="OdI-MA-mhX"/>
-                    <constraint firstAttribute="bottom" secondItem="0VC-Gu-Hpj" secondAttribute="bottom" constant="8" id="PuQ-1K-x6e"/>
+                    <constraint firstAttribute="bottom" secondItem="0VC-Gu-Hpj" secondAttribute="bottom" id="PuQ-1K-x6e"/>
                     <constraint firstItem="JEP-r4-wWe" firstAttribute="top" secondItem="ZJF-fs-geq" secondAttribute="bottom" id="aar-Ql-okT"/>
                     <constraint firstAttribute="trailing" secondItem="vqa-8Y-If3" secondAttribute="trailing" id="edx-WR-xjV"/>
                     <constraint firstItem="vqa-8Y-If3" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="yY7-d6-KRK"/>
