@@ -66,6 +66,12 @@
 	self.titleLabel.textColor = [UIColor formTextMainColor];
 }
 
+- (void)prepareForReuse {
+	[super prepareForReuse];
+
+	[self.tableView reloadData];
+}
+
 - (void)setupUsingConfiguration:(NSDictionary<NSNumber *,id> *)config {
 
 	self.hintLabel.text = nil;
@@ -138,24 +144,33 @@
 
 - (void)updateShownValue {
 
-	NSInteger indexToPreselect = 0;
+	NSInteger indexToPreselect = NSNotFound;
 
 	if (self.dataValue) {
 		NSArray *values = [self.dataSource valuesForMultiValueFormCell:self];
-		NSInteger indexOfValue = [values indexOfObject:self.dataValue];
-		indexToPreselect = indexOfValue;
+		if (values.count > 0) {
+			NSInteger indexOfValue = [values indexOfObject:self.dataValue];
+			indexToPreselect = indexOfValue;
 
-		NSArray< NSString* > *titles = [self.dataSource titlesForMultiValueFormCell:self];
-		NSString *valueTitle = titles[indexOfValue];
-		[self.valueButton setTitle:valueTitle forState:UIControlStateNormal];
+			if (indexOfValue != NSNotFound) {
+				NSArray< NSString* > *titles = [self.dataSource titlesForMultiValueFormCell:self];
+				NSString *valueTitle = titles[indexOfValue];
+				[self.valueButton setTitle:valueTitle forState:UIControlStateNormal];
+			}
+		}
 
 	} else {
 		NSArray *values = [self.dataSource valuesForMultiValueFormCell:self];
-		NSInteger indexOfValue = [values indexOfObject:self.defaultValue];
-		if (indexOfValue != NSNotFound) indexToPreselect = indexOfValue;
+		if (values.count > 0) {
+			NSInteger indexOfValue = [values indexOfObject:self.defaultValue];
+			indexToPreselect = indexOfValue;
 
-		[self.valueButton setTitle:NSLocalizedString(@"Tap to Set", nil) forState:UIControlStateNormal];
+			[self.valueButton setTitle:NSLocalizedString(@"Tap to Set", nil) forState:UIControlStateNormal];
+		}
 	}
+
+	if (indexToPreselect == NSNotFound) return;
+	if (!self.isValueEditingEnabled) return;
 
 	NSIndexPath *indexPath = [NSIndexPath indexPathForRow:indexToPreselect inSection:0];
 	if (self.dataValue) {
