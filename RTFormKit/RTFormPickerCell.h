@@ -17,4 +17,6 @@
 + (NSString *)reuseIdentifierEditing;
 @property (nonatomic, getter=isValueEditingEnabled) BOOL valueEditingEnabled;
 
+@property (nonatomic, getter=shouldAutoCollapseAfterSelection) BOOL autoCollapseAfterSelection;
+
 @end

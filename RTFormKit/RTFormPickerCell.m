@@ -55,6 +55,7 @@
 	_dataValue = nil;
 	_defaultValue = nil;
 	_valueEditingEnabled = NO;
+	_autoCollapseAfterSelection = YES;
 
 	self.cellType = RTFormCellTypeMultiValuePicker;
 	self.hintLabel.textColor = [UIColor formTextNotabeneColor];
@@ -62,6 +63,7 @@
 	self.separator.backgroundColor = [UIColor formSeparatorColor];
 	self.separator.hidden = YES;
 	self.valueButton.layer.borderColor = [UIColor formTintColor].CGColor;
+	self.tableView.backgroundColor = self.contentView.backgroundColor;
 
 	self.titleLabel.textColor = [UIColor formTextMainColor];
 }
@@ -193,8 +195,10 @@
 	NSArray< NSString* > *titles = [self.dataSource titlesForMultiValueFormCell:self];
 
 	UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:[self.class reuseIdentifier] forIndexPath:indexPath];
+	cell.contentView.backgroundColor = self.contentView.backgroundColor;
 	cell.selectionStyle = UITableViewCellSelectionStyleDefault;
 	cell.textLabel.text = titles[indexPath.row];
+	cell.textLabel.backgroundColor = [UIColor clearColor];
 
 	return cell;
 }
@@ -208,6 +212,10 @@
 
 	if ([self.delegate respondsToSelector:@selector(formCell:didChangeValue:)]) {
 		[self.delegate formCell:self didChangeValue:self.dataValue];
+	}
+
+	if (self.shouldAutoCollapseAfterSelection) {
+		[self buttonTapped:nil];
 	}
 }
 
