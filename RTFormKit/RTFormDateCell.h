@@ -12,6 +12,7 @@
 
 @property (nonatomic, weak, readonly) UILabel *titleLabel;
 @property (nonatomic, weak, readonly) UIButton *dateButton;
+@property (nonatomic, weak, readonly) UIDatePicker *datePicker;
 @property (nonatomic, weak, readonly) UIView *separator;
 
 @property (nonatomic) NSDateFormatter *dateFormatter;

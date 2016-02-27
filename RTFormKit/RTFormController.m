@@ -146,6 +146,10 @@
 - (void)formCellDidActivate:(RTFormBaseCell *)cell {
 
 	NSIndexPath *indexPath = [self.tableView indexPathForCell:cell];
+	if (!indexPath) {
+		return;
+	}
+
 	if ([cell isKindOfClass:[RTFormDateCell class]]) {
 		//	is some other date cell active? close it up before activating new one
 		if (self.dateEditingIndexPath) {
@@ -181,6 +185,10 @@
 - (void)formCellDidDeactivate:(RTFormBaseCell *)cell {
 
 	NSIndexPath *indexPath = [self.tableView indexPathForCell:cell];
+	if (!indexPath) {
+		return;
+	}
+
 	if ([cell isKindOfClass:[RTFormDateCell class]]) {
 		self.dateEditingIndexPath = nil;
 		[self.tableView reloadRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationAutomatic];
