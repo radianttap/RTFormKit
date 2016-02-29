@@ -10,8 +10,8 @@
 
 @interface RTFormPickerCell () < UITableViewDataSource, UITableViewDelegate >
 
-@property (nonatomic, copy) NSString *dataValue;
-@property (nonatomic, copy) NSString *defaultValue;
+@property (nonatomic, copy) id dataValue;
+@property (nonatomic, copy) id defaultValue;
 
 @property (nonatomic, weak) IBOutlet UIView *separator;
 @property (nonatomic, weak) IBOutlet UIView *innerContentView;
@@ -70,6 +70,8 @@
 
 - (void)setupUsingConfiguration:(NSDictionary<NSNumber *,id> *)config {
 
+	self.dataValue = nil;
+	self.defaultValue = nil;
 	self.hintLabel.text = nil;
 	self.explainLabel.text = nil;
 
@@ -129,6 +131,9 @@
 
 - (IBAction)buttonTapped:(UIButton *)sender {
 
+	NSArray *values = [self.dataSource valuesForMultiValueFormCell:self];
+	if (values.count <= 1) return;
+
 	if (self.isValueEditingEnabled) {
 		if ([self.delegate respondsToSelector:@selector(formCellDidDeactivate:)]) {
 			[self.delegate formCellDidDeactivate:self];
@@ -142,10 +147,18 @@
 
 - (void)updateShownValue {
 
+	NSArray *values = [self.dataSource valuesForMultiValueFormCell:self];
+	if (values.count == 1) {
+		if ( ![self.dataValue isEqual:values.firstObject] ) {
+			self.dataValue = values.firstObject;
+			if ([self.delegate respondsToSelector:@selector(formCell:didChangeValue:)]) {
+				[self.delegate formCell:self didChangeValue:self.dataValue];
+			}
+		}
+	}
 	NSInteger indexToPreselect = NSNotFound;
 
 	if (self.dataValue) {
-		NSArray *values = [self.dataSource valuesForMultiValueFormCell:self];
 		if (values.count > 0) {
 			NSInteger indexOfValue = [values indexOfObject:self.dataValue];
 			indexToPreselect = indexOfValue;
@@ -157,7 +170,7 @@
 			}
 		}
 
-	} else {
+	} else if (self.defaultValue) {
 		NSArray *values = [self.dataSource valuesForMultiValueFormCell:self];
 		if (values.count > 0) {
 			NSInteger indexOfValue = [values indexOfObject:self.defaultValue];
@@ -167,7 +180,10 @@
 		}
 	}
 
-	if (indexToPreselect == NSNotFound) return;
+	if (indexToPreselect == NSNotFound) {
+		[self.valueButton setTitle:NSLocalizedString(@"Tap to Set", nil) forState:UIControlStateNormal];
+		return;
+	}
 	if (!self.isValueEditingEnabled) return;
 
 	NSIndexPath *indexPath = [NSIndexPath indexPathForRow:indexToPreselect inSection:0];

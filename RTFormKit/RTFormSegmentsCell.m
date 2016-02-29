@@ -10,8 +10,8 @@
 
 @interface RTFormSegmentsCell ()
 
-@property (nonatomic, copy) NSString *dataValue;
-@property (nonatomic, copy) NSString *defaultValue;
+@property (nonatomic, copy) id dataValue;
+@property (nonatomic, copy) id defaultValue;
 
 @property (nonatomic, weak) IBOutlet UIView *separator;
 @property (nonatomic, weak) IBOutlet UIView *innerContentView;
@@ -59,6 +59,8 @@
 
 - (void)setupUsingConfiguration:(NSDictionary<NSNumber *,id> *)config {
 
+	self.dataValue = nil;
+	self.defaultValue = nil;
 	self.hintLabel.text = nil;
 	self.explainLabel.text = nil;
 

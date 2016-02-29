@@ -55,8 +55,16 @@
 	[self.textField addTarget:self action:@selector(textFieldValueChanged:) forControlEvents:UIControlEventEditingChanged];
 }
 
+- (void)prepareForReuse {
+	[super prepareForReuse];
+
+	self.textField.text = nil;
+}
+
 - (void)setupUsingConfiguration:(NSDictionary<NSNumber *,id> *)config {
 
+	self.dataValue = nil;
+	self.defaultValue = nil;
 	self.hintLabel.text = nil;
 	self.explainLabel.text = nil;
 
@@ -71,12 +79,10 @@
 			}
 			case RTFormConfigValue: {
 				self.dataValue = obj;
-				self.textField.text = obj;
 				break;
 			}
 			case RTFormConfigDefaultValue: {
 				self.defaultValue = obj;
-				if (self.dataValue.length == 0) self.textField.text = obj;
 				break;
 			}
 			case RTFormConfigPlaceholder: {
@@ -103,6 +109,7 @@
 		}
 	}];
 
+	[self updateShownValue];
 	[self setNeedsUpdateConstraints];
 }
 
@@ -111,6 +118,17 @@
 	self.explainHeightConstraint.active = (self.explainLabel.text.length == 0);
 
 	[super updateConstraints];
+}
+
+- (void)updateShownValue {
+
+	if (self.dataValue.length > 0) {
+		self.textField.text = self.dataValue;
+	} else if (self.defaultValue.length > 0) {
+		self.textField.text = self.defaultValue;
+	} else {
+		self.textField.text = nil;
+	}
 }
 
 #pragma mark - Text Field

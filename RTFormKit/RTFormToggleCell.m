@@ -58,6 +58,8 @@
 
 - (void)setupUsingConfiguration:(NSDictionary<NSNumber *,id> *)config {
 
+	self.dataValue = nil;
+	self.defaultValue = nil;
 	self.hintLabel.text = nil;
 	self.explainLabel.text = nil;
 

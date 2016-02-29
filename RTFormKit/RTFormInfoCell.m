@@ -45,6 +45,9 @@
 
 - (void)setupUsingConfiguration:(NSDictionary<NSNumber *,id> *)config {
 
+	self.dataValue = nil;
+	self.defaultValue = nil;
+
 	[config enumerateKeysAndObjectsUsingBlock:^(NSNumber * _Nonnull key, id  _Nonnull obj, BOOL * _Nonnull stop) {
 		switch ((RTFormConfig)key.integerValue) {
 			case RTFormConfigKey: {

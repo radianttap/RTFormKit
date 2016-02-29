@@ -66,6 +66,8 @@
 
 - (void)setupUsingConfiguration:(NSDictionary<NSNumber *,id> *)config {
 
+	self.dataValue = nil;
+	self.defaultValue = nil;
 	self.hintLabel.text = nil;
 	self.explainLabel.text = nil;
 
@@ -77,16 +79,10 @@
 			}
 			case RTFormConfigValue: {
 				self.dataValue = obj;
-				self.datePicker.date = obj;
-				[self updateShownDate];
 				break;
 			}
 			case RTFormConfigDefaultValue: {
 				self.defaultValue = obj;
-				if (!self.dataValue) {
-					self.datePicker.date = obj;
-					[self updateShownDate];
-				}
 				break;
 			}
 			case RTFormConfigTitle: {
@@ -111,6 +107,7 @@
 		}
 	}];
 
+	[self updateShownDate];
 	[self setNeedsUpdateConstraints];
 }
 
