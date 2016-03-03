@@ -82,6 +82,11 @@ typedef NS_ENUM(NSInteger, RTFormConfig) {
 	RTFormConfigTitle,
 
 	/**
+	 *	NSString, title of the cell, displayed prominently
+	 */
+	RTFormConfigSubtitle,
+
+	/**
 	 *	id, current value to display. Each cell type will handle this as appropriate
 	 */
 	RTFormConfigValue,

@@ -3,6 +3,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9530"/>
+        <capability name="Alignment constraints with different attributes" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <objects>
@@ -16,7 +17,13 @@
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="751" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dsU-ui-pWB">
-                        <rect key="frame" x="15" y="16" width="297" height="11"/>
+                        <rect key="frame" x="15" y="16" width="40" height="11"/>
+                        <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
+                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="751" verticalHuggingPriority="751" text="2" textAlignment="right" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="z2e-7y-ubg">
+                        <rect key="frame" x="302" y="12" width="10" height="20"/>
                         <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
                         <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                         <nil key="highlightedColor"/>
@@ -30,19 +37,29 @@
                 </subviews>
                 <constraints>
                     <constraint firstAttribute="trailing" secondItem="ySo-wM-zAM" secondAttribute="trailing" id="8hh-fD-FqR"/>
-                    <constraint firstAttribute="bottomMargin" secondItem="dsU-ui-pWB" secondAttribute="bottom" constant="8" id="8uf-oc-UfV"/>
+                    <constraint firstAttribute="bottomMargin" secondItem="dsU-ui-pWB" secondAttribute="bottom" priority="999" constant="8" id="8uf-oc-UfV"/>
                     <constraint firstItem="ySo-wM-zAM" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="FF6-OP-JVU"/>
+                    <constraint firstAttribute="trailingMargin" secondItem="z2e-7y-ubg" secondAttribute="trailing" priority="999" id="QoX-d5-Gxo"/>
+                    <constraint firstItem="dsU-ui-pWB" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerYWithinMargins" id="UrZ-96-dxG"/>
+                    <constraint firstItem="z2e-7y-ubg" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="dsU-ui-pWB" secondAttribute="trailing" constant="8" id="X7f-Jm-q44"/>
+                    <constraint firstItem="z2e-7y-ubg" firstAttribute="centerY" secondItem="dsU-ui-pWB" secondAttribute="centerY" id="XkQ-eE-Vyz"/>
                     <constraint firstItem="dsU-ui-pWB" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" constant="8" id="hec-9P-XkW"/>
                     <constraint firstItem="dsU-ui-pWB" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" constant="7" id="m48-mo-FqS"/>
                     <constraint firstItem="ySo-wM-zAM" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="qaf-f2-xhX"/>
                     <constraint firstAttribute="trailingMargin" secondItem="dsU-ui-pWB" secondAttribute="trailing" id="vEZ-lf-zQd"/>
                 </constraints>
+                <variation key="default">
+                    <mask key="constraints">
+                        <exclude reference="vEZ-lf-zQd"/>
+                    </mask>
+                </variation>
             </tableViewCellContentView>
             <connections>
                 <outlet property="infoLabel" destination="dsU-ui-pWB" id="XWE-AR-n2M"/>
                 <outlet property="separator" destination="ySo-wM-zAM" id="EHd-4i-JBZ"/>
+                <outlet property="sideLabel" destination="z2e-7y-ubg" id="TAQ-Fk-cv4"/>
             </connections>
-            <point key="canvasLocation" x="246" y="231"/>
+            <point key="canvasLocation" x="-7" y="50"/>
         </tableViewCell>
     </objects>
 </document>
