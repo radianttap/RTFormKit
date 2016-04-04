@@ -222,12 +222,12 @@
 	self.dataValue = values[indexPath.row];
 	[self updateShownValue];
 
-	if ([self.delegate respondsToSelector:@selector(formCell:didChangeValue:)]) {
-		[self.delegate formCell:self didChangeValue:self.dataValue];
-	}
-
 	if (self.shouldAutoCollapseAfterSelection) {
 		[self buttonTapped:nil];
+	}
+
+	if ([self.delegate respondsToSelector:@selector(formCell:didChangeValue:)]) {
+		[self.delegate formCell:self didChangeValue:self.dataValue];
 	}
 }
 
