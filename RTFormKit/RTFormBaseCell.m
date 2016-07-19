@@ -44,13 +44,13 @@
 	//	prevent visual cell selection
 	self.selectionStyle = UITableViewCellSelectionStyleNone;
 
-	//	prepare row for self-sizing
-	NSDictionary *metrics = @{@"rowHeight": @(54)};
-	NSDictionary *vd = @{@"cv": self.contentView};
-	[self.contentView addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:[cv(rowHeight@749)]"
-																			 options:0
-																			 metrics:metrics
-																			   views:vd]];
+//	//	prepare row for self-sizing
+//	NSDictionary *metrics = @{@"rowHeight": @(54)};
+//	NSDictionary *vd = @{@"cv": self.contentView};
+//	[self.contentView addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:[cv(rowHeight@749)]"
+//																			 options:0
+//																			 metrics:metrics
+//																			   views:vd]];
 	[self commonInit];
 	return self;
 }
