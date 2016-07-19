@@ -12,7 +12,8 @@
 NS_ASSUME_NONNULL_BEGIN
 
 /**
- *	Basic form controller. Should cover most cases that you need, subclass to customize
+ *	Basic form controller. Should cover most cases that you need.
+ *	You *must* subclass it to define data source and implement UITableViewDataSource as minimum.
  */
 @interface RTFormController : UIViewController < UITableViewDelegate, RTFormDataSource >
 
