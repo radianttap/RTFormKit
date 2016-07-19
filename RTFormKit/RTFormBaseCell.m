@@ -8,6 +8,7 @@
 
 #import "UIColor+RTFormKit.h"
 #import "RTFormBaseCell.h"
+#import "RTFormDataItem.h"
 
 @interface RTFormBaseCell ()
 
@@ -77,7 +78,7 @@
 	self.enabled = YES;
 }
 
-- (void)setupUsingConfiguration:(NSDictionary< NSNumber*,id > *)config {}
+- (void)setupUsingConfiguration:(RTFormDataItem *)config {}
 
 - (void)applyTheme:(NSNotification *)notification {}
 

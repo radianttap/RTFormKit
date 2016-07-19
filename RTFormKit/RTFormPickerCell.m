@@ -68,51 +68,32 @@
 	self.titleLabel.textColor = [UIColor formTextMainColor];
 }
 
-- (void)setupUsingConfiguration:(NSDictionary<NSNumber *,id> *)config {
+- (void)setupUsingConfiguration:(RTFormDataItem *)config {
 
-	self.dataValue = nil;
-	self.defaultValue = nil;
+	//	defaults
+	self.titleLabel.text = nil;
 	self.hintLabel.text = nil;
 	self.explainLabel.text = nil;
 
+	//	setup
+	self.key = config.key;
+	self.dataValue = config.value;
+	self.defaultValue = config.defaultValue;
+	self.enabled = !config.isDisabled;
+
+	if ( config.hint ) {
+		self.hintLabel.text = config.hint;
+	}
+
+	if ( config.explanation ) {
+		self.explainLabel.text = config.explanation;
+	}
+
+	if ( config.title ) {
+		self.titleLabel.text = config.title;
+	}
+
 	self.contentView.backgroundColor = (self.isValueEditingEnabled) ? [UIColor formBackgroundActiveColor] : [UIColor formBackgroundColor];
-
-	[config enumerateKeysAndObjectsUsingBlock:^(NSNumber * _Nonnull key, id  _Nonnull obj, BOOL * _Nonnull stop) {
-		switch ((RTFormConfig)key.integerValue) {
-			case RTFormConfigKey: {
-				self.key = obj;
-				break;
-			}
-			case RTFormConfigValue: {
-				self.dataValue = obj;
-				break;
-			}
-			case RTFormConfigDefaultValue: {
-				self.defaultValue = obj;
-				break;
-			}
-			case RTFormConfigTitle: {
-				self.titleLabel.text = obj;
-				break;
-			}
-			case RTFormConfigHint: {
-				self.hintLabel.text = obj;
-				break;
-			}
-			case RTFormConfigExplanation: {
-				self.explainLabel.text = obj;
-				break;
-			}
-			case RTFormConfigDisabled: {
-				self.enabled = ![(NSNumber *)obj boolValue];
-				break;
-			}
-			default: {
-				break;
-			}
-		}
-	}];
-
 	[self.tableView reloadData];
 	[self updateShownValue];
 	[self setNeedsUpdateConstraints];

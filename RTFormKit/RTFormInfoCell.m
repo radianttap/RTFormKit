@@ -48,40 +48,13 @@
 	self.sideLabel.text = nil;
 }
 
-- (void)setupUsingConfiguration:(NSDictionary<NSNumber *,id> *)config {
+- (void)setupUsingConfiguration:(RTFormDataItem *)config {
 
-	self.dataValue = nil;
-	self.defaultValue = nil;
-	self.subValue = nil;
-
-	[config enumerateKeysAndObjectsUsingBlock:^(NSNumber * _Nonnull key, id  _Nonnull obj, BOOL * _Nonnull stop) {
-		switch ((RTFormConfig)key.integerValue) {
-			case RTFormConfigKey: {
-				self.key = obj;
-				break;
-			}
-			case RTFormConfigTitle:
-			case RTFormConfigValue: {
-				self.dataValue = obj;
-				break;
-			}
-			case RTFormConfigDefaultValue: {
-				self.defaultValue = obj;
-				break;
-			}
-			case RTFormConfigSubtitle: {
-				self.subValue = obj;
-				break;
-			}
-			case RTFormConfigDisabled: {
-				self.enabled = ![(NSNumber *)obj boolValue];
-				break;
-			}
-			default: {
-				break;
-			}
-		}
-	}];
+	self.key = config.key;
+	self.dataValue = config.value;
+	self.defaultValue = config.defaultValue;
+	self.subValue = config.subtitle;
+	self.enabled = !config.isDisabled;
 
 	[self updateShownValue];
 }

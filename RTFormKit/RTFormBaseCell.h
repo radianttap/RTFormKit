@@ -11,6 +11,8 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
+@class RTFormDataItem;
+
 /**
  *	Base cell for all other form cells
  */
@@ -29,7 +31,7 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic) BOOL enabled;
 
 - (void)commonInit;
-- (void)setupUsingConfiguration:(NSDictionary< NSNumber*,id > *)config;
+- (void)setupUsingConfiguration:(RTFormDataItem *)config;
 - (void)applyTheme:(NSNotification *)notification;
 
 @end

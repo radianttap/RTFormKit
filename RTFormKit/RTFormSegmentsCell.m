@@ -57,48 +57,30 @@
 	self.titleLabel.textColor = [UIColor formTextMainColor];
 }
 
-- (void)setupUsingConfiguration:(NSDictionary<NSNumber *,id> *)config {
+- (void)setupUsingConfiguration:(RTFormDataItem *)config {
 
-	self.dataValue = nil;
-	self.defaultValue = nil;
+	//	defaults
+	self.titleLabel.text = nil;
 	self.hintLabel.text = nil;
 	self.explainLabel.text = nil;
 
-	[config enumerateKeysAndObjectsUsingBlock:^(NSNumber * _Nonnull key, id  _Nonnull obj, BOOL * _Nonnull stop) {
-		switch ((RTFormConfig)key.integerValue) {
-			case RTFormConfigKey: {
-				self.key = obj;
-				break;
-			}
-			case RTFormConfigValue: {
-				self.dataValue = obj;
-				break;
-			}
-			case RTFormConfigDefaultValue: {
-				self.defaultValue = obj;
-				break;
-			}
-			case RTFormConfigTitle: {
-				self.titleLabel.text = obj;
-				break;
-			}
-			case RTFormConfigHint: {
-				self.hintLabel.text = obj;
-				break;
-			}
-			case RTFormConfigExplanation: {
-				self.explainLabel.text = obj;
-				break;
-			}
-			case RTFormConfigDisabled: {
-				self.enabled = ![(NSNumber *)obj boolValue];
-				break;
-			}
-			default: {
-				break;
-			}
-		}
-	}];
+	//	setup
+	self.key = config.key;
+	self.dataValue = config.value;
+	self.defaultValue = config.defaultValue;
+	self.enabled = !config.isDisabled;
+
+	if ( config.hint ) {
+		self.hintLabel.text = config.hint;
+	}
+
+	if ( config.explanation ) {
+		self.explainLabel.text = config.explanation;
+	}
+
+	if ( config.title ) {
+		self.titleLabel.text = config.title;
+	}
 
 	//	populate segmented control
 	[self.segmentedControl removeAllSegments];
@@ -118,9 +100,9 @@
 	//	now that content is known, do internal layout pass to figure out do we need to switch to two-line layout
 	[self.innerContentView layoutIfNeeded];
 	//	however, this is done using whatever frame was set in .xib file (I usually go with 320 width)
-	//	thus this will yield proper sizes - unless label or segmented are larger than 320, in which case you shoudl not be using this type of cell
-	//	but origins for segmented will be wrong and way too small, thus additional translations are required in updateConstraints
+	//	thus this will yield proper sizes - unless label or segmented are larger than 320, in which case you should not be using this type of cell
 
+	//	but origins for segmented will be wrong and way too small, thus additional translations are required in updateConstraints
 	[self setNeedsUpdateConstraints];
 }
 
@@ -129,7 +111,7 @@
 	//	this method is called twice for the cell
 
 	//	here - in the 2nd layout pass - contentView will have proper width set (320 or 375 or whatever)
-	//	so use that to calculate would horizontal layout fit
+	//	so use that to calculate is it possible to use all-horizontal layout fit
 	CGFloat labelRightEdge = self.titleLabel.frame.origin.x + self.titleLabel.frame.size.width;
 	CGFloat segLeftEdge = self.contentView.frame.size.width - self.contentView.layoutMargins.right - self.segmentedControl.frame.size.width;
 	BOOL useHorizontalLayout = (labelRightEdge < segLeftEdge);

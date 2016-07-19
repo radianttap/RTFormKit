@@ -61,53 +61,30 @@
 	self.textField.text = nil;
 }
 
-- (void)setupUsingConfiguration:(NSDictionary<NSNumber *,id> *)config {
+- (void)setupUsingConfiguration:(RTFormDataItem *)config {
 
-	self.dataValue = nil;
-	self.defaultValue = nil;
+	//	defaults
 	self.hintLabel.text = nil;
 	self.explainLabel.text = nil;
-
 	self.hintHeightConstraint.active = YES;
 	self.explainHeightConstraint.active = YES;
 
-	[config enumerateKeysAndObjectsUsingBlock:^(NSNumber * _Nonnull key, id  _Nonnull obj, BOOL * _Nonnull stop) {
-		switch ((RTFormConfig)key.integerValue) {
-			case RTFormConfigKey: {
-				self.key = obj;
-				break;
-			}
-			case RTFormConfigValue: {
-				self.dataValue = obj;
-				break;
-			}
-			case RTFormConfigDefaultValue: {
-				self.defaultValue = obj;
-				break;
-			}
-			case RTFormConfigPlaceholder: {
-				self.textField.placeholder = obj;
-				break;
-			}
-			case RTFormConfigHint: {
-				self.hintLabel.text = obj;
-				self.hintHeightConstraint.active = NO;
-				break;
-			}
-			case RTFormConfigExplanation: {
-				self.explainLabel.text = obj;
-				self.explainHeightConstraint.active = NO;
-				break;
-			}
-			case RTFormConfigDisabled: {
-				self.enabled = ![(NSNumber *)obj boolValue];
-				break;
-			}
-			default: {
-				break;
-			}
-		}
-	}];
+	//	setup
+	self.key = config.key;
+	self.dataValue = config.value;
+	self.defaultValue = config.defaultValue;
+	self.enabled = !config.isDisabled;
+
+	self.textField.placeholder = config.placeholder;
+	if ( config.hint ) {
+		self.hintLabel.text = config.hint;
+		self.hintHeightConstraint.active = NO;
+	}
+
+	if ( config.explanation ) {
+		self.explainLabel.text = config.explanation;
+		self.explainHeightConstraint.active = NO;
+	}
 
 	[self updateShownValue];
 	[self setNeedsUpdateConstraints];
