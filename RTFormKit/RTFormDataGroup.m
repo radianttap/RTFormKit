@@ -7,7 +7,19 @@
 //
 
 #import "RTFormDataGroup.h"
+#import "RTFormDataItem.h"
 
 @implementation RTFormDataGroup
+
+- (instancetype)init {
+
+	self = [super init];
+	if ( !self ) return nil;
+
+	_title = @"";
+	_items = @[];
+
+	return self;
+}
 
 @end

@@ -8,6 +8,11 @@
 
 #import <Foundation/Foundation.h>
 
+@class RTFormDataItem;
+
 @interface RTFormDataGroup : NSObject
+
+@property (nonatomic, copy) NSString *title;
+@property (nonatomic, strong) NSArray< RTFormDataItem* > *items;
 
 @end
