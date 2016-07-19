@@ -201,14 +201,17 @@
 
 	NSArray *values = [self.dataSource valuesForMultiValueFormCell:self];
 	self.dataValue = values[indexPath.row];
-	[self updateShownValue];
-
-	if (self.shouldAutoCollapseAfterSelection) {
-		[self buttonTapped:nil];
-	}
 
 	if ([self.delegate respondsToSelector:@selector(formCell:didChangeValue:)]) {
 		[self.delegate formCell:self didChangeValue:self.dataValue];
+	}
+
+	if ( self.shouldAutoCollapseAfterSelection ) {
+		if ([self.delegate respondsToSelector:@selector(formCellDidDeactivate:)]) {
+			[self.delegate formCellDidDeactivate:self];
+		}
+	} else {
+		[self updateShownValue];
 	}
 }
 
