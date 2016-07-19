@@ -66,8 +66,6 @@
 	//	defaults
 	self.hintLabel.text = nil;
 	self.explainLabel.text = nil;
-	self.hintHeightConstraint.active = YES;
-	self.explainHeightConstraint.active = YES;
 
 	//	setup
 	self.key = config.key;
@@ -76,14 +74,13 @@
 	self.enabled = !config.isDisabled;
 
 	self.textField.placeholder = config.placeholder;
+
 	if ( config.hint ) {
 		self.hintLabel.text = config.hint;
-		self.hintHeightConstraint.active = NO;
 	}
 
 	if ( config.explanation ) {
 		self.explainLabel.text = config.explanation;
-		self.explainHeightConstraint.active = NO;
 	}
 
 	[self updateShownValue];
