@@ -11,8 +11,7 @@
 
 @interface RTRegisterCustomerController () < RTFormCellDataSource >
 
-@property (nonatomic, copy) NSArray< NSString* > *sectionNames;
-
+@property (nonatomic, copy) NSArray< RTFormDataGroup* > *dataSource;
 @property (nonatomic, strong) NSDateFormatter *dobFormatter;
 
 @end
@@ -35,121 +34,135 @@
 
 - (void)createDataSource {
 
-	NSMutableDictionary *md = [NSMutableDictionary dictionary];
-
+	NSMutableArray *groups = [NSMutableArray array];
 	{
 		//	section 1: Essentials
 		NSMutableArray *marr = [NSMutableArray array];
 		{
-			NSMutableDictionary *row = [NSMutableDictionary dictionary];
-			row[@(RTFormConfigCellType)] = @(RTFormCellTypeInfo);
-			row[@(RTFormConfigKey)] = @"essentialIntro";
-			row[@(RTFormConfigValue)] = @"The following fields are all mandatory, please fill them in";
+			RTFormDataItem *row = [RTFormDataItem new];
+			row.cellType = RTFormCellTypeInfo;
+			row.key = @"essentialIntro";
+			row.value = @"The following fields are all mandatory, please fill them in";
 
 			[marr addObject:row];
 		}
 		{
-			NSMutableDictionary *row = [NSMutableDictionary dictionary];
-			row[@(RTFormConfigCellType)] = @(RTFormCellTypeOneLineField);
-			row[@(RTFormConfigKey)] = @"email";
-			row[@(RTFormConfigValue)] = @"";
-			row[@(RTFormConfigPlaceholder)] = @"Email address";
+			RTFormDataItem *row = [RTFormDataItem new];
+			row.cellType = RTFormCellTypeOneLineField;
+			row.key = @"email";
+			row.value = @"";
+			row.placeholder = @"Email address";
 
 			[marr addObject:row];
 		}
 		{
-			NSMutableDictionary *row = [NSMutableDictionary dictionary];
-			row[@(RTFormConfigCellType)] = @(RTFormCellTypeOneLineField);
-			row[@(RTFormConfigKey)] = @"password";
-			row[@(RTFormConfigValue)] = @"";
-			row[@(RTFormConfigPlaceholder)] = @"password";
-			row[@(RTFormConfigHint)] = @"Minimum is 5 characters, no maximum.";
-			row[@(RTFormConfigExplanation)] = @"Note: go wild here, don't use easy to figure out stuff, like dates of birth or names of family members. We recommend to use password generators, like 1Password or similar.";
+			RTFormDataItem *row = [RTFormDataItem new];
+			row.cellType = RTFormCellTypeOneLineField;
+			row.key = @"password";
+			row.value = @"";
+			row.placeholder = @"password";
+			row.hint = @"Minimum is 5 characters, no maximum.";
+			row.explanation = @"Note: go wild here, don't use easy to figure out stuff, like dates of birth or names of family members. We recommend to use password generators, like 1Password or similar.";
 
 			[marr addObject:row];
 		}
 		{
-			NSMutableDictionary *row = [NSMutableDictionary dictionary];
-			row[@(RTFormConfigCellType)] = @(RTFormCellTypeOneLineField);
-			row[@(RTFormConfigKey)] = @"nickname";
-			row[@(RTFormConfigValue)] = @"";
-			row[@(RTFormConfigPlaceholder)] = @"Nickname";
-			row[@(RTFormConfigExplanation)] = @"This is the only bit of info everyone on Blerch will see.";
+			RTFormDataItem *row = [RTFormDataItem new];
+			row.cellType = RTFormCellTypeOneLineField;
+			row.key = @"nickname";
+			row.value = @"";
+			row.placeholder = @"Nickname";
+			row.explanation = @"This is the only bit of info everyone on Blerch will see.";
 
 			[marr addObject:row];
 		}
 		{
-			NSMutableDictionary *row = [NSMutableDictionary dictionary];
-			row[@(RTFormConfigCellType)] = @(RTFormCellTypeMultiValueSegments);
-			row[@(RTFormConfigKey)] = @"gender";
-			row[@(RTFormConfigValue)] = @"Unknown";
-			row[@(RTFormConfigTitle)] = @"Gender";
+			RTFormDataItem *row = [RTFormDataItem new];
+			row.cellType = RTFormCellTypeMultiValueSegments;
+			row.key = @"gender";
+			row.value = @"Unknown";
+			row.title = @"Gender";
 
 			[marr addObject:row];
 		}
-		md[@"Essential"] = marr;	//	dict key is the section name, to be shown as header
+
+		RTFormDataGroup *group = [RTFormDataGroup new];
+		group.title = @"Essential Details";
+		group.items = marr;
+		[groups addObject:group];
 	}
 
 	{
 		//	section 2: Email Notifications
 		NSMutableArray *marr = [NSMutableArray array];
 		{
-			NSMutableDictionary *row = [NSMutableDictionary dictionary];
-			row[@(RTFormConfigCellType)] = @(RTFormCellTypeToggle);
-			row[@(RTFormConfigKey)] = @"notifComments";
-			row[@(RTFormConfigValue)] = @YES;
-			row[@(RTFormConfigTitle)] = @"New comments";
+			RTFormDataItem *row = [RTFormDataItem new];
+			row.cellType = RTFormCellTypeToggle;
+			row.key = @"notifComments";
+			row.value = @YES;
+			row.title = @"New comments";
 
 			[marr addObject:row];
 		}
 		{
-			NSMutableDictionary *row = [NSMutableDictionary dictionary];
-			row[@(RTFormConfigCellType)] = @(RTFormCellTypeToggle);
-			row[@(RTFormConfigKey)] = @"notifFollowers";
-			row[@(RTFormConfigValue)] = @NO;
-			row[@(RTFormConfigTitle)] = @"New followers";
+			RTFormDataItem *row = [RTFormDataItem new];
+			row.cellType = RTFormCellTypeToggle;
+			row.key = @"notifFollowers";
+			row.value = @NO;
+			row.title = @"New followers";
 
 			[marr addObject:row];
 		}
 		{
-			NSMutableDictionary *row = [NSMutableDictionary dictionary];
-			row[@(RTFormConfigCellType)] = @(RTFormCellTypeMultiValueSegments);
-			row[@(RTFormConfigKey)] = @"notifPeriod";
-			row[@(RTFormConfigValue)] = @7;
-			row[@(RTFormConfigTitle)] = @"Notification cycle";
+			RTFormDataItem *row = [RTFormDataItem new];
+			row.cellType = RTFormCellTypeMultiValueSegments;
+			row.key = @"notifPeriod";
+			row.value = @7;
+			row.title = @"Notification cycle";
 
 			[marr addObject:row];
 		}
-		md[@"Email Notifications"] = marr;	//	dict key is the section name, to be shown as header
+
+		RTFormDataGroup *group = [RTFormDataGroup new];
+		group.title = @"Email Notifications";
+		group.items = marr;
+		[groups addObject:group];
 	}
 
 	{
 		//	section 3: Details
 		NSMutableArray *marr = [NSMutableArray array];
 		{
-			NSMutableDictionary *row = [NSMutableDictionary dictionary];
-			row[@(RTFormConfigCellType)] = @(RTFormCellTypeDatePicker);
-			row[@(RTFormConfigKey)] = @"dateOfBirth";
-			row[@(RTFormConfigValue)] = [NSDate date];
-			row[@(RTFormConfigTitle)] = @"Date of Birth";
+			RTFormDataItem *row = [RTFormDataItem new];
+			row.cellType = RTFormCellTypeDatePicker;
+			row.key = @"dateOfBirth";
+			row.title = @"Date of Birth";
+
+			//	set default value to 18 years before now
+			NSDateComponents *yearComps = [NSDateComponents new];
+			yearComps.year = 18;
+			NSDate *date = [NSCalendar.currentCalendar dateByAddingComponents:yearComps toDate:NSDate.date options:NSCalendarWrapComponents];
+			row.defaultValue = date;
 
 			[marr addObject:row];
 		}
-		md[@"Personal Details"] = marr;	//	dict key is the section name, to be shown as header
 		{
-			NSMutableDictionary *row = [NSMutableDictionary dictionary];
-			row[@(RTFormConfigCellType)] = @(RTFormCellTypeMultiValuePicker);
-			row[@(RTFormConfigKey)] = @"country";
-//			row[@(RTFormConfigValue)] = @"RS";
-			row[@(RTFormConfigDefaultValue)] = @"RS";
-			row[@(RTFormConfigTitle)] = @"Country";
+			RTFormDataItem *row = [RTFormDataItem new];
+			row.cellType = RTFormCellTypeMultiValuePicker;
+			row.key = @"country";
+			row.defaultValue = @"RS";
+			row.title = @"Country";
 
 			[marr addObject:row];
 		}
+
+		RTFormDataGroup *group = [RTFormDataGroup new];
+		group.title = @"Personal Details";
+		group.items = marr;
+		[groups addObject:group];
 	}
 
-	self.dataSource = md;
-	self.sectionNames = [self.dataSource allKeys];
+	self.dataSource = groups;
 }
 
 
@@ -172,31 +185,32 @@
 #pragma mark - Table View data source
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
+
 	return self.dataSource.count;
 }
 
 - (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section {
 
+	RTFormDataGroup *group = self.dataSource[section];
+
 	RTFormHeader *v = [tableView dequeueReusableHeaderFooterViewWithIdentifier:[RTFormHeader reuseIdentifier]];
-	v.titleLabel.text = [self.sectionNames[section] uppercaseString];
+	v.titleLabel.text = [group.title uppercaseString];
 	return v;
 }
 //- (UIView *)tableView:(UITableView *)tableView viewForFooterInSection:(NSInteger)section {}
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
 
-	NSString *sectionKey = self.sectionNames[section];
-	NSArray *rows = self.dataSource[sectionKey];
-	return rows.count;
+	RTFormDataGroup *group = self.dataSource[section];
+	return group.items.count;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
 
-	NSString *sectionKey = self.sectionNames[indexPath.section];
-	NSArray *rows = self.dataSource[sectionKey];
-	NSDictionary *config = rows[indexPath.row];
+	RTFormDataGroup *group = self.dataSource[indexPath.section];
+	RTFormDataItem *config = group.items[indexPath.item];
 
-	switch ((RTFormCellType)[(NSNumber *)config[@(RTFormConfigCellType)] integerValue]) {
+	switch (config.cellType) {
 		case RTFormCellTypeInfo: {
 			RTFormInfoCell *cell = [tableView dequeueReusableCellWithIdentifier:[RTFormInfoCell reuseIdentifier] forIndexPath:indexPath];
 			[cell setupUsingConfiguration:config];
@@ -210,7 +224,7 @@
 			cell.delegate = self;
 			[cell setupUsingConfiguration:config];
 			//	custom setup
-			NSString *dataKey = config[@(RTFormConfigKey)];
+			NSString *dataKey = config.key;
 			if ([dataKey isEqualToString:@"email"]) {
 				cell.textField.keyboardType = UIKeyboardTypeEmailAddress;
 			} else if ([dataKey isEqualToString:@"password"]) {
@@ -297,30 +311,35 @@
 
 	//	udpate value in data source
 	NSIndexPath *indexPath = [self.tableView indexPathForCell:cell];
-	NSString *sectionKey = self.sectionNames[indexPath.section];
-	NSArray *rows = self.dataSource[sectionKey];
-	NSMutableDictionary *md = rows[indexPath.row];
-	md[@(RTFormConfigValue)] = value;
+	if (!indexPath) {
+		//	hm...
+	}
+	RTFormDataGroup *group = self.dataSource[indexPath.section];
+	RTFormDataItem *config = group.items[indexPath.item];
+	config.value = value;
 }
 
 - (void)formCellDidFinish:(RTFormBaseCell *)cell {
 	[super formCellDidFinish:cell];
 
 	NSIndexPath *indexPath = [self.tableView indexPathForCell:cell];
-
-	NSString *sectionKey = self.sectionNames[indexPath.section];
-	NSArray *rows = self.dataSource[sectionKey];
+	if (!indexPath) {
+		//	hm...
+	}
+	RTFormDataGroup *group = self.dataSource[indexPath.section];
+	NSArray< RTFormDataItem* > *rows = group.items;
 
 	//	now figure out should editing jump to next cell or simply resign keyboard
 	//	check only inside the current section
 	//	look for next text field and if found, auto-activate it
 	BOOL shouldResign = YES;
 	for (NSInteger r = indexPath.row+1; r < rows.count; r++) {
-		NSDictionary *config = rows[r];
+		RTFormDataItem *config = rows[r];
 		BOOL shouldBreak = NO;
-		switch ((RTFormCellType)[(NSNumber *)config[@(RTFormConfigCellType)] integerValue]) {
+		switch ( config.cellType ) {
 			case RTFormCellTypeOneLineField: {
-				RTFormOneLineFieldCell *cell = [self.tableView cellForRowAtIndexPath:[NSIndexPath indexPathForRow:r inSection:indexPath.section]];
+				NSIndexPath *rowIndexPath = [NSIndexPath indexPathForRow:r inSection:indexPath.section];
+				RTFormOneLineFieldCell *cell = [self.tableView cellForRowAtIndexPath:rowIndexPath];
 				[cell.textField becomeFirstResponder];
 				shouldBreak = YES;
 				shouldResign = NO;
