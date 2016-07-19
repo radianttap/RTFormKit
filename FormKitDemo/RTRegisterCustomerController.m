@@ -11,7 +11,6 @@
 
 @interface RTRegisterCustomerController () < RTFormCellDataSource >
 
-@property (nonatomic, copy) NSDictionary *dataSource;
 @property (nonatomic, copy) NSArray< NSString* > *sectionNames;
 
 @property (nonatomic, strong) NSDateFormatter *dobFormatter;

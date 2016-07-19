@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		D052D1B61D3E56A100FF786C /* RTFormDataItem.m in Sources */ = {isa = PBXBuildFile; fileRef = D052D1B51D3E56A100FF786C /* RTFormDataItem.m */; };
+		D052D1B91D3E56C300FF786C /* RTFormDataGroup.m in Sources */ = {isa = PBXBuildFile; fileRef = D052D1B81D3E56C300FF786C /* RTFormDataGroup.m */; };
 		D099EF771C748608008326C0 /* RTFormPickerCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D099EF761C748608008326C0 /* RTFormPickerCell.m */; };
 		D099EF791C748722008326C0 /* RTFormPickerCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D099EF781C748722008326C0 /* RTFormPickerCell.xib */; };
 		D0EFAAA71C6B8D1E00AB4008 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = D0EFAAA61C6B8D1E00AB4008 /* main.m */; };
@@ -34,6 +36,10 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		D052D1B41D3E56A100FF786C /* RTFormDataItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RTFormDataItem.h; sourceTree = "<group>"; };
+		D052D1B51D3E56A100FF786C /* RTFormDataItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RTFormDataItem.m; sourceTree = "<group>"; };
+		D052D1B71D3E56C300FF786C /* RTFormDataGroup.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RTFormDataGroup.h; sourceTree = "<group>"; };
+		D052D1B81D3E56C300FF786C /* RTFormDataGroup.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RTFormDataGroup.m; sourceTree = "<group>"; };
 		D099EF751C748608008326C0 /* RTFormPickerCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RTFormPickerCell.h; sourceTree = "<group>"; };
 		D099EF761C748608008326C0 /* RTFormPickerCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RTFormPickerCell.m; sourceTree = "<group>"; };
 		D099EF781C748722008326C0 /* RTFormPickerCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RTFormPickerCell.xib; sourceTree = "<group>"; };
@@ -142,6 +148,10 @@
 				D0EFAAC11C6B8ED100AB4008 /* RTFormBaseCell.m */,
 				D0EFAADD1C6CA73700AB4008 /* Header / Footer */,
 				D0EFAAD11C6BB64100AB4008 /* Specific Cells */,
+				D052D1B41D3E56A100FF786C /* RTFormDataItem.h */,
+				D052D1B51D3E56A100FF786C /* RTFormDataItem.m */,
+				D052D1B71D3E56C300FF786C /* RTFormDataGroup.h */,
+				D052D1B81D3E56C300FF786C /* RTFormDataGroup.m */,
 			);
 			path = RTFormKit;
 			sourceTree = "<group>";
@@ -259,6 +269,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D052D1B61D3E56A100FF786C /* RTFormDataItem.m in Sources */,
 				D0EFAAC51C6B92E400AB4008 /* UIColor+RTFormKit.m in Sources */,
 				D0EFAAD81C6C9A3600AB4008 /* RTFormInfoCell.m in Sources */,
 				D0EFAAC21C6B8ED100AB4008 /* RTFormBaseCell.m in Sources */,
@@ -271,6 +282,7 @@
 				D0EFAAE71C6CD2BA00AB4008 /* RTFormToggleCell.m in Sources */,
 				D0EFAAD01C6BB5C800AB4008 /* README.md in Sources */,
 				D0EFAAA71C6B8D1E00AB4008 /* main.m in Sources */,
+				D052D1B91D3E56C300FF786C /* RTFormDataGroup.m in Sources */,
 				D0EFAAF31C6F9CA700AB4008 /* RTFormDateCell.m in Sources */,
 				D0EFAAED1C6CF52C00AB4008 /* RTFormSegmentsCell.m in Sources */,
 			);

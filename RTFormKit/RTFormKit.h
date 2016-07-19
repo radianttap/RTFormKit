@@ -7,9 +7,12 @@
 //
 
 #import "UIColor+RTFormKit.h"
-#import "RTFormController.h"
+
+#import "RTFormDataGroup.h"
+#import "RTFormDataItem.h"
 #import "RTFormDataSource.h"
 
+#import "RTFormController.h"
 #import "RTFormHeader.h"
 #import "RTFormBaseCell.h"
 
