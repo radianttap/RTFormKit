@@ -8,15 +8,78 @@
 
 @import UIKit;
 
+@class RTFormBaseCell;
+
+@protocol RTFormCellDataSource <NSObject>
+
+@optional
 /**
- *	Add methods here that handle specific behavior for your data source, 
- *	like post-form-submit that should switch controllers, push/pop various controllers etc.
+ *	Data Source for inner table view inside the expanded multi-value picker
  *
- *	This object is also a data source for the table view, so should create cells, headers, footers, whatever is needed (UITableViewDataSource)
+ *	@param cell	A multi-value subclass of RTFormBaseCell (usually Segments or Picker)
  *
- *	Lastly, it should handle data changes in the cells (RTFormCellDelegate)
+ *	@return Array of actual model data objects. Must correspond to value and defaultValue keys in the cell configuration
  */
-@protocol RTFormCellDelegate;
+- (NSArray *)valuesForMultiValueFormCell:(RTFormBaseCell *)cell;
+
+/**
+ *	Displayed value that corresponds to each data source item
+ *
+ *	@param cell	A multi-value subclass of RTFormBaseCell (usually Segments or Picker)
+ *
+ *	@return Array of string values.
+ */
+- (NSArray< NSString* > *)titlesForMultiValueFormCell:(RTFormBaseCell *)cell;
+
+@end
+
+
+
+
+
+@protocol RTFormCellDelegate <NSObject>
+
+@optional
+/**
+ *	Called when data value changes (text field, switch etc)
+ *
+ *	@param cell		Cell where change occured
+ *	@param value	Latest value
+ */
+- (void)formCell:(RTFormBaseCell *)cell didChangeValue:(id)value;
+
+/**
+ *	Called when keyboard-related element (text field, text view) in the cell becomes first responder. Usual action is to slide it into view
+ *
+ *	@param cell	Activated cell.
+ */
+- (void)formCellDidActivate:(RTFormBaseCell *)cell;
+/**
+ *	Called when keyboard-related element (text field, text view) in the cell resigns being first responder. Usual action is to do nothing
+ *
+ *	@param cell	Deactivated cell.
+ */
+- (void)formCellDidDeactivate:(RTFormBaseCell *)cell;
+
+/**
+ *	Called when Return key is tapped on the keyboard for text-field cell. Or when UITextView editing is done
+ *
+ *	@param cell	Calling cell
+ */
+- (void)formCellDidFinish:(RTFormBaseCell *)cell;
+
+@end
+
+
+
+/**
+ *	This is protocol that your Form VCs should adopt.
+ *	Inherit this protocol if you need to add methods that handle specific behavior for your data source.
+ *
+ *	Object adopting this protocol becomes data source for the entire table view thus should create cells, headers, footers, whatever is needed (UITableViewDataSource)
+ *	Lastly, it should handle data and state changes in the cells (RTFormCellDelegate)
+ */
+
 @protocol RTFormDataSource < UITableViewDataSource, RTFormCellDelegate >
 
 @end

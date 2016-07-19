@@ -7,6 +7,7 @@
 //
 
 @import UIKit;
+#import "RTFormDataSource.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
@@ -127,9 +128,9 @@ typedef NS_ENUM(NSInteger, RTFormConfig) {
 
 
 
-
-
-@protocol RTFormCellDelegate, RTFormCellDataSource;
+/**
+ *	Base cell for all other form cells
+ */
 @interface RTFormBaseCell : UITableViewCell
 
 + (NSString *)reuseIdentifier;
@@ -147,54 +148,6 @@ typedef NS_ENUM(NSInteger, RTFormConfig) {
 - (void)commonInit;
 - (void)setupUsingConfiguration:(NSDictionary< NSNumber*,id > *)config;
 - (void)applyTheme:(NSNotification *)notification;
-
-@end
-
-
-
-
-@protocol RTFormCellDataSource <NSObject>
-
-@optional
-- (NSArray< NSString* > *)titlesForMultiValueFormCell:(RTFormBaseCell *)cell;
-- (NSArray *)valuesForMultiValueFormCell:(RTFormBaseCell *)cell;
-
-@end
-
-
-
-
-
-@protocol RTFormCellDelegate <NSObject>
-
-@optional
-/**
- *	Called when data value changes (text field, switch etc)
- *
- *	@param cell		Cell where change occured
- *	@param value	Latest value
- */
-- (void)formCell:(RTFormBaseCell *)cell didChangeValue:(id)value;
-
-/**
- *	Called when keyboard-related element (text field, text view) in the cell becomes first responder. Usual action is to slide it into view
- *
- *	@param cell	Activated cell.
- */
-- (void)formCellDidActivate:(RTFormBaseCell *)cell;
-/**
- *	Called when keyboard-related element (text field, text view) in the cell resigns being first responder. Usual action is to do nothing
- *
- *	@param cell	Deactivated cell.
- */
-- (void)formCellDidDeactivate:(RTFormBaseCell *)cell;
-
-/**
- *	Called when Return key is tapped on the keyboard for text-field cell. Or when UITextView editing is done
- *
- *	@param cell	Calling cell
- */
-- (void)formCellDidFinish:(RTFormBaseCell *)cell;
 
 @end
 

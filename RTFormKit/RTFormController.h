@@ -11,6 +11,9 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
+/**
+ *	Basic form controller. Should cover most cases that you need, subclass to customize
+ */
 @interface RTFormController : UIViewController < UITableViewDelegate, RTFormDataSource >
 
 @property (nonatomic, strong, readonly) UITableView *tableView;
