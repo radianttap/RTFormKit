@@ -33,4 +33,30 @@
 	return self;
 }
 
+- (instancetype)copyWithZone:(NSZone *)zone {
+
+	RTFormDataItem *newcopy = [[RTFormDataItem allocWithZone:zone] init];
+	newcopy.cellType = self.cellType;
+	newcopy.key = self.key;
+
+	return newcopy;
+}
+
+- (void)encodeWithCoder:(NSCoder *)aCoder {
+
+	[aCoder encodeObject:@(self.cellType) forKey:NSStringFromSelector(@selector(cellType))];
+	[aCoder encodeObject:self.key forKey:NSStringFromSelector(@selector(key))];
+}
+
+- (instancetype)initWithCoder:(NSCoder *)aDecoder {
+
+	self = [super init];
+	if (!self) return nil;
+
+	_cellType = [[aDecoder decodeObjectForKey:NSStringFromSelector(@selector(cellType))] integerValue];
+	_key = [aDecoder decodeObjectForKey:NSStringFromSelector(@selector(key))];
+
+	return self;
+}
+
 @end

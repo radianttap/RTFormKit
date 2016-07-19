@@ -11,7 +11,7 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface RTFormDataItem : NSObject
+@interface RTFormDataItem : NSObject < NSCoding, NSCopying >
 
 /**
  *	Defines cell type. Use this in the your tableView:cellForRowAtIndexPath: to instantiate cell of proper type
