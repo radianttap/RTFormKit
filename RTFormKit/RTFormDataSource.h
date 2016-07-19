@@ -10,6 +10,64 @@
 
 @class RTFormBaseCell;
 
+
+/**
+ *	Defines what kind of a cell this is:
+ *	text only (multi-line label), text field, toggle (switch), slider, multi-value etc.
+ */
+typedef NS_ENUM(NSInteger, RTFormCellType) {
+	/**
+	 *	Base fallback cell type. Never use this directly.
+	 */
+	RTFormCellTypeUnknown,
+
+	/**
+	 *	Cell with just one multi-line UILabel
+	 */
+	RTFormCellTypeInfo,
+
+	/**
+	 *	Cell with text field
+	 */
+	RTFormCellTypeOneLineField,
+
+	/**
+	 *	Cell with inline-date picker, shown on tap
+	 */
+	RTFormCellTypeDatePicker,
+
+	/**
+	 *	Cell with text view
+	 */
+	RTFormCellTypeMultiLineField,
+
+	/**
+	 *	Cell with single-line UILabel on the leading side and UISwitch on the trailing side
+	 */
+	RTFormCellTypeToggle,
+
+	/**
+	 *	Cell with single-line UILabel above and UISlider below, allowing to pick from a range of values
+	 */
+	RTFormCellTypeRange,
+
+	/**
+	 *	Cell with multiple possible options. When you tap the value, it expands to reveal picker with list of possible options
+	 *	This picker is implemented as simple nested table view.
+	 */
+	RTFormCellTypeMultiValuePicker,
+
+	/**
+	 *	Cell with multiple possible options, displayed using UISegmentedControl.
+	 *	It has single-line title UILabel shown above the segment
+	 */
+	RTFormCellTypeMultiValueSegments,
+};
+
+
+
+
+
 @protocol RTFormCellDataSource <NSObject>
 
 @optional
@@ -69,6 +127,10 @@
 - (void)formCellDidFinish:(RTFormBaseCell *)cell;
 
 @end
+
+
+
+
 
 
 

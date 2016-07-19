@@ -12,61 +12,6 @@
 NS_ASSUME_NONNULL_BEGIN
 
 /**
- *	Defines what kind of a cell this is (text only, text field, toggle, slider, multi-value etc.
- */
-typedef NS_ENUM(NSInteger, RTFormCellType) {
-	/**
-	 *	Base cell. never used this directly
-	 */
-	RTFormCellTypeUnknown,
-
-	/**
-	 *	Cell with just one multi-line UILabel
-	 */
-	RTFormCellTypeInfo,
-
-	/**
-	 *	Cell with text field
-	 */
-	RTFormCellTypeOneLineField,
-
-	/**
-	 *	Cell with inline-date picker, shown on tap
-	 */
-	RTFormCellTypeDatePicker,
-
-	/**
-	 *	Cell with text view
-	 */
-	RTFormCellTypeMultiLineField,
-
-	/**
-	 *	Cell with single-line UILabel on the leading side and UISwitch on the trailing side
-	 */
-	RTFormCellTypeToggle,
-
-	/**
-	 *	Cell with single-line UILabel above and UISlider below, allowing to pick from a range of values
-	 */
-	RTFormCellTypeRange,
-
-	/**
-	 *	Cell with multiple possible options. When you tap the value, it expands to reveal picker with list of possible options
-	 *	This picker is implemented as simple nested table view. If there are more than 10 options, it also shows a text field to filter the list of options
-	 */
-	RTFormCellTypeMultiValuePicker,
-
-	/**
-	 *	Cell with multiple possible options, displayed using UISegmentedControl.
-	 *	It has single-line title UILabel shown above the segment
-	 */
-	RTFormCellTypeMultiValueSegments,
-};
-
-
-
-
-/**
  *	Base cell for all other form cells
  */
 @interface RTFormBaseCell : UITableViewCell
