@@ -65,7 +65,7 @@
 		D0EFAADB1C6CA72400AB4008 /* RTFormHeader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RTFormHeader.m; sourceTree = "<group>"; };
 		D0EFAADE1C6CA74B00AB4008 /* RTFormHeader.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RTFormHeader.xib; sourceTree = "<group>"; };
 		D0EFAAE01C6CADD700AB4008 /* RTFormOneLineFieldCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RTFormOneLineFieldCell.h; sourceTree = "<group>"; };
-		D0EFAAE11C6CADD700AB4008 /* RTFormOneLineFieldCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RTFormOneLineFieldCell.m; sourceTree = "<group>"; };
+		D0EFAAE11C6CADD700AB4008 /* RTFormOneLineFieldCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RTFormOneLineFieldCell.m; sourceTree = "<group>"; tabWidth = 3; };
 		D0EFAAE21C6CADD700AB4008 /* RTFormOneLineFieldCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RTFormOneLineFieldCell.xib; sourceTree = "<group>"; };
 		D0EFAAE51C6CD2BA00AB4008 /* RTFormToggleCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RTFormToggleCell.h; sourceTree = "<group>"; };
 		D0EFAAE61C6CD2BA00AB4008 /* RTFormToggleCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RTFormToggleCell.m; sourceTree = "<group>"; };
