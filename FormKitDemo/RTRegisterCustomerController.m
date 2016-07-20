@@ -155,6 +155,42 @@
 
 			[marr addObject:row];
 		}
+		{
+			RTFormDataItem *row = [RTFormDataItem new];
+			row.cellType = RTFormCellTypeOneLineField;
+			row.key = @"street";
+			row.value = @"";
+			row.placeholder = @"Street name and number";
+
+			[marr addObject:row];
+		}
+		{
+			RTFormDataItem *row = [RTFormDataItem new];
+			row.cellType = RTFormCellTypeOneLineField;
+			row.key = @"street2";
+			row.value = @"";
+			row.placeholder = @"Building, Apt";
+
+			[marr addObject:row];
+		}
+		{
+			RTFormDataItem *row = [RTFormDataItem new];
+			row.cellType = RTFormCellTypeOneLineField;
+			row.key = @"zipcode";
+			row.value = @"";
+			row.placeholder = @"Zip code";
+
+			[marr addObject:row];
+		}
+		{
+			RTFormDataItem *row = [RTFormDataItem new];
+			row.cellType = RTFormCellTypeOneLineField;
+			row.key = @"City";
+			row.value = @"";
+			row.placeholder = @"City";
+
+			[marr addObject:row];
+		}
 
 		RTFormDataGroup *group = [RTFormDataGroup new];
 		group.title = @"Personal Details";
@@ -223,6 +259,13 @@
 			RTFormOneLineFieldCell *cell = [tableView dequeueReusableCellWithIdentifier:[RTFormOneLineFieldCell reuseIdentifier] forIndexPath:indexPath];
 			cell.delegate = self;
 			[cell setupUsingConfiguration:config];
+
+			//	defaults
+			//	anything you potentially override below in custom setup, you need to first reset to default here
+			//	otherwise cell reuse may give nasty surprises
+			cell.textField.keyboardType = UIKeyboardTypeDefault;
+			cell.textField.secureTextEntry = NO;
+
 			//	custom setup
 			NSString *dataKey = config.key;
 			if ([dataKey isEqualToString:@"email"]) {
@@ -231,6 +274,7 @@
 				cell.textField.secureTextEntry = YES;
 			}
 
+			//	alternating background color
 			cell.contentView.backgroundColor = (indexPath.row % 2 == 0) ? [UIColor formBackgroundColor] : [UIColor formBackgroundAlternateColor];
 			return cell;
 			break;
