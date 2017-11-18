@@ -1,3 +1,8 @@
+---
+> Note: this is abandoned. 
+> It should still work just fine, but if you use, you‘re on your own.
+---
+
 # RTFormKit
 
 Fairly extensible and feature-rich library to display forms, using table view.
